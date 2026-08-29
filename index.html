@@ -6,6 +6,15 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
+    <!-- Progressive Web App (PWA) & Apple Mobile Web App -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Alps 2026">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+  <meta name="theme-color" content="#0f172a">
   <title>Europe Alps Odyssey 2026 | Rowe & Matthews Travel Party</title>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <style>
@@ -220,7 +229,7 @@
               <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-400/30">
                 ✈ Mark & Shelly Matthews
               </span>
-              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-sky-400/20 text-sky-300 border border-sky-400/30">v3.3</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-sky-400/20 text-sky-300 border border-sky-400/30">v3.4</span>
             </div>
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
               Europe Alpine Odyssey
@@ -232,6 +241,10 @@
 
           <!-- Action Buttons -->
           <div class="flex flex-wrap gap-2 no-print">
+            <button id="btn-add-webapp" onclick="openWebAppModal()" class="btn-add-webapp px-3.5 py-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 font-extrabold rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow-lg shadow-amber-500/25" title="Install on iPhone/Android with custom icon">
+              <svg class="w-4 h-4 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>Add as Web App</span>
+            </button>
             <button onclick="lockPortal()" title="Lock portal behind passphrase" class="px-3 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg text-xs sm:text-sm font-medium border border-white/20 transition flex items-center gap-1.5 backdrop-blur-sm shadow-sm">
               <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
               <span>Lock</span>
@@ -2319,10 +2332,79 @@
       }, 10);
     }
 
+    
+    /* PWA & WEB APP INSTALL DETECTION (Hides button when already in standalone mode) */
+    let deferredInstallPrompt = null;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredInstallPrompt = e;
+      updateWebAppButtonVisibility();
+    });
+
+    function isRunningAsWebApp() {
+      const isStandaloneMedia = window.matchMedia('(display-mode: standalone)').matches;
+      const isIOSStandalone = ('standalone' in window.navigator) && (window.navigator.standalone === true);
+      const isAndroidReferrer = document.referrer && document.referrer.includes('android-app://');
+      return Boolean(isStandaloneMedia || isIOSStandalone || isAndroidReferrer);
+    }
+
+    function updateWebAppButtonVisibility() {
+      const isApp = isRunningAsWebApp();
+      const installBtns = document.querySelectorAll('.btn-add-webapp');
+      installBtns.forEach(btn => {
+        if (isApp) {
+          btn.style.setProperty('display', 'none', 'important');
+        } else {
+          btn.style.removeProperty('display');
+        }
+      });
+    }
+
+    function openWebAppModal() {
+      if (deferredInstallPrompt) {
+        deferredInstallPrompt.prompt();
+        deferredInstallPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            updateWebAppButtonVisibility();
+          }
+          deferredInstallPrompt = null;
+        });
+        return;
+      }
+
+      const isIOSDevice = /iphone|ipad|ipod/i.test(navigator.userAgent) || 
+                          (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      
+      const iosBox = document.getElementById('ios-instructions');
+      const androidBox = document.getElementById('android-instructions');
+      
+      if (isIOSDevice) {
+        if (iosBox) iosBox.classList.remove('hidden');
+        if (androidBox) androidBox.classList.add('hidden');
+      } else {
+        if (androidBox) androidBox.classList.remove('hidden');
+        if (iosBox) iosBox.classList.add('hidden');
+      }
+
+      const modal = document.getElementById('webapp-modal');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeWebAppModal() {
+      const modal = document.getElementById('webapp-modal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    window.addEventListener('appinstalled', () => {
+      updateWebAppButtonVisibility();
+    });
+
     // Auto-unlock if device is remembered and initialize active tab
     document.addEventListener('DOMContentLoaded', () => {
       const savedTab = sessionStorage.getItem('active_alps_tab') || 'overview';
       switchMainTab(savedTab);
+      updateWebAppButtonVisibility();
 
       if (localStorage.getItem('alps_trip_auth') === 'granted') {
         const gate = document.getElementById('password-gate');
@@ -2333,5 +2415,85 @@
       }
     });
   </script>
+
+  <!-- ADD AS WEB APP MODAL (Step-by-Step Home Screen Instructions with Custom Icon) -->
+  <div id="webapp-modal" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300 hidden no-print">
+    <div class="bg-slate-900 border border-sky-500/30 rounded-2xl max-w-md w-full p-6 shadow-2xl text-left relative overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-40 h-40 bg-sky-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <!-- Close Button -->
+      <button onclick="closeWebAppModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1.5 rounded-lg bg-slate-800 border border-slate-700">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <!-- App Preview -->
+      <div class="flex items-center gap-3 mb-4 pb-4 border-b border-slate-800">
+        <img src="apple-touch-icon.png" alt="Alps 2026 App Icon" class="w-16 h-16 rounded-2xl shadow-lg border border-sky-400/40 p-0.5 bg-slate-800">
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-400/20">Custom Web App</span>
+            <span class="text-[10px] font-mono text-sky-300 bg-sky-500/10 px-1.5 py-0.5 rounded border border-sky-400/20">Standalone</span>
+          </div>
+          <h3 class="text-lg font-black text-white mt-1">Europe Alps Odyssey</h3>
+          <p class="text-xs text-slate-400">Install on your phone for instant, full-screen access</p>
+        </div>
+      </div>
+
+      <!-- iOS Instructions -->
+      <div id="ios-instructions" class="space-y-3 text-xs text-slate-300">
+        <div class="font-bold text-sky-300 uppercase text-[11px] tracking-wider flex items-center gap-1.5">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.06 1.72-.93 2.74 1.01.08 2.03-.5 2.64-1.24z"/></svg>
+          iPhone & iPad Safari (3 Easy Steps)
+        </div>
+
+        <div class="flex items-start gap-3 bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+          <div class="w-6 h-6 rounded-full bg-sky-500 text-white flex items-center justify-center font-bold text-xs shrink-0">1</div>
+          <div>
+            Tap the <strong class="text-white">Share</strong> button at the bottom of your Safari screen:
+            <div class="mt-1.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-700 border border-slate-600 text-sky-300 font-semibold text-xs">
+              <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+              <span>Share</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3 bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+          <div class="w-6 h-6 rounded-full bg-sky-500 text-white flex items-center justify-center font-bold text-xs shrink-0">2</div>
+          <div>
+            Scroll down the menu and tap <strong class="text-white">"Add to Home Screen"</strong>:
+            <div class="mt-1.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-700 border border-slate-600 text-emerald-300 font-semibold text-xs">
+              <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              <span>Add to Home Screen</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3 bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+          <div class="w-6 h-6 rounded-full bg-sky-500 text-white flex items-center justify-center font-bold text-xs shrink-0">3</div>
+          <div>
+            Tap <strong class="text-emerald-400">"Add"</strong> in the top-right corner.
+            <p class="text-slate-400 text-[11px] mt-1">The custom Alps 2026 mountain icon will appear on your home screen. When you open it, the browser toolbars disappear and it runs like a native app!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Android Instructions -->
+      <div id="android-instructions" class="hidden space-y-3 text-xs text-slate-300">
+        <div class="font-bold text-emerald-300 uppercase text-[11px] tracking-wider">
+          Android / Chrome Quick Install
+        </div>
+        <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+          Tap the Chrome <strong>three dots menu (⋮)</strong> in the top right and select <strong class="text-white">"Install app"</strong> or <strong class="text-white">"Add to Home screen"</strong>.
+        </div>
+      </div>
+
+      <div class="mt-5 pt-3 border-t border-slate-800">
+        <button onclick="closeWebAppModal()" class="w-full py-2.5 bg-gradient-to-r from-sky-500 to-emerald-500 hover:from-sky-400 hover:to-emerald-400 text-white font-bold rounded-xl text-xs transition shadow-md text-center">
+          Got It, Thanks!
+        </button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
