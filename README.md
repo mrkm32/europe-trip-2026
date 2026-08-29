@@ -45,6 +45,25 @@
 | **09/16 – 09/19** (3 Nights) | Hotel (Geneva Area) | **Geneva / Lake Léman** | ⏳ Reviewing with Madeline | Lakeside exploration & easy transit to GVA Airport • 2 Rooms |
 | **09/19** | **Return Flights** | **Aer Lingus** | `2AXKMS` (Matthews) | EI 0681 (GVA 10:10 AM ➔ DUB) + EI 0089 (DUB ➔ MSP 5:00 PM) • Party of 4 |
 
+### 🚨 Essential Emergency & 24/7 Alpine Contacts
+
+| Service / Authority | Region / Country | Contact Number | Notes |
+| :--- | :--- | :--- | :--- |
+| **Universal European Emergency** | 🇪🇺 EU & Switzerland | **112** | Free 24/7 Police, Fire, Medical dispatch across DE, AT, IT, CH |
+| **Austrian Alpine Mountain Rescue** | 🇦🇹 Austria | **140** | Salzburg & Innsbruck Alpine Emergency |
+| **Italian Alpine Mountain Rescue (CNSAS)** | 🇮🇹 Italy Dolomites | **118** | High-alpine & Dolomite rescue dispatch |
+| **Swiss Air-Rescue (Rega)** | 🇨🇭 Switzerland | **1414** | Helo alpine rescue in Zermatt & Swiss Alps |
+| **Delta Air Lines** | 🇺🇸 USA Support | **+1-800-221-1212** | Flights DL 164 & DL 9553 (UK/EU: +44 207 660 0767) |
+| **Aer Lingus** | 🇺🇸 USA Support | **+1-516-622-4022** | Flights EI 0681 & EI 0089 (Dublin: +353 1 886 8989) |
+| **Boutique Hotel Germania** | 🇩🇪 Munich | **+49 89 590460** | Schwanthalerstraße 28, Munich |
+| **June Six Salzburg** | 🇦🇹 Salzburg | **+43 662 254156** | Haunspergstraße 41, Salzburg |
+| **NALA individuellhotel** | 🇦🇹 Innsbruck | **+43 512 584444** | Müllerstrasse 15, Innsbruck |
+| **Hotel Rezia** | 🇮🇹 La Villa / Alta Badia | **+39 0471 847240** | Str. Colz, 64, La Villa in Badia |
+| **U.S. Consulate General Munich** | 🇩🇪 Germany | **+49 89 28880** | Königinstraße 5, 80539 München |
+| **U.S. Embassy Vienna** | 🇦🇹 Austria | **+43 1 313390** | Boltzmanngasse 16, 1090 Wien |
+| **U.S. Consulate General Milan** | 🇮🇹 Italy | **+39 02 290351** | Via Principe Amedeo 2/10, Milano (covers Dolomites) |
+| **U.S. Embassy Bern** | 🇨🇭 Switzerland | **+41 31 357 7011** | Sulgeneckstrasse 19, 3007 Bern |
+
 ---
 
 ## 🗺️ Journey Flowchart

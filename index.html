@@ -21,8 +21,21 @@
         margin: 10mm 10mm 12mm 10mm;
       }
       
-      .no-print, #password-gate { 
+      .no-print, #password-gate, .main-nav-bar { 
         display: none !important; 
+      }
+
+      /* CRUCIAL FOR BILL & KRIS PRINTING: ALL 3 TABS DISPLAY COMPLETE IN PRINT MODE */
+      .tab-panel,
+      .tab-panel.hidden { 
+        display: block !important; 
+      }
+
+      #panel-confirmations,
+      #panel-schedule,
+      .notes-card {
+        break-before: page !important;
+        page-break-before: always !important;
       }
       
       body { 
@@ -174,7 +187,7 @@
   </div>
 
   <!-- UNIFIED COVER CONTAINER (Stays intact on Page 1 for Print) -->
-  <div class="print-cover-page">
+  
     
     <!-- TOP HERO BAR -->
     <header class="bg-gradient-to-r from-slate-900 via-sky-950 to-slate-900 text-white relative overflow-hidden border-b border-sky-800/40">
@@ -205,22 +218,26 @@
 
           <!-- Action Buttons -->
           <div class="flex flex-wrap gap-2 no-print">
-            <button onclick="lockPortal()" title="Lock portal behind passphrase" class="px-3.5 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg text-sm font-medium border border-white/20 transition flex items-center gap-1.5 backdrop-blur-sm shadow-sm">
+            <button onclick="lockPortal()" title="Lock portal behind passphrase" class="px-3 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg text-xs sm:text-sm font-medium border border-white/20 transition flex items-center gap-1.5 backdrop-blur-sm shadow-sm">
               <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
               <span>Lock</span>
             </button>
-            <button onclick="window.print()" class="px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg text-sm font-medium border border-white/20 transition flex items-center gap-2 backdrop-blur-sm shadow-sm">
+            <button onclick="window.print()" class="px-3.5 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg text-xs sm:text-sm font-medium border border-white/20 transition flex items-center gap-2 backdrop-blur-sm shadow-sm" title="Print complete multi-page itinerary booklet">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
-              Print / PDF
+              <span>Print Booklet</span>
             </button>
-            <a href="#party" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium rounded-lg text-sm transition flex items-center gap-1.5 shadow-lg shadow-emerald-600/25">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-              Party of 4
-            </a>
-            <a href="#confirmations" class="px-4 py-2 bg-sky-500 hover:bg-sky-400 text-white font-medium rounded-lg text-sm transition flex items-center gap-1.5 shadow-lg shadow-sky-500/25">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
-              Confirmations
-            </a>
+            <button onclick="switchMainTab('overview')" class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow-lg shadow-emerald-600/25">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Overview</span>
+            </button>
+            <button onclick="switchMainTab('confirmations')" class="px-3.5 py-2 bg-sky-600 hover:bg-sky-500 text-white font-medium rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow-lg shadow-sky-600/25">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+              <span>Confirmations</span>
+            </button>
+            <button onclick="switchMainTab('schedule')" class="px-3.5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow-lg shadow-indigo-600/25">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              <span>Schedule</span>
+            </button>
           </div>
         </div>
 
@@ -250,9 +267,47 @@
       </div>
     </header>
 
-    <!-- HERO TRIP ARTWORK BANNER (Object-position top so 'THE ALPS' is never cropped) -->
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-4">
-      <div class="hero-banner-box mb-6 rounded-2xl overflow-hidden shadow-xl border border-slate-200 relative bg-slate-900">
+  <!-- STICKY 3-TAB NAVIGATION BAR (Zero scrolling, instant mobile access) -->
+  <div class="main-nav-bar sticky top-0 z-30 bg-slate-900/95 backdrop-blur-md border-b border-sky-800/40 py-2.5 shadow-lg no-print">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between gap-2">
+        <nav class="flex items-center gap-1.5 sm:gap-3 overflow-x-auto custom-scrollbar py-0.5 w-full sm:w-auto">
+          <button onclick="switchMainTab('overview')" id="tab-btn-overview" class="main-nav-tab active-main-tab flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition bg-gradient-to-r from-sky-500 to-emerald-500 text-white shadow-lg shadow-sky-500/25">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            <span>Overview</span>
+          </button>
+
+          <button onclick="switchMainTab('confirmations')" id="tab-btn-confirmations" class="main-nav-tab flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition text-slate-300 hover:text-white hover:bg-slate-800">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+            <span class="truncate">Confirmations & Essential Contacts</span>
+            <span class="text-[10px] bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded-full border border-sky-400/30 font-mono">12+</span>
+          </button>
+
+          <button onclick="switchMainTab('schedule')" id="tab-btn-schedule" class="main-nav-tab flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition text-slate-300 hover:text-white hover:bg-slate-800">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <span class="truncate">Day-by-Day Expedition Schedule</span>
+            <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-400/30 font-mono">16 Days</span>
+          </button>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-2">
+          <button onclick="window.print()" class="px-3.5 py-2 rounded-lg text-xs font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/20 transition flex items-center gap-1.5" title="Print complete multi-page itinerary booklet">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+            <span>Print Booklet</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
+
+    <!-- TAB PANEL 1: OVERVIEW -->
+    <div id="panel-overview" class="tab-panel">
+      <!-- COVER PAGE WRAPPER FOR PRINT (Page 1) -->
+      <div class="print-cover-page">
+        <div class="hero-banner-box mb-6 rounded-2xl overflow-hidden shadow-xl border border-slate-200 relative bg-slate-900">
         <img src="hero.jpg" alt="European Alps Itinerary Overview" class="w-full h-56 sm:h-72 md:h-80 object-cover object-top block">
         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/35 to-transparent flex flex-col justify-end p-5 sm:p-7">
           <span class="text-amber-400 font-bold uppercase tracking-widest text-xs mb-1">Grand Tour Overview</span>
@@ -342,14 +397,10 @@
         </div>
       </section>
     </div>
+      </div>
 
-  </div> <!-- End print-cover-page -->
-
-  <!-- MAIN CONTAINER (Starts on Page 2 in Print) -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
-
-    <!-- SECTION: GEOGRAPHIC SATELLITE RELIEF MAP OVERLAY -->
-    <section class="print-page-break map-card mb-12 bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+      <!-- SATELLITE RELIEF & ROUTE MAP -->
+      <section class="print-page-break map-card mb-12 bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
         <div>
           <div class="flex items-center gap-2">
@@ -578,8 +629,48 @@
       </div>
     </section>
 
-    <!-- SECTION 2: CONFIRMATIONS & BOOKING QUICK-DASHBOARD -->
-    <section id="confirmations" class="confirm-card mb-12 bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+      <!-- ALPINE TRAVEL GUIDELINES & CHECKLIST -->
+      <section class="notes-card mb-12 bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+      <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+        <svg class="w-5 h-5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        Crucial Alps Travel Notes & Party Logistics
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 info-box">
+          <div class="font-bold text-slate-900 text-sm mb-1">🚘 Car Rental for 4 Adults</div>
+          <p class="text-slate-600">
+            For 4 adults + luggage traveling through the Dolomites, request a full-size SUV (Audi Q7/BMW X5) or passenger minivan (Mercedes V-Class), or split into 2 compact wagons for easier mountain hairpin driving.
+          </p>
+        </div>
+
+        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 info-box">
+          <div class="font-bold text-slate-900 text-sm mb-1">🚠 Gondola Closing Strictness</div>
+          <p class="text-slate-600">
+            Dolomites and Swiss cable cars adhere to strict timetables. <strong>Never cut it close to final descent</strong> (Piz La Ila last descent 5:00 PM, Boé 5:30 PM). Mountain descents on foot take 3+ hours!
+          </p>
+        </div>
+
+        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 info-box">
+          <div class="font-bold text-slate-900 text-sm mb-1">💶 Currency & Splitting Bills</div>
+          <p class="text-slate-600">
+            Germany, Austria, and Italy use the <strong>Euro (€)</strong>; Switzerland uses the <strong>Swiss Franc (CHF)</strong>. Contactless credit card is accepted almost everywhere. Keep €50 cash each for remote rifugio lunches.
+          </p>
+        </div>
+
+        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 info-box">
+          <div class="font-bold text-slate-900 text-sm mb-1">🌤 September Mountain Weather</div>
+          <p class="text-slate-600">
+            Early September brings crisp, clear days, but high summits (2,500m - 3,000m) can drop near freezing with sudden wind shifts. Always layer with lightweight fleece and a wind/rain shell in your daypack.
+          </p>
+        </div>
+      </div>
+    </section>
+    </div>
+
+    <!-- TAB PANEL 2: CONFIRMATIONS & ESSENTIAL CONTACTS -->
+    <div id="panel-confirmations" class="tab-panel hidden">
+      <section id="confirmations" class="confirm-card mb-12 bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
         <div>
           <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">All-in-One Master Wallet</span>
@@ -1084,11 +1175,70 @@
           </div>
         </div>
 
+        <!-- Essential Emergency & Travel Contacts Card -->
+        <div class="itinerary-subcard bg-gradient-to-br from-red-50 via-slate-50 to-white border border-red-200 rounded-xl p-5 shadow-sm col-span-1 md:col-span-2 lg:col-span-3">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3 pb-3 border-b border-red-100">
+            <div class="flex items-center gap-2">
+              <span class="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold text-sm">
+                🚨
+              </span>
+              <div>
+                <h3 class="font-extrabold text-slate-900 text-base">Essential Contacts & 24/7 Alpine Emergency Numbers</h3>
+                <p class="text-xs text-slate-500">Universal European emergency services, mountain rescue, airline desks, and US embassies</p>
+              </div>
+            </div>
+            <span class="self-start sm:self-auto px-2.5 py-1 bg-red-100 text-red-700 text-xs font-bold rounded-full border border-red-200">
+              Save to Phone
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+            <div class="p-3 bg-white rounded-lg border border-red-100 space-y-1">
+              <span class="font-bold text-slate-800 uppercase text-[10px] text-red-700">🚑 Universal Emergency</span>
+              <div class="text-sm font-bold text-slate-900">
+                <a href="tel:112" class="text-red-600 hover:text-red-800 flex items-center gap-1 font-mono text-base">📞 Dial 112</a>
+              </div>
+              <p class="text-[11px] text-slate-500">Free 24/7 emergency dispatch across Germany, Austria, Italy & Switzerland (Police, Fire, Ambulance).</p>
+            </div>
+
+            <div class="p-3 bg-white rounded-lg border border-slate-200 space-y-1">
+              <span class="font-bold text-slate-800 uppercase text-[10px] text-sky-700">🏔 Alpine Mountain Rescue</span>
+              <div class="text-xs text-slate-700 space-y-0.5 pt-0.5">
+                <div>🇦🇹 Austria Alps: <a href="tel:140" class="font-mono font-bold text-sky-600">📞 140</a></div>
+                <div>🇮🇹 Italy Dolomites: <a href="tel:118" class="font-mono font-bold text-sky-600">📞 118</a> (CNSAS)</div>
+                <div>🇨🇭 Switzerland Air Rescue: <a href="tel:1414" class="font-mono font-bold text-sky-600">📞 1414</a> (Rega)</div>
+              </div>
+            </div>
+
+            <div class="p-3 bg-white rounded-lg border border-slate-200 space-y-1">
+              <span class="font-bold text-slate-800 uppercase text-[10px] text-emerald-700">✈ Airline Support Desks</span>
+              <div class="text-xs text-slate-700 space-y-0.5 pt-0.5">
+                <div>Delta Air Lines (US): <a href="tel:+18002211212" class="font-mono font-medium text-emerald-700">1-800-221-1212</a></div>
+                <div>Delta (Europe): <a href="tel:+442076600767" class="font-mono font-medium text-emerald-700">+44 207 660 0767</a></div>
+                <div>Aer Lingus: <a href="tel:+15166224022" class="font-mono font-medium text-emerald-700">+1 516-622-4022</a></div>
+                <div>Aer Lingus (Dublin): <a href="tel:+35318868989" class="font-mono font-medium text-emerald-700">+353 1 886 8989</a></div>
+              </div>
+            </div>
+
+            <div class="p-3 bg-white rounded-lg border border-slate-200 space-y-1">
+              <span class="font-bold text-slate-800 uppercase text-[10px] text-amber-700">🏛 U.S. Embassies / Consulates</span>
+              <div class="text-xs text-slate-700 space-y-0.5 pt-0.5">
+                <div>Munich Consulate: <a href="tel:+498928880" class="font-mono font-medium text-amber-800">+49 89 28880</a></div>
+                <div>Vienna Embassy: <a href="tel:+431313390" class="font-mono font-medium text-amber-800">+43 1 313390</a></div>
+                <div>Milan Consulate (Dolomites): <a href="tel:+3902290351" class="font-mono font-medium text-amber-800">+39 02 290351</a></div>
+                <div>Bern Embassy: <a href="tel:+41313577011" class="font-mono font-medium text-amber-800">+41 31 357 7011</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
+    </div>
 
-    <!-- SECTION 3: DAY-BY-DAY INTERACTIVE ITINERARY -->
-    <section class="print-page-break mb-12">
+    <!-- TAB PANEL 3: DAY-BY-DAY EXPEDITION SCHEDULE -->
+    <div id="panel-schedule" class="tab-panel hidden">
+      <section id="schedule" class="print-page-break mb-12">
       <!-- Section Header with Filter Tabs -->
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
         <div>
@@ -1972,49 +2122,11 @@
 
       </div>
     </section>
-
-    <!-- SECTION 4: ESSENTIAL ALPS TRAVEL INTEL -->
-    <section class="notes-card mb-12 bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
-      <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-        <svg class="w-5 h-5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-        Crucial Alps Travel Notes & Party Logistics
-      </h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 info-box">
-          <div class="font-bold text-slate-900 text-sm mb-1">🚘 Car Rental for 4 Adults</div>
-          <p class="text-slate-600">
-            For 4 adults + luggage traveling through the Dolomites, request a full-size SUV (Audi Q7/BMW X5) or passenger minivan (Mercedes V-Class), or split into 2 compact wagons for easier mountain hairpin driving.
-          </p>
-        </div>
-
-        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 info-box">
-          <div class="font-bold text-slate-900 text-sm mb-1">🚠 Gondola Closing Strictness</div>
-          <p class="text-slate-600">
-            Dolomites and Swiss cable cars adhere to strict timetables. <strong>Never cut it close to final descent</strong> (Piz La Ila last descent 5:00 PM, Boé 5:30 PM). Mountain descents on foot take 3+ hours!
-          </p>
-        </div>
-
-        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 info-box">
-          <div class="font-bold text-slate-900 text-sm mb-1">💶 Currency & Splitting Bills</div>
-          <p class="text-slate-600">
-            Germany, Austria, and Italy use the <strong>Euro (€)</strong>; Switzerland uses the <strong>Swiss Franc (CHF)</strong>. Contactless credit card is accepted almost everywhere. Keep €50 cash each for remote rifugio lunches.
-          </p>
-        </div>
-
-        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 info-box">
-          <div class="font-bold text-slate-900 text-sm mb-1">🌤 September Mountain Weather</div>
-          <p class="text-slate-600">
-            Early September brings crisp, clear days, but high summits (2,500m - 3,000m) can drop near freezing with sudden wind shifts. Always layer with lightweight fleece and a wind/rain shell in your daypack.
-          </p>
-        </div>
-      </div>
-    </section>
+    </div>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-center text-xs">
+<footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-center text-xs">
     <div class="max-w-6xl mx-auto px-4">
       <p class="text-slate-300 font-medium">Built for Bill & Kris Rowe and Mark & Shelly Matthews</p>
       <p class="text-slate-500 mt-1">September 2026 Europe Alps Odyssey • Verified with Delta, Aer Lingus & Hotels.com Confirmations</p>
@@ -2035,15 +2147,50 @@
       });
     }
 
-    function scrollToDay(dayId) {
-      const el = document.getElementById(dayId);
-      if (el) {
-        filterDays('all');
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        el.classList.add('ring-2', 'ring-sky-500');
-        setTimeout(() => el.classList.remove('ring-2', 'ring-sky-500'), 2500);
+    
+    /* MAIN TAB NAVIGATION LOGIC (Overview, Confirmations, Schedule) */
+    function switchMainTab(tabId) {
+      document.querySelectorAll('.tab-panel').forEach(panel => {
+        panel.classList.add('hidden');
+      });
+
+      const target = document.getElementById('panel-' + tabId);
+      if (target) {
+        target.classList.remove('hidden');
       }
+
+      const tabs = ['overview', 'confirmations', 'schedule'];
+      tabs.forEach(t => {
+        const btn = document.getElementById('tab-btn-' + t);
+        if (btn) {
+          if (t === tabId) {
+            btn.className = 'main-nav-tab active-main-tab flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition bg-gradient-to-r from-sky-500 to-emerald-500 text-white shadow-lg shadow-sky-500/25';
+          } else {
+            btn.className = 'main-nav-tab flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition text-slate-300 hover:text-white hover:bg-slate-800';
+          }
+        }
+      });
+
+      try {
+        sessionStorage.setItem('active_alps_tab', tabId);
+      } catch (e) {}
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    function scrollToDay(dayId) {
+      switchMainTab('schedule');
+      filterDays('all');
+      setTimeout(() => {
+        const el = document.getElementById(dayId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          el.classList.add('ring-4', 'ring-sky-400');
+          setTimeout(() => el.classList.remove('ring-4', 'ring-sky-400'), 2500);
+        }
+      }, 150);
+    }
+
 
     function filterDays(category) {
       const cards = document.querySelectorAll('.day-card');
