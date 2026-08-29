@@ -121,6 +121,8 @@
         padding-left: 0 !important;
         padding-right: 0 !important;
       }
+    } /* End @media print */
+
     /* SCREEN DISPLAY RULES: Strictly isolate tabs so inactive panels are 100% hidden */
     @media screen {
       .tab-panel.hidden {
@@ -2160,11 +2162,13 @@
     function switchMainTab(tabId) {
       document.querySelectorAll('.tab-panel').forEach(panel => {
         panel.classList.add('hidden');
+        panel.style.setProperty('display', 'none', 'important');
       });
 
       const target = document.getElementById('panel-' + tabId);
       if (target) {
         target.classList.remove('hidden');
+        target.style.setProperty('display', 'block', 'important');
       }
 
       const tabs = ['overview', 'confirmations', 'schedule'];
@@ -2185,6 +2189,18 @@
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    // Bill & Kris Print Handlers: ensure all tabs print complete on paper
+    window.addEventListener('beforeprint', () => {
+      document.querySelectorAll('.tab-panel').forEach(panel => {
+        panel.style.removeProperty('display');
+      });
+    });
+
+    window.addEventListener('afterprint', () => {
+      const currentTab = sessionStorage.getItem('active_alps_tab') || 'overview';
+      switchMainTab(currentTab);
+    });
 
     function scrollToDay(dayId) {
       switchMainTab('schedule');
