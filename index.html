@@ -121,6 +121,14 @@
         padding-left: 0 !important;
         padding-right: 0 !important;
       }
+    /* SCREEN DISPLAY RULES: Strictly isolate tabs so inactive panels are 100% hidden */
+    @media screen {
+      .tab-panel.hidden {
+        display: none !important;
+      }
+      .tab-panel:not(.hidden) {
+        display: block !important;
+      }
     }
 
     .custom-scrollbar::-webkit-scrollbar {
@@ -2269,8 +2277,11 @@
       }, 10);
     }
 
-    // Auto-unlock if device is remembered
+    // Auto-unlock if device is remembered and initialize active tab
     document.addEventListener('DOMContentLoaded', () => {
+      const savedTab = sessionStorage.getItem('active_alps_tab') || 'overview';
+      switchMainTab(savedTab);
+
       if (localStorage.getItem('alps_trip_auth') === 'granted') {
         const gate = document.getElementById('password-gate');
         if (gate) {
