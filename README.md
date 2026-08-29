@@ -27,7 +27,7 @@
 | Date Range | Booking Type | Provider / Property | Confirmation / Ref | Notes / Contact |
 | :--- | :--- | :--- | :--- | :--- |
 | **09/04 – 09/05** | **Outbound Flights** | **Delta / KLM** | `GYXLN6` (Matthews) | DL 164 (MSP 9:45 PM ➔ AMS) + DL 9553 (AMS ➔ MUC 5:00 PM) • Party of 4 |
-| **09/05** | Airport Transfer | **Transfeero Transfer** | Booking Ref `#78653078` | Private transfer MUC Airport ➔ Hotel Germania • Login note: `Hendrick!23` |
+| **09/05** | Airport Transfer | **Transfeero Transfer** | Booking Ref `#78653078` | Private transfer MUC Airport ➔ Boutique Hotel Germania |
 | **09/05 – 09/08** (3 Nights) | Hotel (Munich) | **Boutique Hotel Germania** | Hotels.com `#72076955244782` | Schwanthalerstraße 28, Munich • +49 89 590460 • 2 Rooms (Rowe & Matthews) |
 | **09/06** | VIP Castle Tour | **Premium Neuschwanstein & Linderhof** | Booked (Party of 4) | Meet: Karlsplatz 21, 80335 München @ 8:30 AM (Ret 7:00 PM) • Snacks & drinks on coach |
 | **09/07** | Munich Food Tour | **"Lunch Like a Local" Culinary Tour** | BlackBook Tours `#BR-1422285537` | Meet: Ludwig Beck, Marienplatz 11 (Exit C) @ 11:00 AM (3–4 hrs) |
@@ -98,7 +98,7 @@ flowchart TD
 - **1:00 PM:** Arrive at Amsterdam Schiphol (AMS). 2h 35m transit window to clear Schengen immigration together.
 - **3:35 PM – 5:00 PM:** Flight **DL 9553** (operated by KLM Cityhopper) to Munich (MUC). Touchdown at 5:00 PM.
 - **Airport Transfer:** **Transfeero Private Transfer Service** booked for the party upon arrival.
-  - *Booking Reference:* `78653078` *(Account note: Hendrick!23)*.
+  - *Booking Reference:* `78653078`.
   - Direct private driver pickup from Munich Airport to Boutique Hotel Germania.
 - **Accommodation Check-in:** **Boutique Hotel Germania**
   - *Address:* Schwanthalerstraße 28, 80336 Munich (3-minute stroll from Hauptbahnhof).

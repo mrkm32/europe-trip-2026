@@ -1,0 +1,15 @@
+# Local spreadsheets and sensitive data
+*.xlsx
+*.xls
+*.csv
+
+# Python scripts & caches
+*.py
+__pycache__/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary scratch assets
+alps_map_raw.png
