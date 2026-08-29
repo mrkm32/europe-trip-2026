@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>Europe Alps Odyssey 2026 | Rowe & Matthews Travel Party</title>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <style>
@@ -217,6 +220,7 @@
               <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-400/30">
                 ✈ Mark & Shelly Matthews
               </span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-sky-400/20 text-sky-300 border border-sky-400/30">v3.2</span>
             </div>
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
               Europe Alpine Odyssey
@@ -314,7 +318,7 @@
   <main class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
 
     <!-- TAB PANEL 1: OVERVIEW -->
-    <div id="panel-overview" class="tab-panel">
+    <div id="panel-overview" class="tab-panel" style="display: block;">
       <!-- COVER PAGE WRAPPER FOR PRINT (Page 1) -->
       <div class="print-cover-page">
         <div class="hero-banner-box mb-6 rounded-2xl overflow-hidden shadow-xl border border-slate-200 relative bg-slate-900">
@@ -679,7 +683,7 @@
     </div>
 
     <!-- TAB PANEL 2: CONFIRMATIONS & ESSENTIAL CONTACTS -->
-    <div id="panel-confirmations" class="tab-panel hidden">
+    <div id="panel-confirmations" class="tab-panel hidden" style="display: none;">
       <section id="confirmations" class="confirm-card mb-12 bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
         <div>
@@ -1247,7 +1251,7 @@
     </div>
 
     <!-- TAB PANEL 3: DAY-BY-DAY EXPEDITION SCHEDULE -->
-    <div id="panel-schedule" class="tab-panel hidden">
+    <div id="panel-schedule" class="tab-panel hidden" style="display: none;">
       <section id="schedule" class="print-page-break mb-12">
       <!-- Section Header with Filter Tabs -->
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
@@ -2160,15 +2164,38 @@
     
     /* MAIN TAB NAVIGATION LOGIC (Overview, Confirmations, Schedule) */
     function switchMainTab(tabId) {
-      document.querySelectorAll('.tab-panel').forEach(panel => {
-        panel.classList.add('hidden');
-        panel.style.setProperty('display', 'none', 'important');
-      });
+      const pOverview = document.getElementById('panel-overview');
+      const pConfirm = document.getElementById('panel-confirmations');
+      const pSchedule = document.getElementById('panel-schedule');
 
-      const target = document.getElementById('panel-' + tabId);
-      if (target) {
-        target.classList.remove('hidden');
-        target.style.setProperty('display', 'block', 'important');
+      if (pOverview) {
+        if (tabId === 'overview') {
+          pOverview.classList.remove('hidden');
+          pOverview.style.setProperty('display', 'block', 'important');
+        } else {
+          pOverview.classList.add('hidden');
+          pOverview.style.setProperty('display', 'none', 'important');
+        }
+      }
+
+      if (pConfirm) {
+        if (tabId === 'confirmations') {
+          pConfirm.classList.remove('hidden');
+          pConfirm.style.setProperty('display', 'block', 'important');
+        } else {
+          pConfirm.classList.add('hidden');
+          pConfirm.style.setProperty('display', 'none', 'important');
+        }
+      }
+
+      if (pSchedule) {
+        if (tabId === 'schedule') {
+          pSchedule.classList.remove('hidden');
+          pSchedule.style.setProperty('display', 'block', 'important');
+        } else {
+          pSchedule.classList.add('hidden');
+          pSchedule.style.setProperty('display', 'none', 'important');
+        }
       }
 
       const tabs = ['overview', 'confirmations', 'schedule'];
