@@ -35,10 +35,11 @@ This document consolidates all context, architecture decisions, and feature deve
    * **Gmail Details Integration:** Ingested Madeline's detailed travel itinerary:
      * **Wed Sep 16:** Venice check-out at Fortuny B&B, 7:00 AM water taxi to Santa Lucia station, 8:00 AM train to Tirano via Milan (arr 1:52 PM), 3:00 PM regional train along Bernina Route to St. Moritz (arr 5:11 PM). Check-in at Hotel Arte St. Moritz.
      * **Thu Sep 17:** St. Moritz to Zermatt across Switzerland on regional trains following the exact sold-out Glacier Express route with 4 connections (9:05 AM to Chur, 11:55 AM via Disentis to Andermatt, 3:37 PM via Brig to Zermatt arr 7:50 PM). Check-in at Hotel Beau Rivage Zermatt.
-     * **Fri Sep 18:** Zermatt morning excursions (Gornergrat cog railway or Matterhorn Glacier Paradise cable cars), 1:06 PM train to Geneva via Visp (arr 4:55 PM). Check-in at Hotel New Midi Geneva. Old Town stroll & farewell celebration.
+     * **Fri Sep 18:** Zermatt morning high-alpine excursion confirmed: **Option B — Matterhorn Glacier Paradise (3,883m)** & Glacier Palace via 3S cable cars, followed by 1:06 PM scenic train to Geneva via Visp (arr 4:55 PM). Check-in at Hotel New Midi Geneva. Old Town stroll & farewell celebration.
      * **Sat Sep 19:** 6:58 AM train to Geneva Airport (GVA arr 7:05 AM), 10:10 AM flight EI 0681 to Dublin with US CBP Preclearance, connecting to EI 0089 to MSP (arr 5:00 PM CDT).
    * **Application Updates:**
-     * Upgraded web app to **v3.20**.
+     * Upgraded web app to **v3.21**.
+     * Confirmed **Option B: Matterhorn Glacier Paradise & Glacier Palace (Klein Matterhorn, 3,883m)** as the selected Day 15 morning excursion in both the schedule and confirmations luggage guidance.
      * Updated Interactive SVG Topographic Map: added St. Moritz pin and routing traces for the Bernina railway and the multi-segment Glacier Express regional rail corridor.
      * Replaced placeholder planning cards in `Confirmations` with verified lodging cards for Fortuny B&B, Hotel Arte, Hotel Beau Rivage, and Hotel New Midi, complete with 1-tap Apple Maps & Google Maps links.
      * Updated Day-by-Day schedule for Days 11 to 16 with full transport schedules, transfer buffers, and accommodation details.

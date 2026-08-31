@@ -54,7 +54,7 @@ flowchart TD
     G --> H["🇮🇹 Water Taxi & Rail to Tirano<br/>Wed Sep 16 • Dep 7 AM / Arr 1:52 PM"]
     H --> I["🇨🇭 Bernina Scenic Railway<br/>Wed Sep 16 • UNESCO Line to St. Moritz<br/>Hotel Arte (1 Night)"]
     I --> J["🇨🇭 Glacier Express Route (Regional Rail)<br/>Thu Sep 17 • St. Moritz ➔ Chur ➔ Andermatt ➔ Zermatt<br/>Hotel Beau Rivage (1 Night)"]
-    J --> K["🇨🇭 Zermatt High Peaks ➔ Geneva<br/>Fri Sep 18 • Gornergrat ➔ Train to Geneva<br/>Hotel New Midi (1 Night)"]
+    J --> K["🇨🇭 Matterhorn Glacier Paradise (3,883m) ➔ Geneva<br/>Fri Sep 18 • Cable Cars & Ice Palace ➔ Train to Geneva<br/>Hotel New Midi (1 Night)"]
     K --> L["🇮🇪 6:58 AM Train to GVA ➔ Dublin Layover<br/>Sat Sep 19 (US Preclearance)"]
     L --> M["🇺🇸 MSP Arrival<br/>Sat Sep 19 @ 5:00 PM CDT"]
 
@@ -240,12 +240,14 @@ flowchart TD
 
 ### Leg 5: Zermatt High Summits ➔ Geneva ➔ Journey Home (Days 15–16)
 
-#### Day 15 — Friday, September 18: Zermatt (Gornergrat / Glacier Paradise) ➔ Scenic Train to Geneva
+#### Day 15 — Friday, September 18: Matterhorn Glacier Paradise (3,883m) & Glacier Palace ➔ Scenic Train to Geneva
 - **Morning:**
   - AM: Check out of Hotel Beau Rivage but leave bags at front desk.
-  - **Alpine Excursion (Choice):**
-    - **Option A:** Ride the **Gornergrat Cogwheel Railway** (3,089 m / 10,135 ft) for postcard panoramas of the Matterhorn, Dufourspitze, and Gorner Glacier.
-    - **Option B:** Take the cable cars to **Matterhorn Glacier Paradise** (3,883 m / 12,740 ft, Europe's highest cable car station) to visit the Glacier Palace ice caves and look straight across at the Matterhorn's south face.
+  - **Confirmed Morning Excursion (Option B — Matterhorn Glacier Paradise):**
+    - Board the Matterhorn Express gondola and the high-speed 3S cableway to **Klein Matterhorn summit (3,883 m / 12,740 ft)** — Europe's highest mountain cable car station!
+    - Step out onto the 360° summit viewing platform for breathtaking panoramas of 38 four-thousand-meter peaks across Switzerland, Italy, and France, including the iconic Matterhorn, Monte Rosa, and Mont Blanc.
+    - Tour the magical **Glacier Palace**, an enchanting world of crystalline ice sculptures and tunnels carved 15 meters directly beneath the surface of the glacier.
+    *(Note: Gornergrat Cogwheel Railway at 3,089m remains available as a scenic alternative if desired).*
 - **Afternoon:**
   - Retrieve luggage in Zermatt.
   - **1:06 PM – 4:55 PM Scenic Train:** Board train from Zermatt to **Geneva**, changing in Visp. Descend the Matter Valley to Visp, continuing along the upper Rhône Valley and along the northern shore of Lake Geneva (Lac Léman) past Montreux and the UNESCO Lavaux vineyards.
