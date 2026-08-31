@@ -33,10 +33,11 @@
 | **09/10 – 09/11** (1 Night) | Hotel (Innsbruck) | **NALA individuellhotel** | Hotels.com `#72076999785742` | Müllerstrasse 15, Innsbruck • +43 512 584444 • 2 Rooms (Matthews & Rowe) |
 | **09/11 – 09/14** (3 Nights) | Hotel (Dolomites) | **Hotel Rezia** | Direct / Confirmed | Str. Colz, 64, La Villa in Badia • Spa & Wellness on site • 2 Rooms |
 | **09/11** | Car Rental | **Bolzano Hub** | Pickup: Bolzano Station | Drop: Venice Piazzale Roma (09/14) • Minivan/SUV for 4 adults + bags |
-| **09/14 – 09/15** (1 Night) | Hotel (Tirano) | **Tirano Base** | To finalize | Gateway to the Bernina Swiss rail line • 2 Rooms |
-| **09/15 – 09/16** (1 Night) | Hotel (Zermatt) | **Zermatt Base** | To finalize | Car-free village with Matterhorn views • 2 Rooms |
-| **09/16 – 09/19** (3 Nights) | Hotel (Geneva Area) | **Geneva / Lake Léman** | To finalize | Lakeside exploration & easy transit to GVA Airport • 2 Rooms |
-| **09/19** | **Return Flights** | **Aer Lingus** | `2AXKMS` (Matthews) | EI 0681 (GVA 10:10 AM ➔ DUB) + EI 0089 (DUB ➔ MSP 5:00 PM) • Party of 4 |
+| **09/14 – 09/16** (2 Nights) | Hotel (Venice) | **Fortuny B&B** | Verified (Gmail) | Venice Historic Center • 2 Nights • 7:00 AM Water Taxi on Sep 16 |
+| **09/16 – 09/17** (1 Night) | Hotel (St. Moritz) | **Hotel Arte St. Moritz** | Verified (Gmail) | Somplatz 17, St. Moritz • Arrive via Bernina line (5:11 PM) • 2 Rooms |
+| **09/17 – 09/18** (1 Night) | Hotel (Zermatt) | **Hotel Beau Rivage** | Verified (Gmail) | Kirchstrasse 41, Zermatt • Car-free Alpine village base • 2 Rooms |
+| **09/18 – 09/19** (1 Night) | Hotel (Geneva) | **Hotel New Midi Geneva** | Verified (Gmail) | Place Chevelu 4, Geneva • Lake Léman promenade • 2 Rooms |
+| **09/19** | **Return Flights** | **Aer Lingus** | `2AXKMS` (Matthews) | 6:58 AM train to GVA + EI 0681 (GVA 10:10 AM ➔ DUB) + EI 0089 (DUB ➔ MSP 5:00 PM) |
 
 ---
 
@@ -45,25 +46,25 @@
 ```mermaid
 flowchart TD
     A["🇺🇸 MSP Departure (Party of 4)<br/>Fri Sep 4 (DL 164)"] --> B["🇳🇱 Amsterdam Layover<br/>Sat Sep 5 (2h 35m)"]
-    B --> C["🇩🇪 Munich (3 Nights)<br/>Hotel Germania<br/>Sep 5-8 • Old Town & Castle Tour"]
-    C --> D["🇦🇹 Salzburg (2 Nights)<br/>June Six Hotel<br/>Sep 8-10 • Fortress & Gardens"]
-    D --> E["🇦🇹 Innsbruck (1 Night)<br/>NALA Hotel<br/>Sep 10-11 • Old Town & Alps"]
+    B --> C["🇩🇪 Munich (3 Nights)<br/>Hotel Germania<br/>Sep 5-8 • Old Town & Castles"]
+    C --> D["🇦🇹 Salzburg (2 Nights)<br/>June Six Hotel<br/>Sep 8-10 • Fortress & Lakes"]
+    D --> E["🇦🇹 Innsbruck (1 Night)<br/>NALA Hotel<br/>Sep 10-11 • Old Town & Tyrol Show"]
     E --> F["🇮🇹 Bolzano ➔ Dolomites (3 Nights)<br/>Car Pickup for 4 ➔ Hotel Rezia<br/>Sep 11-14 • Cable Cars & Hikes"]
-    F --> G["🇮🇹 Venice (Afternoon)<br/>Car Return ➔ Canals & Spritz<br/>Mon Sep 14"]
-    G --> H["🇮🇹 Tirano (1 Night)<br/>Mon Sep 14 • Bernina Gateway"]
-    H --> I["🇨🇭 Bernina Scenic Railway<br/>Tue Sep 15 • UNESCO Alpine Line"]
-    I --> J["🇨🇭 Zermatt (1 Night)<br/>Sep 15-16 • Matterhorn Panoramas"]
-    J --> K["🇨🇭 Lake Geneva (3 Nights)<br/>Sep 16-19 • Chillon, Lavaux & Jet d'Eau"]
-    K --> L["🇮🇪 Dublin Connection<br/>Sat Sep 19 (US Preclearance)"]
-    L --> M["🇺🇸 MSP Arrival<br/>Sat Sep 19 @ 5:00 PM"]
+    F --> G["🇮🇹 Venice (2 Nights)<br/>Car Return ➔ Fortuny B&B<br/>Sep 14-16 • Canals & San Marco"]
+    G --> H["🇮🇹 Water Taxi & Rail to Tirano<br/>Wed Sep 16 • Dep 7 AM / Arr 1:52 PM"]
+    H --> I["🇨🇭 Bernina Scenic Railway<br/>Wed Sep 16 • UNESCO Line to St. Moritz<br/>Hotel Arte (1 Night)"]
+    I --> J["🇨🇭 Glacier Express Route (Regional Rail)<br/>Thu Sep 17 • St. Moritz ➔ Chur ➔ Andermatt ➔ Zermatt<br/>Hotel Beau Rivage (1 Night)"]
+    J --> K["🇨🇭 Zermatt High Peaks ➔ Geneva<br/>Fri Sep 18 • Gornergrat ➔ Train to Geneva<br/>Hotel New Midi (1 Night)"]
+    K --> L["🇮🇪 6:58 AM Train to GVA ➔ Dublin Layover<br/>Sat Sep 19 (US Preclearance)"]
+    L --> M["🇺🇸 MSP Arrival<br/>Sat Sep 19 @ 5:00 PM CDT"]
 
     classDef flight fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#0369a1;
     classDef stay fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#15803d;
     classDef transit fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#b45309;
 
     class A,B,L,M flight;
-    class C,D,E,F,H,J,K stay;
-    class G,I transit;
+    class C,D,E,F,G,I,J,K stay;
+    class H transit;
 ```
 
 ---
@@ -186,61 +187,78 @@ flowchart TD
 
 ---
 
-### Leg 4: Venice & The Swiss Railway Odyssey (Tirano & Zermatt)
+### Leg 4: Venice, The Bernina Railway, St. Moritz & The Glacier Express Route (Days 11–14)
 
-#### Day 11 — Monday, September 14: Dolomites ➔ Venice (Drop Car) ➔ Train to Tirano
-- **Morning:** Check out of Hotel Rezia. Enjoy a dramatic 3-hour downhill drive through Belluno and the Venetian plains to Venice.
+#### Day 11 — Monday, September 14: Dolomites ➔ Venice (Drop Car) ➔ Fortuny B&B
+- **Morning:** Check out of Hotel Rezia in La Villa. Enjoy a scenic 3-hour downhill drive through Belluno and Treviso toward the Venetian lagoon.
 - **Midday:** Drop off rental car at **Venice Piazzale Roma** (or Venice Marco Polo Airport).
 - **Afternoon in Venice:** 
-  - Store luggage at Venice Santa Lucia station left luggage.
-  - Board a *Vaporetto* (water bus) along the Grand Canal to Piazza San Marco.
+  - Transfer via water bus / water taxi to **Fortuny B&B** in historic Venice and check in for a 2-night stay.
+  - Afternoon stroll along the Grand Canal to the iconic Rialto Bridge.
   - Savor Venetian *cicchetti* (tapas) and an Aperol Spritz by the canals for the party of 4.
-- **Late Afternoon / Evening:** Board train from Venezia Santa Lucia via Milan to **Tirano** (Valtellina, Italian/Swiss border).
-- **Overnight:** Tirano (rested and ready for an early start on the UNESCO rail line).
+- **Evening:** Leisurely canal-side dinner for four. Overnight at Fortuny B&B (Night 1).
 
 ---
 
-#### Day 12 — Tuesday, September 15: UNESCO Bernina Line ➔ Zermatt
-- **Morning Scenic Train:** Depart Tirano on the regular regional train along the world-famous **Bernina Railway route**.
+#### Day 12 — Tuesday, September 15: Full Day in Venice (Piazza San Marco & Grand Canal)
+- **Morning:** Piazza San Marco, St. Mark's Basilica, Doge's Palace, and the Bridge of Sighs before midday tour groups arrive.
+- **Midday:** Vaporetto ride along the Grand Canal; explore quiet neighborhoods like Dorsoduro or Cannaregio for lunch.
+- **Afternoon:** Optional gondola ride through tranquil side canals or visit artisan Venetian glass workshops.
+- **Evening:** Venetian seafood dinner for four. Rest up for tomorrow's early morning water taxi to the station! Overnight at Fortuny B&B (Night 2).
+
+---
+
+#### Day 13 — Wednesday, September 16: Venice ➔ Tirano ➔ Bernina Railway to St. Moritz
+- **Morning:** 
+  - AM: Check out of Fortuny B&B.
+  - **7:00 AM:** Water taxi from B&B directly to Venice Santa Lucia train station.
+  - **8:00 AM – 1:52 PM Train:** Depart Venezia Santa Lucia by train, changing in Milan, arriving in **Tirano** at 1:52 PM.
+- **Afternoon:**
+  - **1:52 PM – 3:00 PM Connection Buffer:** Relaxed layover in Tirano. Plenty of time to make the connection just in case the train to Tirano is running behind. Enjoy lunch or an authentic Italian espresso in the Valtellina valley.
+  - **3:00 PM – 5:11 PM Scenic Train:** Depart Tirano on the regional train along the world-famous **UNESCO Bernina Railway route** to St. Moritz (arrives 5:11 PM).
   > [!TIP]
-  > **Pro-Traveler Secret:** While the Bernina Express panoramic cars were sold out, the **regular regional train** runs on the **exact same UNESCO World Heritage tracks** with one major advantage: its windows can be opened for reflection-free group photography of the party!
-- **Route Highlights:**
-  - The circular **Brusio Spiral Viaduct**.
-  - Climbing to **Ospizio Bernina** (2,253 m / 7,392 ft) past the turquoise waters of Lago Bianco.
-  - Views of Morteratsch Glacier, Pontresina, and the soaring **Landwasser Viaduct**.
-- **Connecting to Zermatt:** Continue westward through the Swiss Alps (via Chur/Brig) on the Matterhorn Gotthard Bahn into car-free **Zermatt**.
-- **Evening:** Check into Zermatt hotel. Stroll through the cobblestone streets lined with sun-darkened 17th-century larch wood chalets with views of the Matterhorn. Overnight in Zermatt.
+  > **Pro-Traveler Secret: The Regular Bernina Train:** While this is not the Bernina Express panoramic car, it travels the **exact same UNESCO World Heritage route** over the Bernina Pass. Standard regional coaches have windows you can pull down for reflection-free, unobstructed photography of the circular **Brusio Spiral Viaduct**, **Alp Grüm**, **Ospizio Bernina** (2,253 m / 7,392 ft), Lago Bianco, and **Morteratsch Glacier**!
+- **Evening:**
+  - **5:11 PM:** Arrive in St. Moritz station. Check into **Hotel Arte St. Moritz** (Somplatz 17).
+  - Free time to explore the glamorous Alpine resort town and Lake St. Moritz.
+  - Dinner for four in St. Moritz. Overnight at Hotel Arte St. Moritz.
 
 ---
 
-#### Day 13 — Wednesday, September 16: Zermatt & Matterhorn ➔ Lake Geneva
-- **Morning:** Half-day in Zermatt. Optional ride on the **Gornergrat Cogwheel Railway** (3,089 m) for an awe-inspiring view of the Matterhorn, Dufourspitze, and Gorner Glacier.
-- **Afternoon:** Board the scenic train descending the Matter Valley to Visp, continuing along the upper Rhône Valley and along the northern shore of **Lake Geneva (Lac Léman)** to Geneva (~3.5 hours).
-- **Evening:** Check in at Geneva hotel. Lakeside walk to see the illuminated fountain and harbor.
+#### Day 14 — Thursday, September 17: St. Moritz to Zermatt (Glacier Express Route via Regional Trains)
+- **Morning / Afternoon Trans-Alpine Rail Odyssey:**
+  > [!NOTE]
+  > **The Glacier Express Route via Regional Rail:** Glacier Express panoramic cars were sold out before the itinerary was set. However, you will take the **exact same world-famous scenic route** across Switzerland via standard regional trains with 4 seamless connections:
+  - **9:05 AM – 11:02 AM:** Train from St. Moritz to **Chur** (passing over the soaring Landwasser Viaduct and through the Albula Gorge).
+  - **11:55 AM – 2:21 PM:** Train from Chur to **Andermatt**, changing in Disentis (climbing the Rhine Gorge "Swiss Grand Canyon" and crossing the Oberalp Pass at 2,044m).
+  - **3:37 PM – 7:50 PM:** Train from Andermatt to **Zermatt**, changing in Brig (descending through the Furka base tunnel and climbing the Matter Valley into car-free Zermatt).
+- **Evening:**
+  - **7:50 PM:** Arrive in Zermatt. Check into **Hotel Beau Rivage** (Kirchstrasse 41).
+  - Dinner for four in Zermatt beneath the twilight silhouette of the Matterhorn. Overnight at Hotel Beau Rivage.
 
 ---
 
-#### Day 14 — Thursday, September 17: Swiss Riviera & Lavaux Vineyards
-- **Day Trip / Highlights:**
-  - Visit the romantic medieval water fortress **Château de Chillon** in Montreux, jutting straight into Lake Geneva.
-  - Stroll through the UNESCO-listed **Lavaux Terraced Vineyards** with wine tastings for four overlooking the French Alps across the lake.
-- **Evening:** Return to Geneva for a lakeside dinner.
+### Leg 5: Zermatt High Summits ➔ Geneva ➔ Journey Home (Days 15–16)
+
+#### Day 15 — Friday, September 18: Zermatt (Gornergrat / Glacier Paradise) ➔ Scenic Train to Geneva
+- **Morning:**
+  - AM: Check out of Hotel Beau Rivage but leave bags at front desk.
+  - **Alpine Excursion (Choice):**
+    - **Option A:** Ride the **Gornergrat Cogwheel Railway** (3,089 m / 10,135 ft) for postcard panoramas of the Matterhorn, Dufourspitze, and Gorner Glacier.
+    - **Option B:** Take the cable cars to **Matterhorn Glacier Paradise** (3,883 m / 12,740 ft, Europe's highest cable car station) to visit the Glacier Palace ice caves and look straight across at the Matterhorn's south face.
+- **Afternoon:**
+  - Retrieve luggage in Zermatt.
+  - **1:06 PM – 4:55 PM Scenic Train:** Board train from Zermatt to **Geneva**, changing in Visp. Descend the Matter Valley to Visp, continuing along the upper Rhône Valley and along the northern shore of Lake Geneva (Lac Léman) past Montreux and the UNESCO Lavaux vineyards.
+- **Evening:**
+  - **4:55 PM:** Arrive at Geneva Cornavin station. Check into **Hotel New Midi Geneva** (Place Chevelu 4, right on the lake and Rhône).
+  - Stroll through the cobbled alleys of the **Vieille Ville (Old Town)**, visit St. Peter's Cathedral, and see the soaring 140-meter **Jet d’Eau**.
+  - Celebratory Swiss farewell dinner for four (fondue or raclette). Final packing for morning flights. Overnight at Hotel New Midi Geneva.
 
 ---
-
-#### Day 15 — Friday, September 18: Geneva Old Town & Farewell Celebration
-- **Day Exploration:**
-  - Visit the famous **Jet d’Eau** (140-meter water jet).
-  - Walk the cobbled alleys of the **Vieille Ville (Old Town)** and climb St. Peter's Cathedral towers.
-  - View the **L'horloge fleurie (Flower Clock)** in the English Garden.
-- **Evening:** Traditional Swiss farewell dinner for four (fondue or raclette). Final packing for departure.
-
----
-
-### Leg 5: Journey Home
 
 #### Day 16 — Saturday, September 19: Geneva to Minneapolis-St. Paul
-- **Morning:** Transfer to Geneva Airport (GVA) Terminal 1 together.
+- **Early Morning:**
+  - **6:58 AM – 7:05 AM:** 7-minute train from Geneva Cornavin directly to Geneva Airport (GVA) Terminal 1.
 - **Flight 1:** Aer Lingus **EI 0681**
   - **10:10 AM – 11:30 AM:** Geneva (GVA) Terminal 1 ➔ Dublin (DUB)
   - **Confirmation:** `2AXKMS` (Matthews)

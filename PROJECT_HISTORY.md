@@ -31,13 +31,26 @@ This document consolidates all context, architecture decisions, and feature deve
    * **Version Bumps:** Advanced application through v3.10 and pushed directly to `origin/main`.
    * **Workspace Migration Request:** Initiated moving from scratch space into the permanent project workspace `/Users/markmatthews/Code/Euro Alps Trip`.
 
+4. **Conversation 4: Madeline's Gmail Itinerary Integration (Venice, St. Moritz, Glacier Route, Zermatt & Geneva)**
+   * **Gmail Details Integration:** Ingested Madeline's detailed travel itinerary:
+     * **Wed Sep 16:** Venice check-out at Fortuny B&B, 7:00 AM water taxi to Santa Lucia station, 8:00 AM train to Tirano via Milan (arr 1:52 PM), 3:00 PM regional train along Bernina Route to St. Moritz (arr 5:11 PM). Check-in at Hotel Arte St. Moritz.
+     * **Thu Sep 17:** St. Moritz to Zermatt across Switzerland on regional trains following the exact sold-out Glacier Express route with 4 connections (9:05 AM to Chur, 11:55 AM via Disentis to Andermatt, 3:37 PM via Brig to Zermatt arr 7:50 PM). Check-in at Hotel Beau Rivage Zermatt.
+     * **Fri Sep 18:** Zermatt morning excursions (Gornergrat cog railway or Matterhorn Glacier Paradise cable cars), 1:06 PM train to Geneva via Visp (arr 4:55 PM). Check-in at Hotel New Midi Geneva. Old Town stroll & farewell celebration.
+     * **Sat Sep 19:** 6:58 AM train to Geneva Airport (GVA arr 7:05 AM), 10:10 AM flight EI 0681 to Dublin with US CBP Preclearance, connecting to EI 0089 to MSP (arr 5:00 PM CDT).
+   * **Application Updates:**
+     * Upgraded web app to **v3.20**.
+     * Updated Interactive SVG Topographic Map: added St. Moritz pin and routing traces for the Bernina railway and the multi-segment Glacier Express regional rail corridor.
+     * Replaced placeholder planning cards in `Confirmations` with verified lodging cards for Fortuny B&B, Hotel Arte, Hotel Beau Rivage, and Hotel New Midi, complete with 1-tap Apple Maps & Google Maps links.
+     * Updated Day-by-Day schedule for Days 11 to 16 with full transport schedules, transfer buffers, and accommodation details.
+     * Synchronized `Europe_Grand_Alpine_Tour_2026.md` and `README.md`.
+
 ---
 
 ## 👥 Travel Party & Planning Status
 
 * **Bill & Kris Rowe:** Trip Curators & Co-Planners (spearheading itinerary details; full 16-day journey from MSP).
 * **Mark & Shelly Matthews:** Co-Planners & Travelers (Flight confs DL `GYXLN6`, Aer Lingus `2AXKMS`, Hotels.com bookings).
-* **Madeline (Travel Planner):** Finalizing Dolomites rental car logistics (Bolzano ➔ Venice) and Switzerland stays (Tirano, Zermatt, Geneva).
+* **Madeline (Travel Planner):** Detailed Swiss rail connections and hotels verified from Gmail notes; consultation call scheduled for tomorrow at 6:30 PM to review and finalize.
 
 ---
 

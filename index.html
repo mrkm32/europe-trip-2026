@@ -274,13 +274,13 @@
               <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-400/30">
                 ✈ Mark & Shelly Matthews
               </span>
-              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-sky-400/20 text-sky-300 border border-sky-400/30">v3.10</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-sky-400/20 text-sky-300 border border-sky-400/30">v3.20</span>
             </div>
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
               Europe Alpine Odyssey
             </h1>
             <p class="text-sky-200 text-sm sm:text-base mt-1 max-w-2xl font-light">
-              Curated by Bill & Kris Rowe with Mark & Shelly Matthews • Bavaria • Austrian Alps • Italian Dolomites • Venice • Bernina Railway • Zermatt & Matterhorn • Geneva
+              Curated by Bill & Kris Rowe with Mark & Shelly Matthews • Bavaria • Austrian Alps • Italian Dolomites • Venice • Bernina Route • St. Moritz • Glacier Express Route • Zermatt & Matterhorn • Geneva
             </p>
           </div>
 
@@ -316,9 +316,9 @@
         <!-- Quick Metrics Strip -->
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5 pt-4 border-t border-sky-800/40">
           <div class="metric-card bg-white/5 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
-            <div class="text-[11px] text-sky-300 font-medium">Travel Party</div>
-            <div class="text-lg font-bold text-white mt-0.5">4 Travelers</div>
-            <div class="text-[10px] text-sky-200/70">Full 16-Day Journey</div>
+            <div class="text-[11px] text-sky-300 font-medium">Overnight Stops</div>
+            <div class="text-lg font-bold text-white mt-0.5">8 Alpine Bases</div>
+            <div class="text-[10px] text-sky-200/70">Munich ➔ Geneva</div>
           </div>
           <div class="metric-card bg-white/5 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
             <div class="text-[11px] text-sky-300 font-medium">Countries Visited</div>
@@ -326,14 +326,14 @@
             <div class="text-[10px] text-sky-200/70">DE • AT • IT • CH</div>
           </div>
           <div class="metric-card bg-white/5 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
-            <div class="text-[11px] text-sky-300 font-medium">Mountain Highlights</div>
-            <div class="text-lg font-bold text-white mt-0.5">3 Iconic Peaks</div>
-            <div class="text-[10px] text-sky-200/70">Piz Boé • La Crusc • Matterhorn</div>
+            <div class="text-[11px] text-sky-300 font-medium">Iconic Summits</div>
+            <div class="text-lg font-bold text-white mt-0.5">3,883m Peak</div>
+            <div class="text-[10px] text-sky-200/70">Matterhorn • Piz Boé • La Crusc</div>
           </div>
           <div class="metric-card bg-white/5 backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
-            <div class="text-[11px] text-sky-300 font-medium">Scenic Train</div>
-            <div class="text-lg font-bold text-white mt-0.5">Bernina Route</div>
-            <div class="text-[10px] text-sky-200/70">UNESCO Albula/Bernina Pass</div>
+            <div class="text-[11px] text-sky-300 font-medium">Scenic Train Routes</div>
+            <div class="text-lg font-bold text-white mt-0.5">Bernina & Glacier</div>
+            <div class="text-[10px] text-sky-200/70">UNESCO Bernina + Glacier Track</div>
           </div>
         </div>
 
@@ -471,7 +471,7 @@
           <span class="text-amber-400 font-bold uppercase tracking-widest text-xs mb-1">Grand Tour Overview</span>
           <h2 class="text-xl sm:text-2xl font-extrabold text-white">The European Alpine Odyssey</h2>
           <p class="text-slate-300 text-xs sm:text-sm mt-1 max-w-3xl">
-            Planned and spearheaded by Bill & Kris Rowe together with Mark & Shelly Matthews: an extraordinary 16-day grand journey across Munich beer gardens, Neuschwanstein Castle, Mozart's Salzburg, Olympic Innsbruck, the Italian Dolomites, Venice canals, the UNESCO Bernina railway, Zermatt & the Matterhorn, and Lake Geneva.
+            Planned and spearheaded by Bill & Kris Rowe together with Mark & Shelly Matthews: an extraordinary 16-day grand journey across Munich beer gardens, Neuschwanstein Castle, Mozart's Salzburg, Olympic Innsbruck, the Italian Dolomites, Venice's historic canals, the UNESCO Bernina railway into St. Moritz, the legendary Glacier Express route across Switzerland, car-free Zermatt & the Matterhorn, and Lake Geneva.
           </p>
         </div>
       </div>
@@ -616,14 +616,17 @@
           <!-- 7. Rail: Venice -> Tirano (via Milan / Lake Como) -->
           <path d="M 866,632 Q 670,640 530,480" fill="none" stroke="#fb923c" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="8,5" filter="url(#glow-route)" />
 
-          <!-- 8. UNESCO Bernina Rail & Swiss Transit: Tirano -> Zermatt -->
-          <path d="M 530,480 Q 420,490 304,540" fill="none" stroke="#34d399" stroke-width="5.5" stroke-linecap="round" filter="url(#glow-route)" />
+          <!-- 8A. UNESCO Bernina Rail: Tirano -> St. Moritz -->
+          <path d="M 530,480 Q 515,450 485,430" fill="none" stroke="#34d399" stroke-width="5.5" stroke-linecap="round" filter="url(#glow-route)" />
+
+          <!-- 8B. Regional Rail along Glacier Express Route: St. Moritz -> Chur -> Andermatt -> Brig -> Zermatt -->
+          <path d="M 485,430 Q 470,370 450,380 T 395,415 T 340,490 L 304,540" fill="none" stroke="#10b981" stroke-width="5" stroke-linecap="round" stroke-dasharray="7,4" filter="url(#glow-route)" />
 
           <!-- 9. Rhône Valley / Lake Geneva Rail: Zermatt -> Geneva -->
-          <path d="M 304,540 Q 210,485 115,475" fill="none" stroke="#10b981" stroke-width="5" stroke-linecap="round" filter="url(#glow-route)" />
+          <path d="M 304,540 Q 210,485 115,475" fill="none" stroke="#059669" stroke-width="5" stroke-linecap="round" filter="url(#glow-route)" />
 
           <!-- 10. Flight Outbound (Geneva -> Dublin -> MSP) -->
-          <path d="M 115,475 Q 60,300 40,120" fill="none" stroke="#34d399" stroke-width="3" stroke-dasharray="6,6" opacity="0.9" filter="url(#glow-route)" />
+          <path d="M 115,475 Q 60,300 40,120" fill="none" stroke="#38bdf8" stroke-width="3" stroke-dasharray="6,6" opacity="0.9" filter="url(#glow-route)" />
 
           <!-- INBOUND FLIGHT LABEL -->
           <g transform="translate(60, 48)">
@@ -698,45 +701,57 @@
             <circle cx="0" cy="0" r="7" fill="#f59e0b" filter="url(#pin-shadow)" />
             <circle cx="0" cy="0" r="3.5" fill="#ffffff" />
             <g transform="translate(14, -18)">
-              <rect x="0" y="0" width="155" height="38" rx="6" fill="#0f172a" opacity="0.92" stroke="#fbbf24" stroke-width="1.5" filter="url(#pin-shadow)" />
+              <rect x="0" y="0" width="165" height="38" rx="6" fill="#0f172a" opacity="0.92" stroke="#fbbf24" stroke-width="1.5" filter="url(#pin-shadow)" />
               <text x="10" y="16" font-size="12" font-weight="800" fill="#ffffff">Venice (Venezia)</text>
-              <text x="10" y="30" font-size="10" font-weight="600" fill="#fde68a">Sep 14 • Drop Car & Canals</text>
+              <text x="10" y="30" font-size="10" font-weight="600" fill="#fde68a">Sep 14-16 • 2 N • Fortuny B&B</text>
             </g>
           </g>
 
           <!-- 7. TIRANO PIN -->
-          <g transform="translate(530, 480)" class="cursor-pointer" onclick="scrollToDay('day-11')">
+          <g transform="translate(530, 480)" class="cursor-pointer" onclick="scrollToDay('day-13')">
             <circle cx="0" cy="0" r="12" fill="#ea580c" opacity="0.4" />
             <circle cx="0" cy="0" r="6" fill="#ea580c" filter="url(#pin-shadow)" />
             <circle cx="0" cy="0" r="2.5" fill="#ffffff" />
-            <g transform="translate(-160, -32)">
-              <rect x="0" y="0" width="150" height="34" rx="6" fill="#0f172a" opacity="0.92" stroke="#ea580c" stroke-width="1.5" filter="url(#pin-shadow)" />
+            <g transform="translate(-165, -32)">
+              <rect x="0" y="0" width="155" height="34" rx="6" fill="#0f172a" opacity="0.92" stroke="#ea580c" stroke-width="1.5" filter="url(#pin-shadow)" />
               <text x="10" y="15" font-size="11" font-weight="800" fill="#ffffff">Tirano (Valtellina)</text>
-              <text x="10" y="27" font-size="9" font-weight="600" fill="#fdba74">Sep 14-15 • Bernina Start</text>
+              <text x="10" y="27" font-size="9" font-weight="600" fill="#fdba74">Sep 16 • Bernina Transfer</text>
+            </g>
+          </g>
+
+          <!-- 7.5. ST. MORITZ PIN -->
+          <g transform="translate(485, 430)" class="cursor-pointer" onclick="scrollToDay('day-13')">
+            <circle cx="0" cy="0" r="14" fill="#14b8a6" opacity="0.45" class="badge-pulse" />
+            <circle cx="0" cy="0" r="7" fill="#14b8a6" filter="url(#pin-shadow)" />
+            <circle cx="0" cy="0" r="3.5" fill="#ffffff" />
+            <g transform="translate(14, -18)">
+              <rect x="0" y="0" width="165" height="38" rx="6" fill="#0f172a" opacity="0.92" stroke="#2dd4bf" stroke-width="1.5" filter="url(#pin-shadow)" />
+              <text x="10" y="16" font-size="12" font-weight="800" fill="#ffffff">St. Moritz (Engadin)</text>
+              <text x="10" y="30" font-size="10" font-weight="600" fill="#99f6e4">Sep 16-17 • 1 N • Hotel Arte</text>
             </g>
           </g>
 
           <!-- 8. ZERMATT / MATTERHORN PIN -->
-          <g transform="translate(304, 540)" class="cursor-pointer" onclick="scrollToDay('day-12')">
+          <g transform="translate(304, 540)" class="cursor-pointer" onclick="scrollToDay('day-14')">
             <circle cx="0" cy="0" r="16" fill="#10b981" opacity="0.45" class="badge-pulse" />
             <circle cx="0" cy="0" r="8" fill="#10b981" filter="url(#pin-shadow)" />
             <circle cx="0" cy="0" r="4" fill="#ffffff" />
             <g transform="translate(16, -18)">
-              <rect x="0" y="0" width="170" height="38" rx="6" fill="#0f172a" opacity="0.92" stroke="#34d399" stroke-width="1.5" filter="url(#pin-shadow)" />
+              <rect x="0" y="0" width="175" height="38" rx="6" fill="#0f172a" opacity="0.92" stroke="#34d399" stroke-width="1.5" filter="url(#pin-shadow)" />
               <text x="10" y="16" font-size="12" font-weight="800" fill="#ffffff">Zermatt (Matterhorn)</text>
-              <text x="10" y="30" font-size="10" font-weight="600" fill="#6ee7b7">Sep 15-16 • Alpine Village</text>
+              <text x="10" y="30" font-size="10" font-weight="600" fill="#6ee7b7">Sep 17-18 • 1 N • Beau Rivage</text>
             </g>
           </g>
 
           <!-- 9. GENEVA PIN -->
-          <g transform="translate(115, 475)" class="cursor-pointer" onclick="scrollToDay('day-14')">
+          <g transform="translate(115, 475)" class="cursor-pointer" onclick="scrollToDay('day-15')">
             <circle cx="0" cy="0" r="16" fill="#059669" opacity="0.45" class="badge-pulse" />
             <circle cx="0" cy="0" r="8" fill="#059669" filter="url(#pin-shadow)" />
             <circle cx="0" cy="0" r="4" fill="#ffffff" />
             <g transform="translate(-15, 14)">
               <rect x="0" y="0" width="165" height="42" rx="6" fill="#0f172a" opacity="0.95" stroke="#10b981" stroke-width="1.5" filter="url(#pin-shadow)" />
-              <text x="10" y="16" font-size="12" font-weight="800" fill="#ffffff">Geneva (GVA)</text>
-              <text x="10" y="32" font-size="10" font-weight="600" fill="#a7f3d0">Sep 16-19 • Aer Lingus Return</text>
+              <text x="10" y="16" font-size="12" font-weight="800" fill="#ffffff">Geneva (Lac Léman)</text>
+              <text x="10" y="32" font-size="10" font-weight="600" fill="#a7f3d0">Sep 18-19 • 1 N • Hotel New Midi</text>
             </g>
           </g>
 
@@ -749,18 +764,21 @@
 
           <!-- MAP LEGEND -->
           <g transform="translate(30, 715)">
-            <rect x="0" y="0" width="480" height="38" rx="8" fill="#0f172a" opacity="0.92" stroke="#334155" stroke-width="1" />
+            <rect x="0" y="0" width="560" height="38" rx="8" fill="#0f172a" opacity="0.92" stroke="#334155" stroke-width="1" />
             <line x1="15" y1="19" x2="45" y2="19" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="4,4" />
             <text x="52" y="23" font-size="11" fill="#cbd5e1">Flights</text>
             
-            <line x1="110" y1="19" x2="140" y2="19" stroke="#60a5fa" stroke-width="3.5" />
-            <text x="147" y="23" font-size="11" fill="#cbd5e1">Rail Transit</text>
+            <line x1="105" y1="19" x2="135" y2="19" stroke="#60a5fa" stroke-width="3.5" />
+            <text x="142" y="23" font-size="11" fill="#cbd5e1">Rail Transit</text>
 
-            <line x1="225" y1="19" x2="255" y2="19" stroke="#fb7185" stroke-width="3.5" />
-            <text x="262" y="23" font-size="11" fill="#cbd5e1">Dolomites Road</text>
+            <line x1="220" y1="19" x2="250" y2="19" stroke="#fb7185" stroke-width="3.5" />
+            <text x="257" y="23" font-size="11" fill="#cbd5e1">Dolomites Road</text>
 
-            <line x1="365" y1="19" x2="395" y2="19" stroke="#34d399" stroke-width="3.5" />
-            <text x="402" y="23" font-size="11" fill="#cbd5e1">Bernina UNESCO Rail</text>
+            <line x1="360" y1="19" x2="390" y2="19" stroke="#34d399" stroke-width="3.5" />
+            <text x="397" y="23" font-size="11" fill="#cbd5e1">Bernina Route</text>
+
+            <line x1="480" y1="19" x2="510" y2="19" stroke="#10b981" stroke-width="3.5" stroke-dasharray="4,3" />
+            <text x="517" y="23" font-size="11" fill="#cbd5e1">Glacier Route</text>
           </g>
         </svg>
       </div>
@@ -772,16 +790,16 @@
           <p class="text-lg font-bold text-slate-800">4 Adventurers</p>
         </div>
         <div class="p-2">
-          <span class="text-xs text-slate-400 uppercase font-semibold">Overnight Stays</span>
-          <p class="text-lg font-bold text-slate-800">6 Unique Destinations</p>
+          <span class="text-xs text-slate-400 uppercase font-semibold">Overnight Bases</span>
+          <p class="text-lg font-bold text-slate-800">8 Iconic Destinations</p>
         </div>
         <div class="p-2">
           <span class="text-xs text-slate-400 uppercase font-semibold">Highest Elevation</span>
-          <p class="text-lg font-bold text-slate-800">~3,100m (Sella / Boé)</p>
+          <p class="text-lg font-bold text-slate-800">3,883m (Matterhorn)</p>
         </div>
         <div class="p-2">
-          <span class="text-xs text-slate-400 uppercase font-semibold">Bernina Route</span>
-          <p class="text-lg font-bold text-slate-800">UNESCO World Heritage</p>
+          <span class="text-xs text-slate-400 uppercase font-semibold">Scenic Rail Journeys</span>
+          <p class="text-lg font-bold text-slate-800">Bernina + Glacier Track</p>
         </div>
       </div>
     </section>
@@ -1312,28 +1330,175 @@
           </div>
         </div>
 
-        <!-- Italy & Switzerland Planning Status Card (Madeline Review) -->
-        <div class="itinerary-subcard bg-gradient-to-br from-amber-50/60 to-white border-2 border-dashed border-amber-300 rounded-xl p-4 flex flex-col justify-between shadow-sm">
+        <!-- Hotel Venice Card: Fortuny B&B -->
+        <div class="itinerary-subcard bg-gradient-to-br from-amber-50/70 to-white border border-amber-200 rounded-xl p-4 flex flex-col justify-between shadow-sm">
           <div>
             <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-bold uppercase text-amber-800 tracking-wider">Italy & Swiss Leg (Sep 11 - 19)</span>
-              <span class="text-[11px] bg-amber-100 text-amber-800 font-semibold px-2 py-0.5 rounded-full border border-amber-200">⏳ In Planning</span>
+              <span class="text-xs font-bold uppercase text-amber-800 tracking-wider">Venice Base (2 N)</span>
+              <span class="text-xs bg-amber-100 text-amber-800 font-mono px-2 py-0.5 rounded">Sep 14 - 16</span>
             </div>
-            <div class="font-bold text-slate-900 text-base">Travel Planner Review (Madeline)</div>
-            <p class="text-xs text-slate-600 mt-1">
-              Finalizing details for the Bolzano SUV rental, Venice transfer, Tirano stay (Sep 14), Zermatt hotel (Sep 15), and Geneva lodging (Sep 16–19).
-            </p>
-            <div class="mt-2 text-xs bg-amber-50 p-2 rounded border border-amber-200 text-amber-900 font-medium">
-              🗓 <strong>Planning Meeting:</strong> Monday evening, Aug 31 with Madeline
+            <div class="font-bold text-slate-900 text-base">Fortuny B&B</div>
+            <div class="text-xs text-slate-500 mt-0.5">Venice Historic Center (San Marco / Canals), Italy</div>
+<div class="flex items-center gap-1.5 pt-1.5 no-print">
+  <span class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mr-0.5">Map:</span>
+  <a href="https://maps.apple.com/?q=Fortuny+B%26B%2C+San+Marco%2C+Venice%2C+Italy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-2 py-0.5 text-[11px] rounded font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Open in Apple Maps">
+    <svg class="w-3 h-3 text-slate-700" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.06 1.72-.93 2.74 1.01.08 2.03-.5 2.64-1.24z"/></svg>
+    Apple
+  </a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Fortuny+B%26B+San+Marco+Venice+Italy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-2 py-0.5 text-[11px] rounded font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Open in Google Maps">
+    <svg class="w-3 h-3 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    Google
+  </a>
+</div>
+            <div class="text-xs text-slate-600 mt-1">2 Nights • Venetian lagoon base after Dolomites car drop-off</div>
+            <div class="mt-2 text-xs bg-white/80 p-2 rounded border border-amber-100 text-amber-900">
+              🚤 <strong>Departure Morning (Wed Sep 16):</strong> 7:00 AM Water taxi booked to Venice Santa Lucia train station!
             </div>
           </div>
           <div class="mt-3 pt-2.5 border-t border-amber-100 flex items-center justify-between">
             <div>
-              <div class="text-[10px] text-slate-400 font-semibold uppercase">Status</div>
-              <div class="text-xs font-bold text-amber-700">Refining on Mon 8/31</div>
+              <div class="text-[10px] text-slate-400 font-semibold uppercase">Checkout</div>
+              <div class="text-xs font-bold text-amber-800">Wed Sep 16 (7:00 AM)</div>
             </div>
-            <span class="text-xs font-medium text-amber-700 bg-amber-100/70 px-2 py-1 rounded">
-              Pending Updates
+            <span class="text-xs font-medium text-amber-700 bg-amber-100/70 px-2 py-1 rounded border border-amber-200">
+              Gmail Verified
+            </span>
+          </div>
+        </div>
+
+        <!-- Hotel St. Moritz Card: Hotel Arte -->
+        <div class="itinerary-subcard bg-gradient-to-br from-teal-50/70 to-white border border-teal-200 rounded-xl p-4 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold uppercase text-teal-800 tracking-wider">Swiss Alps Base (1 N)</span>
+              <span class="text-xs bg-teal-100 text-teal-800 font-mono px-2 py-0.5 rounded">Sep 16 - 17</span>
+            </div>
+            <div class="font-bold text-slate-900 text-base">Hotel Arte St. Moritz</div>
+            <div class="text-xs text-slate-500 mt-0.5">Somplatz 17, 7500 St. Moritz, Switzerland</div>
+<div class="flex items-center gap-1.5 pt-1.5 no-print">
+  <span class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mr-0.5">Map:</span>
+  <a href="https://maps.apple.com/?q=Hotel+Arte%2C+Somplatz+17%2C+7500+St.+Moritz%2C+Switzerland" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-2 py-0.5 text-[11px] rounded font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Open in Apple Maps">
+    <svg class="w-3 h-3 text-slate-700" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.06 1.72-.93 2.74 1.01.08 2.03-.5 2.64-1.24z"/></svg>
+    Apple
+  </a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Arte+Somplatz+17+St+Moritz+Switzerland" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-2 py-0.5 text-[11px] rounded font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Open in Google Maps">
+    <svg class="w-3 h-3 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    Google
+  </a>
+</div>
+            <div class="text-xs text-slate-600 mt-1">Arrival via UNESCO Bernina Railway (Arr 5:11 PM). Evening in town.</div>
+            <div class="mt-2 text-xs bg-white/80 p-2 rounded border border-teal-100 text-teal-900">
+              🏔 <strong>Engadin Resort:</strong> Free evening to explore St. Moritz lake & alpine village. Dinner in St. Moritz.
+            </div>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-teal-100 flex items-center justify-between">
+            <div>
+              <div class="text-[10px] text-slate-400 font-semibold uppercase">Departure</div>
+              <div class="text-xs font-bold text-teal-800">Thu Sep 17 (9:05 AM Train)</div>
+            </div>
+            <span class="text-xs font-medium text-teal-700 bg-teal-50 px-2 py-1 rounded border border-teal-200">
+              Gmail Verified
+            </span>
+          </div>
+        </div>
+
+        <!-- Hotel Zermatt Card: Hotel Beau Rivage -->
+        <div class="itinerary-subcard bg-gradient-to-br from-emerald-50/70 to-white border border-emerald-200 rounded-xl p-4 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold uppercase text-emerald-800 tracking-wider">Matterhorn Base (1 N)</span>
+              <span class="text-xs bg-emerald-100 text-emerald-800 font-mono px-2 py-0.5 rounded">Sep 17 - 18</span>
+            </div>
+            <div class="font-bold text-slate-900 text-base">Hotel Beau Rivage</div>
+            <div class="text-xs text-slate-500 mt-0.5">Kirchstrasse 41, 3920 Zermatt, Switzerland</div>
+<div class="flex items-center gap-1.5 pt-1.5 no-print">
+  <span class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mr-0.5">Map:</span>
+  <a href="https://maps.apple.com/?q=Hotel+Beau+Rivage%2C+Kirchstrasse+41%2C+3920+Zermatt%2C+Switzerland" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-2 py-0.5 text-[11px] rounded font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Open in Apple Maps">
+    <svg class="w-3 h-3 text-slate-700" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.06 1.72-.93 2.74 1.01.08 2.03-.5 2.64-1.24z"/></svg>
+    Apple
+  </a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Beau+Rivage+Kirchstrasse+41+Zermatt+Switzerland" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-2 py-0.5 text-[11px] rounded font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Open in Google Maps">
+    <svg class="w-3 h-3 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    Google
+  </a>
+</div>
+            <div class="text-xs text-slate-600 mt-1">Car-free Alpine village base directly below the Matterhorn</div>
+            <div class="mt-2 text-xs bg-white/80 p-2 rounded border border-emerald-100 text-emerald-900">
+              🏔 <strong>Luggage Note (Fri Sep 18):</strong> Checkout AM but leave bags at front desk while visiting Gornergrat / Matterhorn Glacier Paradise!
+            </div>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-emerald-100 flex items-center justify-between">
+            <div>
+              <div class="text-[10px] text-slate-400 font-semibold uppercase">Zermatt Train</div>
+              <div class="text-xs font-bold text-emerald-800">Fri Sep 18 (1:06 PM dep)</div>
+            </div>
+            <span class="text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-1 rounded border border-emerald-200">
+              Gmail Verified
+            </span>
+          </div>
+        </div>
+
+        <!-- Hotel Geneva Card: Hotel New Midi -->
+        <div class="itinerary-subcard bg-gradient-to-br from-sky-50/70 to-white border border-sky-200 rounded-xl p-4 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold uppercase text-sky-800 tracking-wider">Final Europe Base (1 N)</span>
+              <span class="text-xs bg-sky-100 text-sky-800 font-mono px-2 py-0.5 rounded">Sep 18 - 19</span>
+            </div>
+            <div class="font-bold text-slate-900 text-base">Hotel New Midi Geneva</div>
+            <div class="text-xs text-slate-500 mt-0.5">Place Chevelu 4, 1201 Geneva, Switzerland</div>
+<div class="flex items-center gap-1.5 pt-1.5 no-print">
+  <span class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mr-0.5">Map:</span>
+  <a href="https://maps.apple.com/?q=Hotel+New+Midi%2C+Place+Chevelu+4%2C+1201+Geneva%2C+Switzerland" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-2 py-0.5 text-[11px] rounded font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Open in Apple Maps">
+    <svg class="w-3 h-3 text-slate-700" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.06 1.72-.93 2.74 1.01.08 2.03-.5 2.64-1.24z"/></svg>
+    Apple
+  </a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Hotel+New+Midi+Place+Chevelu+4+Geneva+Switzerland" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-2 py-0.5 text-[11px] rounded font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Open in Google Maps">
+    <svg class="w-3 h-3 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    Google
+  </a>
+</div>
+            <div class="text-xs text-slate-600 mt-1">Lakeside location near Geneva Cornavin Station & Old Town</div>
+            <div class="mt-2 text-xs bg-white/80 p-2 rounded border border-sky-100 text-sky-900">
+              ✈ <strong>Airport Rail Link:</strong> Saturday 6:58 AM train from station to GVA Airport takes only 7 mins (arr 7:05 AM).
+            </div>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-sky-100 flex items-center justify-between">
+            <div>
+              <div class="text-[10px] text-slate-400 font-semibold uppercase">Airport Dep</div>
+              <div class="text-xs font-bold text-sky-800">Sat Sep 19 (6:58 AM Train)</div>
+            </div>
+            <span class="text-xs font-medium text-sky-700 bg-sky-50 px-2 py-1 rounded border border-sky-200">
+              Gmail Verified
+            </span>
+          </div>
+        </div>
+
+        <!-- Master Swiss Rail Transits Card (Madeline's Verified Itinerary) -->
+        <div class="itinerary-subcard bg-gradient-to-br from-indigo-50/60 to-white border border-indigo-200 rounded-xl p-4 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold uppercase text-indigo-800 tracking-wider">Scenic Rail Master Plan</span>
+              <span class="text-xs bg-indigo-100 text-indigo-800 font-mono px-2 py-0.5 rounded">Sep 16 - 19</span>
+            </div>
+            <div class="font-bold text-slate-900 text-base">Swiss Scenic Trains & Connections</div>
+            <p class="text-xs text-slate-600 mt-1">
+              Exact train times & connection buffers identified by travel planner Madeline:
+            </p>
+            <div class="mt-2 space-y-1.5 text-[11px] text-slate-700 bg-white/80 p-2.5 rounded-lg border border-indigo-100">
+              <div>🚤 <strong>Sep 16:</strong> 7:00 AM water taxi ➔ 8:00 AM train to Tirano via Milan (arr 1:52 PM) ➔ 3:00 PM Bernina train to St. Moritz (arr 5:11 PM).</div>
+              <div>🏔 <strong>Sep 17:</strong> St. Moritz to Zermatt (Glacier Route): 9:05 AM to Chur (arr 11:02) ➔ 11:55 AM via Disentis to Andermatt (arr 2:21) ➔ 3:37 PM via Brig to Zermatt (arr 7:50 PM).</div>
+              <div>🇨🇭 <strong>Sep 18:</strong> 1:06 PM scenic train Zermatt to Geneva via Visp (arr 4:55 PM).</div>
+              <div>✈ <strong>Sep 19:</strong> 6:58 AM airport train to GVA (arr 7:05 AM) for 10 AM flight.</div>
+            </div>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-indigo-100 flex items-center justify-between">
+            <div>
+              <div class="text-[10px] text-slate-400 font-semibold uppercase">Consultation Call</div>
+              <div class="text-xs font-bold text-indigo-800">Tomorrow @ 6:30 PM</div>
+            </div>
+            <span class="text-xs font-medium text-indigo-700 bg-indigo-50 px-2 py-1 rounded border border-indigo-200">
+              Call with Madeline
             </span>
           </div>
         </div>
@@ -2093,171 +2258,263 @@
           </div>
         </div>
 
-        <!-- DAY 11: VENICE & TIRANO -->
+        <!-- DAY 11: DOLOMITES TO VENICE -->
         <div id="day-11" class="print-page-break day-card bg-white rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm" data-category="swiss">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
             <div class="flex items-center gap-3">
               <span class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-sm">11</span>
               <div>
                 <span class="text-xs font-bold text-amber-600 uppercase tracking-wide">Monday • Sep 14, 2026</span>
-                <h3 class="text-lg font-extrabold text-slate-900">Hotel Rezia Checkout ➔ Drive to Venice (Drop Car) ➔ Train to Tirano</h3>
+                <h3 class="text-lg font-extrabold text-slate-900">Hotel Rezia Checkout ➔ Scenic Drive to Venice (Drop Car) ➔ Fortuny B&B</h3>
               </div>
             </div>
-            <span class="self-start sm:self-auto px-3 py-1 bg-amber-50 text-amber-700 rounded-full text-xs font-medium">Night in Tirano</span>
+            <span class="self-start sm:self-auto px-3 py-1 bg-amber-50 text-amber-700 rounded-full text-xs font-medium">Night 1 in Venice</span>
           </div>
 
           <div class="mt-4 space-y-3 text-sm text-slate-700">
             <div class="flex items-start gap-3">
               <span class="text-xs font-bold text-slate-400 w-28 shrink-0 pt-0.5">Morning</span>
               <div>
-                <strong>Checkout Hotel Rezia:</strong> Scenic 3-hour drive descending from the Dolomites south toward the Venetian lagoon.
+                <strong>Checkout Hotel Rezia:</strong> Scenic 3-hour downhill drive descending from the Dolomites through Belluno and Treviso toward the Venetian lagoon.
               </div>
             </div>
             <div class="flex items-start gap-3">
               <span class="text-xs font-bold text-slate-400 w-28 shrink-0 pt-0.5">Midday / PM</span>
               <div class="bg-amber-50/50 p-3 rounded-lg border border-amber-200 w-full">
-                <div class="font-bold text-slate-900 text-xs uppercase text-amber-800">Rental Car Drop-off & Venice Afternoon</div>
+                <div class="font-bold text-slate-900 text-xs uppercase text-amber-800">Rental Car Drop-off & Venice Arrival</div>
                 <p class="text-xs text-slate-700 mt-1">
-                  Drop rental car at Venice Piazzale Roma (or Marco Polo Airport). Store luggage at Santa Lucia station storage and spend a leisurely afternoon exploring Venice: Vaporetto ride down the Grand Canal, Rialto Bridge, cicchetti & wine lunch by the canal for four.
+                  Drop rental car at Venice Piazzale Roma (or Marco Polo Airport). Transfer by water bus / water taxi to <strong>Fortuny B&B</strong> in historic Venice. Settle in for a 2-night stay in the heart of the canal city.
                 </p>
               </div>
             </div>
             <div class="flex items-start gap-3">
-              <span class="text-xs font-bold text-slate-400 w-28 shrink-0 pt-0.5">Late Afternoon</span>
+              <span class="text-xs font-bold text-slate-400 w-28 shrink-0 pt-0.5">Afternoon / Eve</span>
               <div>
-                <strong>Train to Tirano:</strong> Depart Venezia Santa Lucia by train via Milan to Tirano (Valtellina). Arrive in Tirano for overnight stay right at the foot of the Swiss Alps Bernina pass.
+                <strong>Venice Stroll & Dinner:</strong> Afternoon stroll along the Grand Canal to the Rialto Bridge. Enjoy authentic Venetian <em>cicchetti</em> (tapas) and an Aperol Spritz beside the canals for the party of four. Dinner in Venice, overnight Fortuny B&B.
               </div>
             </div>
           </div>
         </div>
 
-        <!-- DAY 12 -->
-        <div id="day-12" class="day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-emerald-300 shadow-md relative" data-category="swiss">
-          <div class="absolute -top-3 right-6 bg-emerald-600 text-white text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
-            Scenic Railway Odyssey
+        <!-- DAY 12: FULL DAY IN VENICE -->
+        <div id="day-12" class="day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-amber-300 shadow-md relative" data-category="swiss">
+          <div class="absolute -top-3 right-6 bg-amber-600 text-white text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
+            Venetian Canals
           </div>
 
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
             <div class="flex items-center gap-3">
-              <span class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-extrabold text-sm">12</span>
+              <span class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-extrabold text-sm">12</span>
               <div>
-                <span class="text-xs font-bold text-emerald-600 uppercase tracking-wide">Tuesday • Sep 15, 2026</span>
-                <h3 class="text-lg font-extrabold text-slate-900">UNESCO Bernina Railway Route ➔ Swiss Alps to Zermatt</h3>
+                <span class="text-xs font-bold text-amber-600 uppercase tracking-wide">Tuesday • Sep 15, 2026</span>
+                <h3 class="text-lg font-extrabold text-slate-900">Full Day in Venice: Piazza San Marco, Grand Canal & Venetian Culture</h3>
               </div>
             </div>
-            <span class="self-start sm:self-auto px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-xs font-medium">Night in Zermatt</span>
+            <span class="self-start sm:self-auto px-3 py-1 bg-amber-50 text-amber-700 rounded-full text-xs font-medium">Night 2 in Venice</span>
           </div>
 
           <div class="mt-5 space-y-3.5 text-sm text-slate-700">
-            <div class="bg-emerald-50/70 p-4 rounded-xl border border-emerald-200">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+              <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                <span class="font-bold text-slate-800 uppercase">Piazza San Marco</span>
+                <p class="text-slate-600 mt-1">St. Mark's Basilica, Doge's Palace, and the Bridge of Sighs before peak crowds.</p>
+              </div>
+              <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                <span class="font-bold text-slate-800 uppercase">Grand Canal Cruise</span>
+                <p class="text-slate-600 mt-1">Ride the Vaporetto along the historic palazzi, visiting Dorsoduro or Cannaregio for lunch.</p>
+              </div>
+              <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                <span class="font-bold text-slate-800 uppercase">Quiet Canals & Gondola</span>
+                <p class="text-slate-600 mt-1">Optional afternoon gondola glide through tranquil side canals away from the main thoroughfares.</p>
+              </div>
+            </div>
+
+            <div class="bg-amber-50/70 p-3 rounded-lg border border-amber-200 text-xs text-amber-950">
+              ⏰ <strong>Early Morning Rest:</strong> Savor a leisurely seafood dinner for four in Venice tonight. Pack bags and rest up for an early 7:00 AM water taxi to the station tomorrow! Sleep at Fortuny B&B.
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 13: VENICE TO ST. MORITZ VIA BERNINA RAILWAY -->
+        <div id="day-13" class="print-page-break day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-teal-300 shadow-md relative" data-category="swiss">
+          <div class="absolute -top-3 right-6 bg-teal-600 text-white text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
+            UNESCO Bernina Railway
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center font-extrabold text-sm">13</span>
+              <div>
+                <span class="text-xs font-bold text-teal-600 uppercase tracking-wide">Wednesday • Sep 16, 2026</span>
+                <h3 class="text-lg font-extrabold text-slate-900">Venice ➔ Tirano ➔ UNESCO Bernina Line to St. Moritz</h3>
+              </div>
+            </div>
+            <span class="self-start sm:self-auto px-3 py-1 bg-teal-50 text-teal-700 rounded-full text-xs font-medium">Night in St. Moritz</span>
+          </div>
+
+          <div class="mt-4 space-y-3 text-sm text-slate-700">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+              <div class="p-3 bg-amber-50/70 rounded-lg border border-amber-200">
+                <span class="font-bold text-amber-800 uppercase text-[10px]">7:00 AM Water Taxi</span>
+                <div class="text-sm font-bold text-slate-900 mt-0.5">B&B ➔ Train Station</div>
+                <p class="text-slate-600 mt-1">Checkout Fortuny B&B; private water taxi directly to Venice Santa Lucia station.</p>
+              </div>
+              <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <span class="font-bold text-slate-500 uppercase text-[10px]">8:00 AM – 1:52 PM Train</span>
+                <div class="text-sm font-bold text-slate-900 mt-0.5">Venice ➔ Tirano</div>
+                <p class="text-slate-600 mt-1">Train departs Venezia Santa Lucia, changing in Milan, arriving Tirano at 1:52 PM.</p>
+              </div>
+              <div class="p-3 bg-emerald-50/70 rounded-lg border border-emerald-200">
+                <span class="font-bold text-emerald-800 uppercase text-[10px]">1:52 PM – 3:00 PM Buffer</span>
+                <div class="text-sm font-bold text-emerald-950 mt-0.5">Tirano Layover</div>
+                <p class="text-emerald-900 mt-1">Plenty of time to connect just in case train to Tirano is running behind. Lunch/espresso.</p>
+              </div>
+              <div class="p-3 bg-teal-50/70 rounded-lg border border-teal-200">
+                <span class="font-bold text-teal-800 uppercase text-[10px]">3:00 PM – 5:11 PM Train</span>
+                <div class="text-sm font-bold text-teal-950 mt-0.5">Bernina ➔ St. Moritz</div>
+                <p class="text-teal-900 mt-1">Regional train along exact Bernina Express route, arriving St. Moritz at 5:11 PM.</p>
+              </div>
+            </div>
+
+            <!-- Pro-Traveler Bernina Secret -->
+            <div class="bg-emerald-50/70 p-3.5 rounded-xl border border-emerald-200">
               <div class="flex items-center justify-between mb-1">
                 <span class="text-xs font-bold uppercase text-emerald-800">Pro-Traveler Secret: The Regular Bernina Train</span>
                 <span class="text-xs bg-white text-emerald-700 px-2 py-0.5 rounded font-medium border border-emerald-200">Openable Windows</span>
               </div>
               <p class="text-xs text-emerald-950 leading-relaxed">
-                Taking the standard regional train on the Bernina line is actually preferred by photographers over the sold-out Bernina Express! You ride the exact same UNESCO World Heritage tracks, but the regional coaches have windows you can pull down for glare-free, unobstructed photos of the party and the peaks.
+                While this is not the Bernina Express panoramic car, it travels the <strong>exact same UNESCO World Heritage route</strong> over the Bernina Pass. Standard regional coaches have windows you can pull down for reflection-free, unobstructed photography of the Brusio Spiral, Lago Bianco, and Morteratsch Glacier!
               </p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-              <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
-                <span class="font-bold text-slate-800 uppercase">Brusio Spiral</span>
-                <p class="text-slate-600 mt-1">Watch the train loop 360 degrees over the famous stone viaduct right after Tirano.</p>
-              </div>
-              <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
-                <span class="font-bold text-slate-800 uppercase">Ospizio Bernina (2,253m)</span>
-                <p class="text-slate-600 mt-1">Pass the turquoise glacial waters of Lago Bianco and Morteratsch Glacier.</p>
-              </div>
-              <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
-                <span class="font-bold text-slate-800 uppercase">Arrival in Zermatt</span>
-                <p class="text-slate-600 mt-1">Car-free mountain resort nestled right under the sharp peak of the Matterhorn.</p>
-              </div>
-            </div>
-
-            <p class="text-xs text-slate-600">
-              Check in at hotel in Zermatt. Enjoy an evening stroll through the historic car-free village with traditional sun-blackened timber chalets.
-            </p>
-          </div>
-        </div>
-
-        <!-- DAY 13 -->
-        <div id="day-13" class="day-card bg-white rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm" data-category="swiss">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
-            <div class="flex items-center gap-3">
-              <span class="w-10 h-10 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center font-bold text-sm">13</span>
-              <div>
-                <span class="text-xs font-bold text-teal-600 uppercase tracking-wide">Wednesday • Sep 16, 2026</span>
-                <h3 class="text-lg font-extrabold text-slate-900">Zermatt & Matterhorn Panoramas ➔ Train to Lake Geneva</h3>
-              </div>
-            </div>
-            <span class="self-start sm:self-auto px-3 py-1 bg-teal-50 text-teal-700 rounded-full text-xs font-medium">Night in Geneva Region</span>
-          </div>
-
-          <div class="mt-4 space-y-3 text-sm text-slate-700">
-            <div class="flex items-start gap-3">
-              <span class="text-xs font-bold text-slate-400 w-28 shrink-0 pt-0.5">Morning</span>
-              <div>
-                <strong>Half Day in Zermatt:</strong> Ride the <strong>Gornergrat Cogwheel Railway</strong> up to 3,089m for the ultimate postcard view of the Matterhorn and Monte Rosa glaciers.
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <span class="text-xs font-bold text-slate-400 w-28 shrink-0 pt-0.5">Afternoon</span>
-              <div>
-                <strong>Scenic Train: Zermatt to Geneva:</strong> Descend the Matter Valley to Visp, then skirt along the scenic northern shores of Lake Geneva (Lac Léman) past Montreux and the UNESCO Lavaux vineyards (~3h 30m).
-              </div>
-            </div>
             <div class="flex items-start gap-3">
               <span class="text-xs font-bold text-slate-400 w-28 shrink-0 pt-0.5">Evening</span>
-              <div>Check into Geneva hotel. Lakeside stroll and dinner for four overlooking the water.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- DAY 14: SWISS RIVIERA & HOMEWARD BOUND -->
-        <div id="day-14" class="print-page-break day-card bg-white rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm" data-category="swiss">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
-            <div class="flex items-center gap-3">
-              <span class="w-10 h-10 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center font-bold text-sm">14</span>
               <div>
-                <span class="text-xs font-bold text-teal-600 uppercase tracking-wide">Thursday • Sep 17, 2026</span>
-                <h3 class="text-lg font-extrabold text-slate-900">Lake Geneva & Swiss Riviera: Chillon Castle & Vineyards</h3>
+                <strong>Check into Hotel Arte St. Moritz:</strong> Settle into your hotel. Free time to explore the glamorous Alpine resort town and lakeside promenade. Dinner for four in St. Moritz. Sleep Hotel Arte St. Moritz.
               </div>
             </div>
-            <span class="self-start sm:self-auto px-3 py-1 bg-teal-50 text-teal-700 rounded-full text-xs font-medium">Night in Geneva</span>
+          </div>
+        </div>
+
+        <!-- DAY 14: ST. MORITZ TO ZERMATT (GLACIER EXPRESS ROUTE) -->
+        <div id="day-14" class="print-page-break day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-emerald-300 shadow-md relative" data-category="swiss">
+          <div class="absolute -top-3 right-6 bg-emerald-600 text-white text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
+            Glacier Express Route
           </div>
 
-          <div class="mt-4 text-xs text-slate-600 grid grid-cols-1 md:grid-cols-2 gap-3">
-            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
-              <div class="font-bold text-slate-900 uppercase text-teal-800">Château de Chillon</div>
-              <p class="mt-1">Visit Switzerland's most romantic island fortress nestled right on the rocky edge of Lake Geneva in Montreux.</p>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-extrabold text-sm">14</span>
+              <div>
+                <span class="text-xs font-bold text-emerald-600 uppercase tracking-wide">Thursday • Sep 17, 2026</span>
+                <h3 class="text-lg font-extrabold text-slate-900">St. Moritz to Zermatt across Switzerland (Glacier Express Route via Regional Trains)</h3>
+              </div>
             </div>
-            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
-              <div class="font-bold text-slate-900 uppercase text-teal-800">Lavaux Terraced Vineyards</div>
-              <p class="mt-1">Walk among the UNESCO World Heritage terraced vineyards overlooking the French and Swiss Alps across the lake with wine tasting for four.</p>
+            <span class="self-start sm:self-auto px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-xs font-medium">Night in Zermatt</span>
+          </div>
+
+          <div class="mt-4 space-y-3.5 text-sm text-slate-700">
+            <div class="bg-indigo-50/70 p-3.5 rounded-xl border border-indigo-200">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-bold uppercase text-indigo-800">Glacier Express Route via Regional Trains</span>
+                <span class="text-xs bg-white text-indigo-700 px-2 py-0.5 rounded font-medium border border-indigo-200">Same Tracks • 4 Changes</span>
+              </div>
+              <p class="text-xs text-indigo-950 leading-relaxed">
+                As Glacier Express tickets were sold out before the itinerary was set, you will take the <strong>exact same world-famous panoramic route</strong> across the Swiss Alps via regular regional trains! Enjoy uncrowded coaches, flexible movement, and breathtaking vistas across the Landwasser Viaduct, Rhine Gorge, and Oberalp Pass.
+              </p>
+            </div>
+
+            <!-- Train Segments Breakdown -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+              <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <div class="flex justify-between items-center">
+                  <span class="font-bold text-slate-700 uppercase text-[10px]">Segment 1</span>
+                  <span class="text-[10px] font-mono text-emerald-700 font-bold bg-emerald-100 px-1.5 py-0.5 rounded">9:05 AM – 11:02 AM</span>
+                </div>
+                <div class="text-sm font-bold text-slate-900 mt-1">St. Moritz ➔ Chur</div>
+                <p class="text-slate-600 mt-1">Crossing the soaring Landwasser Viaduct and through the Albula Tunnel into Chur (arrives 11:02 AM).</p>
+              </div>
+
+              <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <div class="flex justify-between items-center">
+                  <span class="font-bold text-slate-700 uppercase text-[10px]">Segment 2</span>
+                  <span class="text-[10px] font-mono text-emerald-700 font-bold bg-emerald-100 px-1.5 py-0.5 rounded">11:55 AM – 2:21 PM</span>
+                </div>
+                <div class="text-sm font-bold text-slate-900 mt-1">Chur ➔ Andermatt</div>
+                <p class="text-slate-600 mt-1">Changing in Disentis; climbing through the Swiss Grand Canyon (Rhine Gorge) and Oberalp Pass (arr 2:21 PM).</p>
+              </div>
+
+              <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <div class="flex justify-between items-center">
+                  <span class="font-bold text-slate-700 uppercase text-[10px]">Segment 3</span>
+                  <span class="text-[10px] font-mono text-emerald-700 font-bold bg-emerald-100 px-1.5 py-0.5 rounded">3:37 PM – 7:50 PM</span>
+                </div>
+                <div class="text-sm font-bold text-slate-900 mt-1">Andermatt ➔ Zermatt</div>
+                <p class="text-slate-600 mt-1">Changing in Brig; ascending the spectacular Matter Valley straight into car-free Zermatt (arrives 7:50 PM).</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 pt-1">
+              <span class="text-xs font-bold text-slate-400 w-28 shrink-0 pt-0.5">Evening</span>
+              <div>
+                <strong>Check into Hotel Beau Rivage:</strong> Arrive 7:50 PM in car-free Zermatt. Check into Hotel Beau Rivage. Stroll through the charming larch wood chalets for dinner beneath the evening outline of the Matterhorn. Sleep Hotel Beau Rivage.
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- DAY 15 -->
+        <!-- DAY 15: ZERMATT PANORAMAS TO GENEVA -->
         <div id="day-15" class="day-card bg-white rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm" data-category="swiss">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
             <div class="flex items-center gap-3">
               <span class="w-10 h-10 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center font-bold text-sm">15</span>
               <div>
                 <span class="text-xs font-bold text-teal-600 uppercase tracking-wide">Friday • Sep 18, 2026</span>
-                <h3 class="text-lg font-extrabold text-slate-900">Geneva Old Town, Lake Promenade & Farewell Dinner</h3>
+                <h3 class="text-lg font-extrabold text-slate-900">Zermatt & Matterhorn High Summits ➔ Scenic Train to Geneva</h3>
               </div>
             </div>
             <span class="self-start sm:self-auto px-3 py-1 bg-teal-50 text-teal-700 rounded-full text-xs font-medium">Final Night in Europe</span>
           </div>
 
-          <div class="mt-4 space-y-2 text-xs text-slate-600">
-            <p><strong>Highlights:</strong> The soaring 140m water plume of the <em>Jet d’Eau</em>, St. Peter's Cathedral in the Old Town, Jardin Anglais (Flower Clock), and a classic Swiss cheese fondue celebration dinner for the four of you to mark the end of an unforgettable journey.</p>
-            <p class="text-slate-500">Pack bags and ensure travel documents and passports are handy for the morning flight.</p>
+          <div class="mt-4 space-y-3 text-sm text-slate-700">
+            <div class="flex items-start gap-3">
+              <span class="text-xs font-bold text-slate-400 w-28 shrink-0 pt-0.5">Morning</span>
+              <div class="space-y-2 w-full">
+                <div><strong>Checkout Hotel Beau Rivage:</strong> Leave bags at hotel reception for the morning.</div>
+                
+                <!-- Two Alpine Excursion Options -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                  <div class="p-3 bg-emerald-50/70 rounded-lg border border-emerald-200">
+                    <span class="font-bold text-emerald-800 uppercase text-[10px]">Option A • Postcard Matterhorn Views</span>
+                    <div class="font-bold text-slate-900 text-xs mt-1">Gornergrat Cog Railway (3,089m)</div>
+                    <p class="text-slate-600 mt-1">Ascend Europe's highest open-air cogwheel railway for sweeping panoramas of the Matterhorn, Monte Rosa, and 29 four-thousander peaks.</p>
+                  </div>
+                  <div class="p-3 bg-sky-50/70 rounded-lg border border-sky-200">
+                    <span class="font-bold text-sky-800 uppercase text-[10px]">Option B • Highest Cable Car in Alps</span>
+                    <div class="font-bold text-slate-900 text-xs mt-1">Matterhorn Glacier Paradise (3,883m)</div>
+                    <p class="text-slate-600 mt-1">Take the cable cars to Klein Matterhorn summit to visit the Glacier Palace ice caves and look straight across at the Matterhorn's south face.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-xs font-bold text-slate-400 w-28 shrink-0 pt-0.5">Afternoon</span>
+              <div>
+                <strong>1:06 PM Train to Geneva:</strong> Retrieve bags in Zermatt. Board scenic train down the valley changing in Visp, continuing along the upper Rhône Valley and northern shores of Lake Geneva (Lac Léman) past Montreux and the Lavaux vineyards. Arrive Geneva at 4:55 PM.
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-xs font-bold text-slate-400 w-28 shrink-0 pt-0.5">Evening</span>
+              <div>
+                <strong>Check into Hotel New Midi Geneva:</strong> Settle in at Place Chevelu 4 right by the water. Enjoy a sunset stroll through Geneva Old Town (Vieille Ville), admire the soaring 140m <em>Jet d’Eau</em>, and share a celebratory Swiss farewell dinner (fondue or raclette) for the four of you! Sleep New Midi Geneva.
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- DAY 16 -->
+        <!-- DAY 16: GENEVA TO MINNEAPOLIS -->
         <div id="day-16" class="day-card bg-white rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm" data-category="swiss">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
             <div class="flex items-center gap-3">
@@ -2270,21 +2527,26 @@
             <span class="self-start sm:self-auto px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-xs font-medium">Return Flights (Party of 4)</span>
           </div>
 
-          <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="mt-4 grid grid-cols-1 md:grid-cols-4 gap-3 text-xs">
+            <div class="p-3 bg-sky-50/70 rounded-lg border border-sky-200">
+              <span class="font-semibold text-sky-800 uppercase text-[10px]">6:58 AM – 7:05 AM Train</span>
+              <div class="text-sm font-bold text-slate-900 mt-0.5">Station ➔ GVA Airport</div>
+              <div class="text-slate-600 mt-1">7-minute rail link from Geneva Cornavin directly to GVA Terminal.</div>
+            </div>
             <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
-              <span class="text-xs font-semibold text-slate-500 uppercase">10:10 AM – 11:30 AM</span>
+              <span class="font-semibold text-slate-500 uppercase text-[10px]">10:10 AM – 11:30 AM Flight</span>
               <div class="text-sm font-bold text-slate-900 mt-0.5">Flight EI 0681</div>
-              <div class="text-xs text-slate-600">Geneva (GVA) Terminal 1 ➔ Dublin (DUB)</div>
+              <div class="text-slate-600 mt-1">Geneva (GVA) Terminal 1 ➔ Dublin (DUB). Ref: 2AXKMS.</div>
             </div>
             <div class="p-3 bg-emerald-50/70 rounded-lg border border-emerald-200">
-              <span class="text-xs font-semibold text-emerald-800 uppercase">Dublin Layover (2h 55m)</span>
+              <span class="font-semibold text-emerald-800 uppercase text-[10px]">Dublin Layover (2h 55m)</span>
               <div class="text-sm font-bold text-emerald-950 mt-0.5">US Preclearance</div>
-              <div class="text-xs text-emerald-900">Clear US Customs & Immigration together in Dublin before boarding!</div>
+              <div class="text-emerald-900 mt-1">Clear US Customs & Immigration together in Dublin before boarding!</div>
             </div>
             <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
-              <span class="text-xs font-semibold text-slate-500 uppercase">2:25 PM – 5:00 PM</span>
+              <span class="font-semibold text-slate-500 uppercase text-[10px]">2:25 PM – 5:00 PM Flight</span>
               <div class="text-sm font-bold text-slate-900 mt-0.5">Flight EI 0089</div>
-              <div class="text-xs text-slate-600">Dublin (DUB) ➔ Minneapolis-St. Paul (MSP). Arr 5:00 PM.</div>
+              <div class="text-slate-600 mt-1">Dublin (DUB) ➔ Minneapolis-St. Paul (MSP). Arr 5:00 PM CDT.</div>
             </div>
           </div>
         </div>
