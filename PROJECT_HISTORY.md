@@ -63,6 +63,20 @@ This document consolidates all context, architecture decisions, and feature deve
    * **Version Upgrade:** Bumped web app to **v3.30**.
    * **Full Documentation Sync:** Updated `index.html`, `Europe_Grand_Alpine_Tour_2026.md`, `README.md`, and `PROJECT_HISTORY.md`.
 
+6. **Conversation 6: Scheduled Monitoring of Axus Itinerary & Foreign Currency/ATM Strategy (v3.31)**
+   * **Automated Cron Schedule for Axus Updates:**
+     * Configured background daemon cron (`0 8,14,20 * * *`, 3x daily at 8 AM, 2 PM, 8 PM through Sep 19 return) to monitor Madeline's live Axus itinerary URL for changes and notify the user if adjustments occur.
+   * **Foreign Currency & ATM Banking Strategy Incorporated:**
+     * **Euros in Munich (Deutsche Bank Filiale):** Located at Schwanthalerstraße 32 (less than 1-minute walk / 40m right of Boutique Hotel Germania entrance). 24/7 self-service indoor lobby with secure ATMs. $0.00 local German ATM surcharge.
+     * **Swiss Francs (UBS Switzerland AG / Cantonal Banks):** Primary recommendation upon Swiss arrival in St. Moritz (Wed Sep 16) at UBS Switzerland AG (Plazza da Scoula 10, 8-min walk) or GKB Bancomat at St. Moritz Bahnhof concourse. Secondary backup at UBS Zermatt (Bahnhofstrasse 37) / BCVs (Bahnhofstrasse 24).
+     * **USAA Debit Card Fee Architecture:** Confirmed $0.00 local bank fee for foreign debit cards at official branches; USAA charges only a standard 1% foreign transaction fee (~$1.65 on €150).
+     * **The Golden Rule on Dynamic Currency Conversion (DCC):** Always select *"Without Conversion / Settle in EUR or CHF"* to force card network wholesale mid-market rate and avoid 5%–15% ATM owner markups. Avoid standalone Euronet kiosks.
+   * **Application & Documentation Updates:**
+     * Upgraded web app to **v3.31**.
+     * Added **Official Bank & ATM Cash Strategy** wallet card in Confirmations tab.
+     * Added interactive map links & callout tips in Day 2, Day 13, and Day 14 schedule cards.
+     * Updated Overview Quick Facts currency card and synchronized `Europe_Grand_Alpine_Tour_2026.md` and `README.md`.
+
 ---
 
 ## 👥 Travel Party & Planning Status

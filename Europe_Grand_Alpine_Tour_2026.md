@@ -102,14 +102,17 @@ flowchart TD
 
 ---
 
-#### Day 2 — Saturday, September 5: Welcome to Munich
+#### Day 2 — Saturday, September 5: Welcome to Munich & Transfeero Transfer
 - **1:00 PM:** Arrive at Amsterdam Schiphol (AMS). 2h 35m transit window to clear Schengen immigration together.
-- **3:35 PM – 5:00 PM:** Flight **DL 9553** (operated by KLM Cityhopper) to Munich (MUC).
-- **Airport to City:** Board the **S-Bahn S1 or S8 line** directly from Munich Airport to Munich Hauptbahnhof (Central Station, ~40–45 mins).
+- **3:35 PM – 5:00 PM:** Flight **DL 9553** (operated by KLM Cityhopper) to Munich (MUC). Touchdown at 5:00 PM.
+- **Airport Transfer:** **Transfeero Private Airport Transfer** booked for the party (Ref: `#78653078`). Private driver pickup at MUC Airport directly to Boutique Hotel Germania.
 - **Accommodation Check-in:** **Boutique Hotel Germania**
   - *Address:* Schwanthalerstraße 28, 80336 Munich (3-minute walk from Hauptbahnhof).
   - *Booking:* Hotels.com `#72076955244782` | Tel: `+49 89 590460`
   - *Rooms:* 2 Deluxe Double Rooms (3 nights: Sep 5 – 8).
+- **Euro Cash Recommendation (Deutsche Bank Filiale):**
+  > [!TIP]
+  > **Official Bank ATM (1-Min Walk):** Walk out of Hotel Germania, turn right, and walk 40 meters (just 2 doors down to **Deutsche Bank Filiale**, Schwanthalerstraße 32). It features a 24/7 self-service indoor lobby with secure ATMs. Withdrawing €100–€200 cash with a USAA debit card incurs **$0.00 German bank surcharge** and only a 1% USAA foreign transaction fee (~$1.65 on €150). **Crucial rule:** Always choose *"Without Conversion / Settle in EUR"* to decline Dynamic Currency Conversion (DCC) and get the true mid-market rate. Never use standalone Euronet kiosks!
 - **Evening:** Unpack, refresh, and enjoy a celebratory Bavarian welcome dinner for four at nearby *Augustiner-Keller* or *Schneider Bräuhaus*.
 
 ---
@@ -244,6 +247,9 @@ flowchart TD
   - **3:00 PM – 5:11 PM Bernina Line:** Bernina RE 1660 to St. Moritz (Coach 3, 1st Class, Seats 11, 12, 21, 22). Pull-down windows for photography of Brusio Spiral Viaduct, Alp Grüm, and Morteratsch Glacier!
 - **5:11 PM St. Moritz Arrival:**
   - 5-minute taxi to **Hotel Arte St. Moritz** (Via Tinus 7 / Somplatz • `+41 81 837 5858`, Ref `2026080150736583` M / `2026080150736489` R). 2 x Double Balcony Rooms.
+  - **Swiss Francs (CHF) Recommendation:**
+    > [!TIP]
+    > **Where to get Swiss Francs:** St. Moritz is the ideal spot to withdraw a small cash stash of **50–100 CHF** per couple. Walk 8 minutes into central Dorf to **UBS Switzerland AG** (Plazza da Scoula 10) or use the **Graubündner Kantonalbank (GKB)** Bancomat at the St. Moritz train station concourse. Major Swiss retail banks charge $0 local ATM surcharge. Choose *"Without Conversion / Settle in CHF"* so USAA only assesses its 1% fee (~$0.60–$1.15).
   - Chocolate shopping at **Läderach** (Via Serlas 26).
   - 7:30 PM Dinner: **La Stalla** (in hotel, cheese fondue & pizza • `+41 81 837 5859`) OR **Le Lapin Bleu** (`+41 81 836 9697`).
   *(Have hotel order taxi for 8:40 AM tomorrow).* Overnight Hotel Arte.
@@ -259,6 +265,7 @@ flowchart TD
   - **3:37 PM – 7:17 PM:** Train R 557 to Visp, then R 257 up Matter Valley straight into **Zermatt** (arrives 7:17 PM).
 - **7:17 PM Zermatt Arrival:**
   - 10-minute walk or hotel shuttle (CHF 15) to **Beau-Rivage Hotel Garni** (Kirchstrasse 44 • `+41 27 966 3440`, Ref `60682436` M / `60682402` R).
+  - *(Need Swiss Francs in Zermatt? **UBS Switzerland AG** is at Bahnhofstrasse 37 and **Walliser Kantonalbank (BCVs)** at Bahnhofstrasse 24, both with 24/7 indoor ATMs on the walk from the station).*
   - 8:00 PM Dinner: **Restaurant Chez Max Julen** (in hotel building, grill & Valais specialties • `+41 27 967 4044`) OR **Restaurant Spycher** (`+41 27 967 7741`).
   *(Reserve hotel shuttle for 12:20 PM tomorrow).* Overnight Hotel Beau Rivage.
 
@@ -310,7 +317,14 @@ flowchart TD
    - **Austria Highway Vignette:** Required for Austrian autobahns (digital 10-day pass can be purchased online before departure).
    - **Brenner Pass Toll:** Separate toll applies for the Europabrücke / Brenner motorway.
    - **Venice Piazzale Roma:** Book car return drop-off slot in advance to avoid lagoon traffic.
-5. **Currency & Splitting Expenses:**
-   - **Euros (€):** Germany, Austria, and Italy.
-   - **Swiss Francs (CHF):** Switzerland.
+5. **Currency, Banking & ATM Strategy:**
+   - **Euros (€):** Germany, Austria, and Italy. Keep €100–€200 cash per couple for bakeries, coin lockers, and high rifugi.
+     - *Best Munich Bank:* **Deutsche Bank Filiale** (Schwanthalerstraße 32) — less than 1-minute walk from Hotel Germania (two doors down). 24/7 indoor ATM lobby.
+   - **Swiss Francs (CHF):** Switzerland. Switzerland is heavily cashless; 50–100 CHF cash per couple is plenty.
+     - *Best Swiss Banks:* **UBS Switzerland AG** (Plazza da Scoula 10, St. Moritz or Bahnhofstrasse 37, Zermatt) or **Cantonal Banks** (GKB in St. Moritz station / BCVs in Zermatt).
+   - **USAA Debit Card Fee Structure:**
+     - Official bank ATM operator fee: **$0.00**.
+     - USAA foreign transaction fee: **1%** (~$1.65 per €150).
+     - **The Golden Rule:** Always decline Dynamic Currency Conversion (DCC) at the ATM prompt by choosing **"Without Conversion / Charge in EUR or CHF"**. This lets Visa/Mastercard convert at the true interbank wholesale rate.
+     - **Avoid Euronet kiosks:** Never use standalone yellow/blue ATMs in train corridors or convenience stores.
    - Apps like Splitwise work great for tracking shared fuel, toll, and dinner receipts across the group.
