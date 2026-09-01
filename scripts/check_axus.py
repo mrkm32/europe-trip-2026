@@ -114,8 +114,11 @@ def run_check():
             subtitle="Axus Itinerary Updated",
             message="Madeline updated trip details! Check scripts/changes_detected.log."
         )
+        return 2
     else:
         log("Check complete: Itinerary unchanged.")
+        return 0
 
 if __name__ == "__main__":
-    run_check()
+    code = run_check()
+    sys.exit(code or 0)
