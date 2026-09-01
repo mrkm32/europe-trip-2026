@@ -75,7 +75,19 @@ This document consolidates all context, architecture decisions, and feature deve
      * Upgraded web app to **v3.31**.
      * Added **Official Bank & ATM Cash Strategy** wallet card in Confirmations tab.
      * Added interactive map links & callout tips in Day 2, Day 13, and Day 14 schedule cards.
-     * Updated Overview Quick Facts currency card and synchronized `Europe_Grand_Alpine_Tour_2026.md` and `README.md`.
+      * Updated Overview Quick Facts currency card and synchronized `Europe_Grand_Alpine_Tour_2026.md` and `README.md`.
+
+7. **Conversation 7: Autonomous 15-Minute Auto-Sync & Complete Offline Caching PWA (v3.32)**
+   * **15-Minute Fully Autonomous Auto-Sync:**
+     * Re-enabled AGY background scheduler (`*/15 * * * *`) powered by `scripts/check_axus.py`.
+     * Zero-token pass-through: if no changes occur (exit code 0), finishes silently in 2 seconds.
+     * Autonomous update pipeline: if changes occur (exit code 2), AGY automatically analyzes diffs, updates HTML and documentation, validates syntax, commits, and pushes to GitHub Pages so the live mobile app updates seamlessly.
+   * **100% Offline Caching Service Worker (`sw.js`):**
+     * Built and registered a native Service Worker (`sw.js`) utilizing a **Network-First with Cache Fallback** caching strategy.
+     * Automatically pre-caches the complete app shell, static assets, high-res maps, icons, and stylesheets upon first visit.
+     * When traveling through remote alpine valleys, tunnels, or high mountain passes without internet, the app serves the last-synced itinerary instantly with zero connection errors.
+     * Added a live **Online/Offline Connection Status Badge** (`🟢 Online • Synced` vs `📶 Offline • Saved`) in the header that reacts dynamically to network status.
+   * **Version Upgrade:** Advanced web app to **v3.32**.
 
 ---
 
@@ -93,10 +105,12 @@ This document consolidates all context, architecture decisions, and feature deve
 * **Live Site:** `https://mrkm32.github.io/europe-trip-2026/`
 * **Local Workspace:** `/Users/markmatthews/Code/Euro Alps Trip`
 * **Key Files:**
-  * `index.html`: Complete standalone web app (Tailwind CSS, Font Awesome, Passcode guard, PWA support, Tab navigation, Maps links, Countdown timer, Print formatting).
+  * `index.html`: Complete standalone web app (Tailwind CSS, Font Awesome, Passcode guard, PWA support, Tab navigation, Maps links, Countdown timer, Print formatting, Dynamic online/offline indicator).
+  * `sw.js`: Service Worker enabling 100% offline caching for remote alpine access.
   * `manifest.json`: Web App Manifest for mobile installation.
   * `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`: App icons for iOS & Android.
   * `hero.jpg` & `alps_map.jpg`: Local high-resolution photography and satellite terrain relief map.
+  * `scripts/check_axus.py`: Autonomous background script monitoring Madeline's Axus URL every 15 minutes.
   * `September 2026 Europe Trip Itinerary V3.xlsx`: Source spreadsheet downloaded from travel planners.
   * `Europe_Grand_Alpine_Tour_2026.md`: Comprehensive reference guide of the entire 16-day expedition.
   * `README.md`: GitHub repository documentation.
