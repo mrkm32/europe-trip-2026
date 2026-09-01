@@ -5,6 +5,7 @@
 
 # Python scripts & caches
 *.py
+!scripts/*.py
 __pycache__/
 
 # OS files
