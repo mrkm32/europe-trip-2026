@@ -45,13 +45,31 @@ This document consolidates all context, architecture decisions, and feature deve
      * Updated Day-by-Day schedule for Days 11 to 16 with full transport schedules, transfer buffers, and accommodation details.
      * Synchronized `Europe_Grand_Alpine_Tour_2026.md` and `README.md`.
 
+5. **Conversation 5: Madeline's Axus Travel App Integration (Dolomites, Venice & Switzerland Confirmed Vouchers, Guides & Dining)**
+   * **Axus Itinerary Data Ingestion:** Processed full shared Axus itinerary (`axustravelapp.com/shared/itinerary/4984d555-2c81-4965-8866-a8c1b59ee77e`) containing all confirmed vouchers, exact booking references, seat assignments, dispatch contacts, and dining recommendations.
+   * **Key Logistics Incorporated:**
+     * **Dedicated Support:** Added Rebecca (`+39 331 222 2349`, WhatsApp) and Madeline Jhawar (`+1 773 621 3024`, WhatsApp) to 24/7 Emergency Contacts.
+     * **Car Rental (Auto Europe / Europcar):** Voucher `#745646711`, Europcar `#1206017591`, Peugeot 508 SW SWAR Diesel Automatic, pickup Bolzano Airport (Sep 11 @ 12 PM), drop Venice Piazzale Roma 496 (Sep 14 @ 12 PM). William Rowe primary driver.
+     * **Venice Private Water Taxis (VLS Agency):** Dispatch `+39 345 1879941`. Sep 14 transfer (€120 prepaid) 3 Ponti ➔ S. Angelo; Sep 16 early 6:30 AM transfer (€140 prepaid) S. Angelo ➔ Santa Lucia station.
+     * **Venice Private Guided Tours (Maria Andrea):** Certified guide `+39 388 642 0499`. Sep 14 (4–7 PM) Intro Walking Tour (€270 prepaid); Sep 15 (10 AM–1 PM) Doge's Palace & St. Mark's Basilica VIP Tour (€510 prepaid incl tickets).
+     * **Hotel Bookings & Exact Rooms:**
+       * Hotel Pension Rezia (La Villa): Res `#R3653`, 2 x Mansard rooms (35m² with balconies), pre-check-in completed, spa 4–7 PM.
+       * B&B Fortuny (Venice): Ref `TY78554084-1`, Canal View (Matthews) & Courtyard View (Rowe).
+       * Hotel Arte St. Moritz: Ref `2026080150736583` (Matthews) & `2026080150736489` (Rowe), Double Balcony rooms.
+       * Beau-Rivage Hotel Garni (Zermatt): Ref `60682436` (Matthews, Double Standard Valley) & `60682402` (Rowe, Double Queen Valley).
+       * The New Midi Geneva: Ref `1091654581` (Matthews) & `1091652434` (Rowe), Superior River View rooms.
+     * **Swiss & Italian Rail Details:** ÖBB Railjet 81 (Coach 261, Seats 111, 116, 113, 115); Frecciarossa 9713 (Coach 3 Business, Seats 15A/B, 16A/B); Bernina RE 1660 (Coach 3 1st Class, Seats 11, 12, 21, 22); Glacier route regional trains with tight 6-min connection alert at Disentis.
+     * **Dining Reservations & Recommendations:** Added verified lunch and dinner venues across Ortisei (Tubladel), San Cassiano (Mumant, La Raisc, Armentarola), Venice (Rosa Rossa, Da Cherubino, Bistrot de Venise, Testiere, Ai Assassini), St. Moritz (La Stalla, Lapin Bleu), Andermatt (Bahnhofbuffet), Zermatt (Chez Max Julen, Spycher), and Geneva (Café PAPON, Bistrot du Bœuf Rouge).
+   * **Version Upgrade:** Bumped web app to **v3.30**.
+   * **Full Documentation Sync:** Updated `index.html`, `Europe_Grand_Alpine_Tour_2026.md`, `README.md`, and `PROJECT_HISTORY.md`.
+
 ---
 
 ## 👥 Travel Party & Planning Status
 
 * **Bill & Kris Rowe:** Trip Curators & Co-Planners (spearheading itinerary details; full 16-day journey from MSP).
 * **Mark & Shelly Matthews:** Co-Planners & Travelers (Flight confs DL `GYXLN6`, Aer Lingus `2AXKMS`, Hotels.com bookings).
-* **Madeline (Travel Planner):** Detailed Swiss rail connections and hotels verified from Gmail notes; consultation call scheduled for tomorrow at 6:30 PM to review and finalize.
+* **Madeline Jhawar & Rebecca (Italy Beyond the Obvious):** Professional travel planners for Italy & Switzerland segments; all bookings, vouchers, private tours, and rail passes fully confirmed in Axus.
 
 ---
 

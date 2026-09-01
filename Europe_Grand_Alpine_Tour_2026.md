@@ -24,20 +24,34 @@
 
 ## 📋 Master Confirmation & Booking Directory
 
-| Date Range | Booking Type | Provider / Property | Confirmation / Ref | Notes / Contact |
+| Date Range | Booking Type | Provider / Property | Confirmation / Voucher | Notes / Contact |
 | :--- | :--- | :--- | :--- | :--- |
 | **09/04 – 09/05** | **Outbound Flights** | **Delta / KLM** | `GYXLN6` (Matthews) | DL 164 (MSP 9:45 PM ➔ AMS) + DL 9553 (AMS ➔ MUC 5:00 PM) • Party of 4 |
 | **09/05 – 09/08** (3 Nights) | Hotel (Munich) | **Boutique Hotel Germania** | Hotels.com `#72076955244782` | Schwanthalerstraße 28, Munich • +49 89 590460 • 2 Rooms (Matthews & Rowe) |
 | **09/07** | Day Tour | **Neuschwanstein Castle** | Bus Tour ($227 ea) | Full-day excursion from Munich to Bavarian royal castles (4 seats) |
 | **09/08 – 09/10** (2 Nights) | Hotel (Salzburg) | **June Six Salzburg** | Hotels.com `#72077000025128` | Haunspergstraße 41, Salzburg • +43 662 254156 • 2 Rooms (Matthews & Rowe) |
+| **09/10** | High-Speed Rail | **WESTbahn: Salzburg ➔ Innsbruck** | Omio `#336-9587-7889` | 9:39 AM – 11:58 AM (Salzburg Hbf ➔ Innsbruck Hbf) • Booked by Kris |
 | **09/10 – 09/11** (1 Night) | Hotel (Innsbruck) | **NALA individuellhotel** | Hotels.com `#72076999785742` | Müllerstrasse 15, Innsbruck • +43 512 584444 • 2 Rooms (Matthews & Rowe) |
-| **09/11 – 09/14** (3 Nights) | Hotel (Dolomites) | **Hotel Rezia** | Direct / Confirmed | Str. Colz, 64, La Villa in Badia • Spa & Wellness on site • 2 Rooms |
-| **09/11** | Car Rental | **Bolzano Hub** | Pickup: Bolzano Station | Drop: Venice Piazzale Roma (09/14) • Minivan/SUV for 4 adults + bags |
-| **09/14 – 09/16** (2 Nights) | Hotel (Venice) | **Fortuny B&B** | Verified (Gmail) | Venice Historic Center • 2 Nights • 7:00 AM Water Taxi on Sep 16 |
-| **09/16 – 09/17** (1 Night) | Hotel (St. Moritz) | **Hotel Arte St. Moritz** | Verified (Gmail) | Somplatz 17, St. Moritz • Arrive via Bernina line (5:11 PM) • 2 Rooms |
-| **09/17 – 09/18** (1 Night) | Hotel (Zermatt) | **Hotel Beau Rivage** | Verified (Gmail) | Kirchstrasse 41, Zermatt • Car-free Alpine village base • 2 Rooms |
-| **09/18 – 09/19** (1 Night) | Hotel (Geneva) | **Hotel New Midi Geneva** | Verified (Gmail) | Place Chevelu 4, Geneva • Lake Léman promenade • 2 Rooms |
-| **09/19** | **Return Flights** | **Aer Lingus** | `2AXKMS` (Matthews) | 6:58 AM train to GVA + EI 0681 (GVA 10:10 AM ➔ DUB) + EI 0089 (DUB ➔ MSP 5:00 PM) |
+| **09/10** | Show & Dinner | **Tyrolean Folk Show** | Alpensaal Innsbruck | 8:30 PM Show + Traditional Dinner + 1 drink • Booked by Shelly |
+| **09/11** | Scenic Rail | **ÖBB Railjet 81 (Innsbruck ➔ Bolzano)** | ÖBB Confirmed | 9:24 AM – 11:27 AM • 1st Class, Coach 261, Seats 111, 116, 113, 115 (Quiet Zone) |
+| **09/11 – 09/14** (3 Days) | Rental Car | **Auto Europe / Europcar** | AE `#745646711` • EC `#1206017591` | Bolzano Airport pick-up (12 PM) ➔ Venice Piazzale Roma drop (12 PM) • Peugeot 508 SW SWAR Diesel Auto • Driver: William Rowe |
+| **09/11 – 09/14** (3 Nights) | Hotel (Dolomites) | **Hotel Pension Rezia** | Booking `#R3653` | Str Cianins 3 / Str. Colz 64, La Villa in Badia • 2 x Mansard Rooms • Pre-check-in done |
+| **09/14 & 09/16** | Private Water Taxis | **VLS Agency (Venice)** | VLS Dispatch (+39 345 1879941) | Sep 14: 3 Ponti ➔ S. Angelo (€120 prepaid) • Sep 16 @ 6:30 AM: S. Angelo ➔ Station (€140 prepaid) |
+| **09/14 & 09/15** | Private Guided Tours | **Maria Andrea (Venice Guide)** | Cell: +39 388 642 0499 | Sep 14 (4–7 PM): Intro Tour (€270 prepaid) • Sep 15 (10 AM–1 PM): Doge's & St. Mark's (€510 prepaid incl tickets) |
+| **09/14 – 09/16** (2 Nights) | Hotel (Venice) | **B&B Fortuny** | Ref: `TY78554084-1` | San Marco, Corte Lucatello 3484 • Canal View (Matthews) & Courtyard View (Rowe) |
+| **09/16** | High-Speed Rail | **Frecciarossa 9713 (Mestre ➔ Milan)** | `J7Z9R5` (M) • `J6V3Z5` (R) | 8:00 AM – 10:15 AM • Coach 3 Business, Seats 15A/B, 16A/B |
+| **09/16** | Scenic Rail | **Bernina RE 1660 (Tirano ➔ St. Moritz)** | SBB / RhB Confirmed | 3:00 PM – 5:11 PM • 1st Class, Coach 3, Seats 11, 12, 21, 22 |
+| **09/16 – 09/17** (1 Night) | Hotel (St. Moritz) | **Hotel Arte St. Moritz** | `2026080150736583` (M) • `2026080150736489` (R) | Via Tinus 7 / Somplatz • 2 x Double Balcony Rooms • Dining: *La Stalla* |
+| **09/17 – 09/18** (1 Night) | Hotel (Zermatt) | **Beau-Rivage Hotel Garni** | `60682436` (M) • `60682402` (R) | Kirchstrasse 44, Zermatt • Double Standard (M) & Double Queen (R) Valley View |
+| **09/18 – 09/19** (1 Night) | Hotel (Geneva) | **The New Midi Geneva** | `1091654581` (M) • `1091652434` (R) | Place de Chevelu 4, Quai de Bergues • 2 x Superior Room River View |
+| **09/19** | **Return Flights** | **Aer Lingus** | `2AXKMS` (Matthews) | 7:00 AM taxi to GVA + EI 0681 (GVA 10:10 AM ➔ DUB) + EI 0089 (DUB ➔ MSP 5:00 PM) |
+
+### 📱 Dedicated On-Trip Support & Emergency Contacts
+- **Primary On-Trip Support:** Rebecca (Italy Beyond the Obvious) • WhatsApp: [`+39 331 222 2349`](https://wa.me/393312222349) • *9:00 AM – 7:00 PM Italian time*
+- **Backup Support:** Madeline Jhawar • Call/WhatsApp: [`+1 773 621 3024`](https://wa.me/17736213024) • *5:00 PM – 9:00 AM Italian time*
+- **Venice Private Guide:** Maria Andrea • Cell: [`+39 388 642 0499`](tel:+393886420499)
+- **Venice Water Taxi Dispatch:** VLS Agency • Call [`+39 345 1879941`](tel:+393451879941) (call 15 mins before scheduled transfers)
+- **Universal European Emergency:** 112 (Ambulance Italy: 118 • Ambulance Switzerland: 144 • Rega Air Rescue: 1414)
 
 ---
 
@@ -150,91 +164,103 @@ flowchart TD
 
 ### Leg 3: Italian Dolomites (Alta Badia & Val Gardena)
 
-#### Day 8 — Friday, September 11: Innsbruck ➔ Bolzano ➔ La Villa (Alta Badia)
-- **9:24 AM – 11:27 AM:** Early direct EuroCity train from Innsbruck Hbf to **Bolzano / Bozen** across the Brenner Pass (Selected early option!).
-- **Car Rental:** Pick up rental vehicle sized for 4 adults + 4 suitcases at Bolzano station.
-- **Drive to Alta Badia:** Scenic ~2-hour drive through the Val d'Isarco / Val Gardena climbing into the majestic Ladin valley of **Val Badia**.
-- **Accommodation Check-in:** **Hotel Rezia** (Str. Colz, 64, 39036 La Villa in Badia). 3 nights (Sep 11 – 14) for the party of 4.
-- **Afternoon Walk:** Take the **Piz La Ila cable car** directly from La Villa up to the high alpine plateau. At the top, choose between gentle panoramic loop trails overlooking the Fanes and Sella massifs.
+#### Day 8 — Friday, September 11: Innsbruck ➔ Bolzano ➔ Ortisei Lunch ➔ La Villa & Piz La Ila
+- **9:24 AM – 11:27 AM:** ÖBB Railjet **RJ 81** from Innsbruck Hbf to **Bolzano / Bozen** (1st Class, Coach 261, Seats 111, 116, 113, 115 in Quiet Zone).
+- **11:30 AM – 1:00 PM Car Rental Pickup:**
+  - Take taxi from Bolzano station to **Europcar Bolzano Airport** (Via Francesco Baracca 1).
+  - Pick up rental car: **Peugeot 508 SW SWAR Diesel Automatic** (Auto Europe Voucher `#745646711` • Europcar Conf `#1206017591`). William Rowe primary driver. Zero deductible.
+- **1:15 PM Lunch Stop:** **Ristorante Tubladel** in Ortisei (Via Christian Trebinger 22, Val Gardena • `+39 0471 796879`).
+- **3:00 PM Accommodation Check-in:** **Hotel Pension Rezia** (Str Cianins 3 / Str. Colz 64, La Villa in Badia • `+39 0471 847155`). 2 x Mansard Rooms (Res `#R3653`, pre-check-in completed). Sauna open 4:00 – 7:00 PM.
+- **Afternoon Cable Car:** **Piz La Ila cable car** up to Active Park plateau (€21.90 pp round trip). Stop at La Villa tourist office for hiking maps.
   > [!WARNING]
-  > **Cable Car Schedule:** The Piz La Ila cable car closes at **5:30 PM**, and the **final descent is at 5:00 PM sharp**.
-- **Evening:** Dinner for four at a cozy restaurant in La Villa. Overnight at Hotel Rezia.
+  > **Cable Car Schedule:** Piz La Ila cable car closes at **5:30 PM**; **final descent is at 5:00 PM sharp**.
+- **7:30 PM Dinner:** **Ristorante Mumant à la carte** (Str. Plan 11, San Cassiano • `+39 0471 849544`, 6-min drive). Overnight Hotel Rezia (Night 1).
 
 ---
 
-#### Day 9 — Saturday, September 12: Corvara, Boé Gondola, Vallon & Lago Boé
-- **Morning:** Quick 10-minute drive from La Villa to **Corvara**.
-- **Ascent:** Take the **Boé Gondola**, followed by the **Vallon chairlift** up to the dramatic rocky lunar amphitheater beneath the peak of Piz Boé.
+#### Day 9 — Saturday, September 12: Corvara, Boé Gondola & Vallon Lift, Trail 638 to Lago Boé
+- **Morning:** 10-minute drive from La Villa to **Corvara**. Park at Boé Gondola (€8/12 hrs).
+- **Ascent:** Take **Boé Gondola** + **Vallon Chairlift** (€31.80 pp round trip) up to the lunar amphitheater beneath Piz Boé.
 - **Alpine Hike & Lunch:**
-  - Take the easy downhill trail (~90 minutes) toward emerald-green **Boé Lake (Lech de Boé)**.
-  - Enjoy a relaxed alpine lunch with panoramic views on the terrace at the **Piz Boé Alpine Lounge** for four.
+  - Easy downhill hike on Trail 638 (~90 minutes) toward emerald-green **Boé Lake (Lech de Boé)**.
+  - Relaxed alpine lunch with panoramic views at **Piz Boé Alpine Lounge** (`+39 0471 188 8166`).
 - **Descent Timing:**
   > [!IMPORTANT]
-  > The Boé cable car closes at **6:00 PM**; the **final descent is at 5:30 PM**.
-- **Late Afternoon:** Drive 10 minutes back to Hotel Rezia. Unwind in the hotel spa, sauna, and pool.
-- **Evening:** Scenic sunset drive over Passo Gardena to **Ortisei** for dinner for four. Overnight at Hotel Rezia.
+  > Boé lift closes at **6:00 PM**; the **final descent is at 5:30 PM sharp**.
+- **Late Afternoon:** Drive back to Hotel Rezia. Finnish sauna, vitarium, infrared & whirlpool recovery (open 4–7 PM) or explore La Villa & Ciastel Colz.
+- **7:30 PM Dinner:** **Ristorante La Raisc** (Località Sciarè 10, San Cassiano • `+39 377 384 5649`, 9-min drive). Overnight Hotel Rezia (Night 2).
 
 ---
 
 #### Day 10 — Sunday, September 13: Badia, La Crusc Sanctuary & Alpine Meadows
-- **Morning:** Drive 10 minutes to **Badia**.
-- **Ascent:** Take the two consecutive **La Crusc gondolas / chairlifts** up directly beneath the vertical rock wall of Sas dla Crusc to visit the historic 15th-century **Church of Santa Croce (La Crusc)**.
+- **Morning:** 6-minute drive to **Badia** (free parking at lift base).
+- **Ascent:** Double **La Crusc gondola lifts** up beneath Sas dla Crusc limestone wall to visit the historic 15th-century **Holy Cross Sanctuary (La Crusc / Santa Croce)**.
 - **Trail Options:**
-  - **Option A (Easy & Leisurely):** Gentle downhill stroll (~45 minutes) to mountain hut **Ütia Lé** for lunch for four with meadow views, followed by taking the gondola back down to Badia.
-  - **Option B (Moderate Scenic Trek):** The stunning **Armentara Trail** through pristine high-altitude meadows filled with wooden barns and wildflowers (~3.5 hours downhill directly to Badia).
-- **Late Afternoon:** Return to Hotel Rezia to relax in the spa and explore the village shops.
-- **Evening:** Dinner for four in Ortisei or Alta Badia. Overnight at Hotel Rezia.
+  - **Option A (Easy & Leisurely):** 45-minute gentle downhill walk along the Way of the Cross to **Ütia Lé** (`+39 347 238 3927`) for lunch, followed by gondola descent to Badia.
+  - **Option B (Moderate Scenic Trek):** 3.5-hour downhill traverse across panoramic **Armentara meadows** with wooden barns and wildflowers, stopping for lunch at **Ranch da Andrè** (`+39 0471 843174`), descending to Badia.
+  *(Bring physical cash for rifugi!)*
+- **Afternoon:** Explore San Cassiano and Museum Ladin Ursus ladinicus. Pack bags for checkout.
+- **7:30 PM Dinner:** **Ristorante Armentarola** (Prè de Vì 12, San Cassiano • `+39 0471 849522`, 7-min drive). Overnight Hotel Rezia (Night 3).
 
 ---
 
 ### Leg 4: Venice, The Bernina Railway, St. Moritz & The Glacier Express Route (Days 11–14)
 
-#### Day 11 — Monday, September 14: Dolomites ➔ Venice (Drop Car) ➔ Fortuny B&B
-- **Morning:** Check out of Hotel Rezia in La Villa. Enjoy a scenic 3-hour downhill drive through Belluno and Treviso toward the Venetian lagoon.
-- **Midday:** Drop off rental car at **Venice Piazzale Roma** (or Venice Marco Polo Airport).
-- **Afternoon in Venice:** 
-  - Transfer via water bus / water taxi to **Fortuny B&B** in historic Venice and check in for a 2-night stay.
-  - Afternoon stroll along the Grand Canal to the iconic Rialto Bridge.
-  - Savor Venetian *cicchetti* (tapas) and an Aperol Spritz by the canals for the party of 4.
-- **Evening:** Leisurely canal-side dinner for four. Overnight at Fortuny B&B (Night 1).
+#### Day 11 — Monday, September 14: Dolomites ➔ Venice (Drop Car) ➔ Private Water Taxi ➔ B&B Fortuny & Intro Tour
+- **8:00 AM:** Check out of Hotel Rezia. Scenic 3-hour downhill drive through Belluno and Treviso toward the Venetian lagoon.
+- **12:00 PM Car Return:** Drop rental car at **Europcar Piazzale Roma 496, Venice** (full tank).
+- **12:00 PM Private Water Taxi:**
+  - **VLS Agency** private transfer (€120 prepaid). Call `+39 345 1879941` 15 mins prior for boat number.
+  - Board at **3 Ponti**; disembark at **S. Angelo dock** (2-min walk to hotel).
+- **Check-in & Lunch:**
+  - **B&B Fortuny:** San Marco, Corte Lucatello 3484 (`+39 347 547 9871`, Ref `TY78554084-1`). Canal View (Matthews) & Courtyard View (Rowe).
+  - 1:30 PM Lunch: **Ristorante Rosa Rossa** (Calle de la Mandola 3709 • `+39 041 523 4605`).
+- **4:00 PM – 7:00 PM Private Intro to Venice Tour:**
+  - Meet licensed guide **Maria Andrea** (`+39 388 642 0499`) at B&B Fortuny (€270 prepaid). Hidden alleys, legends, and merchant palazzi.
+- **8:00 PM Dinner:** **Da Cherubino** (Calle Barcaroli 1702 • `+39 041 522 1543`) OR **Bistrot de Venise** fine dining (`+39 041 523 6651`).
+  *(Gondola tip: Fixed city rates €90 before / €110 after 7:24 PM sunset for 30 min boat).* Overnight B&B Fortuny (Night 1).
 
 ---
 
-#### Day 12 — Tuesday, September 15: Full Day in Venice (Piazza San Marco & Grand Canal)
-- **Morning:** Piazza San Marco, St. Mark's Basilica, Doge's Palace, and the Bridge of Sighs before midday tour groups arrive.
-- **Midday:** Vaporetto ride along the Grand Canal; explore quiet neighborhoods like Dorsoduro or Cannaregio for lunch.
-- **Afternoon:** Optional gondola ride through tranquil side canals or visit artisan Venetian glass workshops.
-- **Evening:** Venetian seafood dinner for four. Rest up for tomorrow's early morning water taxi to the station! Overnight at Fortuny B&B (Night 2).
+#### Day 12 — Tuesday, September 15: Private Doge's Palace & St. Mark's Tour ➔ Art & Osteria Ai Assassini
+- **Morning:** Breakfast coffee at Bar all'Angolo, Bar Redentore, Moro Cafe, or historic Caffè Florian.
+- **10:00 AM – 1:00 PM Private Tour:**
+  - Meet guide **Maria Andrea** (`+39 388 642 0499`) at B&B Fortuny (€510 prepaid incl tickets). Golden staircase, Bridge of Sighs, prisons, and St. Mark's Basilica mosaics. *(Guide holds tickets; bring original passports!)*
+- **1:30 PM Lunch:** **Osteria alle Testiere** (fresh seafood • `+39 041 522 7220`) OR **Ristorante Centrale Pizzeria** (`+39 041 237 9661`).
+- **Afternoon:** Scuola Grande di San Rocco (Tintoretto), Ca' Pesaro, Ca' Rezzonico, or artisanal shopping.
+- **Billing Action:** Settle hotel bill at B&B Fortuny this afternoon for tomorrow's early departure!
+- **7:30 PM Dinner:** **Osteria Ai Assassini** (S. Marco 3695 • `+39 041 099 4435`, table held 15 mins). Rest up for 6:30 AM water taxi! Overnight B&B Fortuny (Night 2).
 
 ---
 
-#### Day 13 — Wednesday, September 16: Venice ➔ Tirano ➔ Bernina Railway to St. Moritz
-- **Morning:** 
-  - AM: Check out of Fortuny B&B.
-  - **7:00 AM:** Water taxi from B&B directly to Venice Santa Lucia train station.
-  - **8:00 AM – 1:52 PM Train:** Depart Venezia Santa Lucia by train, changing in Milan, arriving in **Tirano** at 1:52 PM.
-- **Afternoon:**
-  - **1:52 PM – 3:00 PM Connection Buffer:** Relaxed layover in Tirano. Plenty of time to make the connection just in case the train to Tirano is running behind. Enjoy lunch or an authentic Italian espresso in the Valtellina valley.
-  - **3:00 PM – 5:11 PM Scenic Train:** Depart Tirano on the regional train along the world-famous **UNESCO Bernina Railway route** to St. Moritz (arrives 5:11 PM).
-  > [!TIP]
-  > **Pro-Traveler Secret: The Regular Bernina Train:** While this is not the Bernina Express panoramic car, it travels the **exact same UNESCO World Heritage route** over the Bernina Pass. Standard regional coaches have windows you can pull down for reflection-free, unobstructed photography of the circular **Brusio Spiral Viaduct**, **Alp Grüm**, **Ospizio Bernina** (2,253 m / 7,392 ft), Lago Bianco, and **Morteratsch Glacier**!
-- **Evening:**
-  - **5:11 PM:** Arrive in St. Moritz station. Check into **Hotel Arte St. Moritz** (Somplatz 17).
-  - Free time to explore the glamorous Alpine resort town and Lake St. Moritz.
-  - Dinner for four in St. Moritz. Overnight at Hotel Arte St. Moritz.
+#### Day 13 — Wednesday, September 16: Venice ➔ Milan ➔ Tirano ➔ Bernina Railway to St. Moritz
+- **6:30 AM Sharp:** Private water taxi from S. Angelo dock (VLS Agency, call `+39 345 1879941` 15 min prior, €140 prepaid) to Venezia Santa Lucia station.
+- **Rail Transit Schedule:**
+  - **7:31 AM – 7:41 AM:** Regionale Veloce 3644 to Venezia Mestre (19m layover).
+  - **8:00 AM – 10:15 AM:** Frecciarossa 9713 to Milano Centrale (Business Class Coach 3, Seats 15A/B, 16A/B • Ref `J7Z9R5` / `J6V3Z5`).
+  - **10:15 AM – 11:20 AM Layover:** Pick up lunch sandwiches at Mercato Centrale in Milan station.
+  - **11:20 AM – 1:52 PM:** Trenord 2822 to Tirano (1st class open).
+  - **1:52 PM – 3:00 PM Buffer:** 1h 8m layover in Tirano. Walk across to Swiss SBB station.
+  - **3:00 PM – 5:11 PM Bernina Line:** Bernina RE 1660 to St. Moritz (Coach 3, 1st Class, Seats 11, 12, 21, 22). Pull-down windows for photography of Brusio Spiral Viaduct, Alp Grüm, and Morteratsch Glacier!
+- **5:11 PM St. Moritz Arrival:**
+  - 5-minute taxi to **Hotel Arte St. Moritz** (Via Tinus 7 / Somplatz • `+41 81 837 5858`, Ref `2026080150736583` M / `2026080150736489` R). 2 x Double Balcony Rooms.
+  - Chocolate shopping at **Läderach** (Via Serlas 26).
+  - 7:30 PM Dinner: **La Stalla** (in hotel, cheese fondue & pizza • `+41 81 837 5859`) OR **Le Lapin Bleu** (`+41 81 836 9697`).
+  *(Have hotel order taxi for 8:40 AM tomorrow).* Overnight Hotel Arte.
 
 ---
 
 #### Day 14 — Thursday, September 17: St. Moritz to Zermatt (Glacier Express Route via Regional Trains)
-- **Morning / Afternoon Trans-Alpine Rail Odyssey:**
-  > [!NOTE]
-  > **The Glacier Express Route via Regional Rail:** Glacier Express panoramic cars were sold out before the itinerary was set. However, you will take the **exact same world-famous scenic route** across Switzerland via standard regional trains with 4 seamless connections:
-  - **9:05 AM – 11:02 AM:** Train from St. Moritz to **Chur** (passing over the soaring Landwasser Viaduct and through the Albula Gorge).
-  - **11:55 AM – 2:21 PM:** Train from Chur to **Andermatt**, changing in Disentis (climbing the Rhine Gorge "Swiss Grand Canyon" and crossing the Oberalp Pass at 2,044m).
-  - **3:37 PM – 7:50 PM:** Train from Andermatt to **Zermatt**, changing in Brig (descending through the Furka base tunnel and climbing the Matter Valley into car-free Zermatt).
-- **Evening:**
-  - **7:50 PM:** Arrive in Zermatt. Check into **Hotel Beau Rivage** (Kirchstrasse 41).
-  - Dinner for four in Zermatt beneath the twilight silhouette of the Matterhorn. Overnight at Hotel Beau Rivage.
+- **8:40 AM:** Taxi to St. Moritz station.
+- **Trans-Alpine Rail Odyssey:**
+  - **9:05 AM – 11:02 AM:** Train IR 1128 to **Chur** (crossing Landwasser Viaduct). 53-min layover in Chur.
+  - **11:55 AM – 2:21 PM:** RE 1737/4737 via Rhine Gorge to **Andermatt**. Stay in seats at Ilanz; ⚠️ *tight 6-min connection at Disentis to Train R 839 departing 1:15 PM!*
+  - **2:21 PM – 3:37 PM Layover:** Casual lunch at **Bahnhofbuffet Andermatt** (`+41 41 888 0153`) directly at the station.
+  - **3:37 PM – 7:17 PM:** Train R 557 to Visp, then R 257 up Matter Valley straight into **Zermatt** (arrives 7:17 PM).
+- **7:17 PM Zermatt Arrival:**
+  - 10-minute walk or hotel shuttle (CHF 15) to **Beau-Rivage Hotel Garni** (Kirchstrasse 44 • `+41 27 966 3440`, Ref `60682436` M / `60682402` R).
+  - 8:00 PM Dinner: **Restaurant Chez Max Julen** (in hotel building, grill & Valais specialties • `+41 27 967 4044`) OR **Restaurant Spycher** (`+41 27 967 7741`).
+  *(Reserve hotel shuttle for 12:20 PM tomorrow).* Overnight Hotel Beau Rivage.
 
 ---
 
@@ -242,34 +268,32 @@ flowchart TD
 
 #### Day 15 — Friday, September 18: Matterhorn Glacier Paradise (3,883m) & Glacier Palace ➔ Scenic Train to Geneva
 - **Morning:**
-  - AM: Check out of Hotel Beau Rivage but leave bags at front desk.
-  - **Confirmed Morning Excursion (Option B — Matterhorn Glacier Paradise):**
-    - Board the Matterhorn Express gondola and the high-speed 3S cableway to **Klein Matterhorn summit (3,883 m / 12,740 ft)** — Europe's highest mountain cable car station!
-    - Step out onto the 360° summit viewing platform for breathtaking panoramas of 38 four-thousand-meter peaks across Switzerland, Italy, and France, including the iconic Matterhorn, Monte Rosa, and Mont Blanc.
-    - Tour the magical **Glacier Palace**, an enchanting world of crystalline ice sculptures and tunnels carved 15 meters directly beneath the surface of the glacier.
-    *(Note: Gornergrat Cogwheel Railway at 3,089m remains available as a scenic alternative if desired).*
-- **Afternoon:**
-  - Retrieve luggage in Zermatt.
-  - **1:06 PM – 4:55 PM Scenic Train:** Board train from Zermatt to **Geneva**, changing in Visp. Descend the Matter Valley to Visp, continuing along the upper Rhône Valley and along the northern shore of Lake Geneva (Lac Léman) past Montreux and the UNESCO Lavaux vineyards.
+  - AM: Check out of Hotel Beau Rivage, leave bags at reception.
+  - **Confirmed Excursion: Matterhorn Glacier Paradise (3,883 m / 12,740 ft):**
+    - 10-minute walk to cable car station. Board Matterhorn Express gondolas and 3S cableway via Furi and Trockener Steg to **Europe's highest mountain station** (CHF 120 pp round trip, 40 min).
+    - 360° summit viewing platform overlooking 38 four-thousand-meter peaks (Matterhorn, Monte Rosa, Mont Blanc).
+    - Tour the magical **Glacier Palace**, carved 15 meters directly inside the permanent ice field with crystalline ice sculptures!
+- **Midday:** Return down to Zermatt with plenty of time for 12:20 PM hotel shuttle to station. Pick up sandwiches at Zermatt station.
+- **1:06 PM – 4:55 PM Scenic Train:**
+  - 1:06 PM – 2:19 PM: Train R 344 to Visp (17m layover).
+  - 2:36 PM – 4:55 PM: Train IR 1824 through Rhône Valley and along the northern shore of Lake Geneva past Montreux and Lavaux vineyards into Geneva Cornavin.
 - **Evening:**
-  - **4:55 PM:** Arrive at Geneva Cornavin station. Check into **Hotel New Midi Geneva** (Place Chevelu 4, right on the lake and Rhône).
-  - Stroll through the cobbled alleys of the **Vieille Ville (Old Town)**, visit St. Peter's Cathedral, and see the soaring 140-meter **Jet d’Eau**.
-  - Celebratory Swiss farewell dinner for four (fondue or raclette). Final packing for morning flights. Overnight at Hotel New Midi Geneva.
+  - Check into **The New Midi Geneva** (Place de Chevelu 4 • `+41 22 544 1500`, Ref `1091654581` M / `1091652434` R). 2 x Superior Room River View.
+  - Stroll Old Town (Vieille Ville), St. Peter's Cathedral, and 140m *Jet d'Eau*.
+  - 8:00 PM Dinner: **Café PAPON** (historic Old Town • `+41 22 311 5428`) OR **Bistrot du Bœuf Rouge** (`+41 22 732 7537`).
+  *(Have hotel order taxi for 4 + luggage for 7:00 AM tomorrow to GVA Airport).* Overnight The New Midi Geneva.
 
 ---
 
 #### Day 16 — Saturday, September 19: Geneva to Minneapolis-St. Paul
-- **Early Morning:**
-  - **6:58 AM – 7:05 AM:** 7-minute train from Geneva Cornavin directly to Geneva Airport (GVA) Terminal 1.
+- **7:00 AM:** Hotel taxi directly to Geneva Airport (GVA) Terminal 1 (15 min). (Or 6:58 AM airport train from station arriving 7:05 AM).
 - **Flight 1:** Aer Lingus **EI 0681**
-  - **10:10 AM – 11:30 AM:** Geneva (GVA) Terminal 1 ➔ Dublin (DUB)
-  - **Confirmation:** `2AXKMS` (Matthews)
+  - **10:10 AM – 11:30 AM:** Geneva (GVA) Terminal 1 ➔ Dublin (DUB). Ref: `2AXKMS`.
 - **Dublin Connection (2h 55m Layover):**
   > [!TIP]
-  > **Dublin US Preclearance Advantage:** Dublin Airport features US Customs and Border Protection (CBP) Preclearance. You will all clear US passport control and customs *before* boarding your flight to the US, so you land at MSP as a domestic arrival!
+  > **Dublin US Preclearance Advantage:** Clear US passport control and customs *before* boarding in Dublin, landing at MSP as domestic arrivals!
 - **Flight 2:** Aer Lingus **EI 0089**
-  - **2:25 PM – 5:00 PM:** Dublin (DUB) ➔ Minneapolis-St. Paul (MSP)
-  - **Arrival:** MSP @ 5:00 PM local time. Welcome home!
+  - **2:25 PM – 5:00 PM CDT:** Dublin (DUB) ➔ Minneapolis-St. Paul (MSP). Welcome home!
 
 ---
 
