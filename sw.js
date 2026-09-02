@@ -1,6 +1,6 @@
 // Service Worker for Europe Alps Odyssey 2026
 // Enables 100% Offline Access across Alpine valleys, trains, and mountain passes
-const CACHE_NAME = 'europe-alps-2026-v2';
+const CACHE_NAME = 'europe-alps-2026-v3';
 
 const PRECACHE_URLS = [
   './',
