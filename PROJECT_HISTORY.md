@@ -114,6 +114,16 @@ This document consolidates all context, architecture decisions, and feature deve
      * Updated `sw.js` cache manifest (`europe-alps-2026-v4`) to pre-cache all 39 documents so travelers can open tickets in mountain passes without cell signal.
    * **Version Upgrade:** Advanced web app to **v3.40**.
 
+9. **Conversation 9: High-Contrast Active Tab State & Web Haptic Feedback (v3.41)**
+   * **Dual Navigation Synchronization:**
+     * Linked the top Hero Action Strip buttons (`hero-btn-*`) directly with the Sticky Navigation Bar (`tab-btn-*`) so both sets of buttons stay in sync when switching between tabs.
+   * **High-Contrast Active Tab Styling:**
+     * Active tabs now display with a high-contrast white ring (`ring-2 ring-white`), elevated transform (`-translate-y-0.5`), bold typography, and radiant glow.
+     * Inactive tabs recede into a muted translucent dark background (`rgba(15, 23, 42, 0.6)`) with subtle border lines, removing all ambiguity about which tab is currently selected.
+   * **Haptic & Acoustic Tap Feedback:**
+     * Implemented `triggerHapticFeedback()`: executes `navigator.vibrate([15])` on Android and a subtle synthesized acoustic micro-click via Web Audio API on iOS Safari/PWA.
+   * **Version Upgrade:** Advanced web app to **v3.41** with Service Worker cache `v5`.
+
 ---
 
 ## 👥 Travel Party & Planning Status
