@@ -203,7 +203,7 @@
       border-radius: 4px;
     }
 
-    /* Active Tab Emphasis & Haptic Pulse Animations */
+    /* Ultra-High Contrast Active Tab Emphasis & Haptic Pulse Animations */
     .hero-tab-btn {
       position: relative;
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -211,28 +211,31 @@
       -webkit-tap-highlight-color: transparent;
     }
     .hero-tab-btn:active, .main-nav-tab:active {
-      transform: scale(0.96);
+      transform: scale(0.95);
     }
     .hero-tab-active {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.4), 0 0 0 3px #ffffff, 0 0 20px 4px rgba(56, 189, 248, 0.5) !important;
-      font-weight: 800 !important;
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 28px -2px rgba(0, 0, 0, 0.6), 0 0 0 2.5px #ffffff, 0 0 22px 6px rgba(255, 255, 255, 0.45) !important;
+      font-weight: 900 !important;
+      z-index: 10;
     }
     .hero-tab-inactive {
-      opacity: 0.65;
-      filter: saturate(0.75);
-      border: 1px solid rgba(255, 255, 255, 0.15) !important;
-      background: rgba(15, 23, 42, 0.6) !important;
+      opacity: 0.55;
+      filter: saturate(0.6);
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+      background: rgba(15, 23, 42, 0.65) !important;
+      color: #94a3b8 !important;
       box-shadow: none !important;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
     .hero-tab-inactive:hover {
-      opacity: 0.95;
+      opacity: 0.9;
       filter: saturate(1);
-      border-color: rgba(255, 255, 255, 0.35) !important;
+      color: #ffffff !important;
+      border-color: rgba(255, 255, 255, 0.3) !important;
     }
     .sticky-tab-active {
-      box-shadow: 0 4px 18px -2px rgba(0, 0, 0, 0.35), 0 0 0 2px #ffffff, 0 0 14px 2px rgba(56, 189, 248, 0.4) !important;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.45), 0 0 0 2.5px #ffffff, 0 0 18px 4px rgba(255, 255, 255, 0.4) !important;
     }
   </style>
 </head>
@@ -4704,21 +4707,21 @@
         }
       });
 
-      // 2. Update Top Hero Action Strip Tabs (Makes active tab unmistakably stand out)
+      // 2. Update Top Hero Action Strip Tabs (Makes active tab unmistakably stand out with vivid bright colors)
       const heroStyles = {
-        overview: 'bg-emerald-600 hover:bg-emerald-500 shadow-emerald-600/30 text-white',
-        confirmations: 'bg-sky-600 hover:bg-sky-500 shadow-sky-600/30 text-white',
-        schedule: 'bg-indigo-600 hover:bg-indigo-500 shadow-indigo-600/30 text-white',
-        documents: 'bg-purple-600 hover:bg-purple-500 shadow-purple-600/30 text-white'
+        overview: 'bg-gradient-to-r from-emerald-500 to-teal-400 text-white shadow-emerald-500/50 ring-2 ring-white',
+        confirmations: 'bg-gradient-to-r from-sky-500 to-cyan-400 text-white shadow-sky-500/50 ring-2 ring-white',
+        schedule: 'bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-indigo-500/50 ring-2 ring-white',
+        documents: 'bg-gradient-to-r from-fuchsia-500 to-purple-500 text-white shadow-purple-500/50 ring-2 ring-white'
       };
 
       tabs.forEach(t => {
         const heroBtn = document.getElementById('hero-btn-' + t);
         if (heroBtn) {
           if (t === tabId) {
-            heroBtn.className = `hero-tab-btn hero-tab-active px-3.5 py-2 ${heroStyles[t]} font-extrabold rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5`;
+            heroBtn.className = `hero-tab-btn hero-tab-active px-3.5 py-2 ${heroStyles[t]} font-black rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5`;
           } else {
-            heroBtn.className = `hero-tab-btn hero-tab-inactive px-3.5 py-2 text-slate-300 font-medium rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5`;
+            heroBtn.className = `hero-tab-btn hero-tab-inactive px-3.5 py-2 font-medium rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5`;
           }
         }
       });
