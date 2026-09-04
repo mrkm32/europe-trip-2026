@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.markmatthews.axusmonitor</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>/Users/markmatthews/Code/Euro Alps Trip/scripts/check_axus.py</string>
+    </array>
+    <key>StartInterval</key>
+    <integer>900</integer>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/Users/markmatthews/Code/Euro Alps Trip/scripts/launchd_stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/markmatthews/Code/Euro Alps Trip/scripts/launchd_stderr.log</string>
+</dict>
+</plist>
