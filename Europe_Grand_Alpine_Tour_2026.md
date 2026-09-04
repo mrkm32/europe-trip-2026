@@ -19,6 +19,7 @@
   * **Vehicle Rental (Bolzano ➔ Venice):** Sized for 4 adults plus 4 large pieces of luggage (Full-size SUV such as Audi Q7 / BMW X5, or Mercedes V-Class / minivan).
   * **Excursions & Dining:** Neuschwanstein Castle tour (4 seats • $227 ea), cable car ascents, and dinner reservations in La Villa and Ortisei set for a table of four.
   * **Upcoming Planning Review:** Dolomites vehicle & Switzerland details (Tirano, Zermatt, Geneva) undergoing review with travel planner **Madeline** on Monday evening, August 31.
+  * **🎟️ Tickets & Supporting Docs Hub (39 Files):** All official PDF/PNG documents are cataloged under [`documents/`](documents/) with multi-facet mobile filtering and offline caching in the web app.
 
 ---
 

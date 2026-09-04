@@ -89,6 +89,31 @@ This document consolidates all context, architecture decisions, and feature deve
      * Added a live **Online/Offline Connection Status Badge** (`🟢 Online • Synced` vs `📶 Offline • Saved`) in the header that reacts dynamically to network status.
    * **Version Upgrade:** Advanced web app to **v3.32**.
 
+8. **Conversation 8: Axus Document & Ticket Vault Organization with Mobile-Optimized Hub (v3.40)**
+   * **Full Document Harvest & Storage (39 Assets):**
+     * Harvested all 39 supporting files from Madeline's Axus itinerary (37 PDFs and 2 high-res schedule PNGs, ~18 MB total).
+     * Organized into a clean, intuitive directory hierarchy under `/documents/`:
+       * `documents/trains/matthews/` (9 train ticket PDFs)
+       * `documents/trains/rowe/` (9 train ticket PDFs)
+       * `documents/trains/shared/` (2 shared train schedules / route details)
+       * `documents/lodging/` (11 hotel confirmation vouchers & arrival maps)
+       * `documents/rental_car/` (3 Hertz confirmation, voucher & Italy driving ebook)
+       * `documents/tours_excursions/` (4 Venice private tour receipts & Dolomite lift timetables)
+       * `documents/guides_support/` (1 emergency support overview)
+     * Built structured metadata catalog (`documents/catalog.json`).
+   * **Interactive Tickets & Documents Hub (`#panel-documents`):**
+     * Added 4th primary navigation tab in header and sticky mobile nav bar (`🎟️ Tickets & Docs`).
+     * Real-time search bar filtering across titles, cities, train numbers, and dates.
+     * Instant filter pills by **Traveler** (`All (39)`, `Mark & Shelly (15)`, `Bill & Kris (17)`, `Shared (7)`).
+     * Instant filter pills by **Category** (`Trains (20)`, `Hotels (11)`, `Car & Driving (3)`, `Tours & Lifts (4)`, `Support (1)`).
+     * City / region dropdown filter for instant geographic lookups.
+     * Mobile-optimized cards designed for standard iPhone 15/16 viewports: short, clean route titles (preventing truncation), prominent traveler badges, seat numbers, file sizes, and 1-tap `View PDF` / `Download` buttons.
+   * **Contextual Schedule Integration:**
+     * Embedded direct 1-tap document strips into each relevant day card in the Day-by-Day Schedule (Days 7, 10, 11, 13, 14, 15, 16).
+   * **100% Offline Access via Service Worker:**
+     * Updated `sw.js` cache manifest (`europe-alps-2026-v4`) to pre-cache all 39 documents so travelers can open tickets in mountain passes without cell signal.
+   * **Version Upgrade:** Advanced web app to **v3.40**.
+
 ---
 
 ## 👥 Travel Party & Planning Status

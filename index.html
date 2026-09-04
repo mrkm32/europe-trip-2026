@@ -274,7 +274,7 @@
               <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-400/30">
                 ✈ Mark & Shelly Matthews
               </span>
-              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-sky-400/20 text-sky-300 border border-sky-400/30">v3.33</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-sky-400/20 text-sky-300 border border-sky-400/30">v3.40</span>
               <span id="pwa-status-badge" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 shadow-sm" title="Offline Caching Status">
                 <span id="pwa-status-dot" class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span id="pwa-status-text">Online • Synced</span>
@@ -313,6 +313,11 @@
             <button onclick="switchMainTab('schedule')" class="px-3.5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow-lg shadow-indigo-600/25">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
               <span>Schedule</span>
+            </button>
+            <button onclick="switchMainTab('documents')" class="px-3.5 py-2 bg-purple-600 hover:bg-purple-500 text-white font-medium rounded-lg text-xs sm:text-sm transition flex items-center gap-1.5 shadow-lg shadow-purple-600/25">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <span>Tickets & Docs</span>
+              <span class="bg-white/20 px-1.5 py-0.5 rounded-full text-[10px] font-bold">39</span>
             </button>
           </div>
         </div>
@@ -427,6 +432,11 @@
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
             <span class="truncate">Day-by-Day Expedition Schedule</span>
             <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-400/30 font-mono">16 Days</span>
+          </button>
+          <button onclick="switchMainTab('documents')" id="tab-btn-documents" class="main-nav-tab flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition text-slate-300 hover:text-white hover:bg-slate-800">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <span class="truncate">Tickets & Docs</span>
+            <span class="text-[10px] bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded-full border border-purple-400/30 font-mono">39 Docs</span>
           </button>
           <button onclick="openWebAppModal()" class="btn-add-webapp flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-black bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 shadow-md shadow-amber-500/25 shrink-0 border border-amber-300 transition" title="Add to Home Screen with custom icon">
             <svg class="w-4 h-4 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
@@ -556,7 +566,25 @@
           <span>
             <strong>Built for the Four Travelers:</strong> Bill & Kris Rowe and Mark & Shelly Matthews are traveling as a unified party of four for the entire 16-day expedition. All vehicle rentals in Bolzano (full-size SUV or 7-passenger van), Neuschwanstein coach seats (4 tickets), mountain cable cars, and dining tables are arranged for the four of us!
           </span>
+        
+            <!-- Contextual Document Vault Strip -->
+            <div class="mt-3 p-3 bg-purple-50/80 rounded-xl border border-purple-200/80 text-xs no-print">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="font-bold text-purple-950 flex items-center gap-1.5 text-xs">
+                  <svg class="w-4 h-4 text-purple-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/></svg>
+                  <span>Airport Train Tickets</span>
+                </span>
+                <button onclick="switchMainTab('documents')" class="text-[11px] font-bold text-purple-700 hover:text-purple-900 underline">
+                  All 39 Docs ➔
+                </button>
+              </div>
+              <div class="flex flex-wrap items-center gap-1.5">
+    <a href="documents/trains/matthews/09_Geneva_to_Airport_Train_Tickets_Matthews.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Geneva ➔ Airport Express (Mark & Shelly)</span></a>
+    <a href="documents/trains/rowe/09_Geneva_to_Airport_Train_Tickets_Rowe.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Geneva ➔ Airport Express (Bill & Kris)</span></a>
+              </div>
+            </div>
         </div>
+
       </section>
     </div> <!-- End print-cover-page -->
 
@@ -1778,6 +1806,1499 @@
     </section>
     </div>
 
+    <!-- PANEL 4: TICKETS & SUPPORTING DOCUMENTS (39 ITEMS, MULTI-FILTER, 100% OFFLINE) -->
+    <div id="panel-documents" class="tab-panel hidden" style="display: none;">
+      <!-- Hero Banner -->
+      <div class="bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 rounded-2xl p-5 sm:p-7 text-white shadow-xl mb-6 border border-purple-800/40 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
+          <div>
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-purple-500/30 text-purple-200 border border-purple-400/30 uppercase tracking-wider">
+                🎟️ Complete Document Vault
+              </span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+                ⚡ 100% Offline Ready
+              </span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white">
+              Official Tickets & Vouchers
+            </h2>
+            <p class="text-purple-200/90 text-xs sm:text-sm mt-1 max-w-2xl font-light leading-relaxed">
+              All 39 official train tickets, hotel confirmations, rental car vouchers, and alpine cable car passes from Madeline (Italy Beyond the Obvious). Stored locally on this site for instant access even without cellular reception in the Alps!
+            </p>
+          </div>
+          <div class="flex flex-row md:flex-col items-center md:items-end justify-between gap-2 shrink-0">
+            <div class="text-right hidden sm:block">
+              <div class="text-2xl font-black text-white">39 Files</div>
+              <div class="text-[11px] text-purple-300 font-mono">18 MB Total Cached</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Multi-Facet Search & Filter Hub (Sticky / Responsive for iPhone 15/16) -->
+      <div class="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-sm mb-6 space-y-3.5">
+        <!-- Search Input -->
+        <div class="relative">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+          <input type="text" id="doc-search-input" oninput="filterDocuments()" placeholder="Search by city, train number, hotel, or traveler (e.g. Tirano, Rezia, Rowe, Railjet)..." 
+                 class="w-full pl-9 pr-8 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 text-slate-900 placeholder-slate-400 transition" />
+          <button onclick="clearDocSearch()" id="doc-search-clear" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <!-- Traveler Filter Pills -->
+        <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+          <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider shrink-0">Traveler:</span>
+          <div class="flex flex-wrap items-center gap-1.5">
+            <button onclick="setDocTraveler('all')" id="doc-filter-trav-all" class="doc-trav-btn active-doc-trav px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-900 text-white shadow-sm">
+              All Travelers (39)
+            </button>
+            <button onclick="setDocTraveler('Mark & Shelly')" id="doc-filter-trav-matthews" class="doc-trav-btn px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">
+              ✈ Mark & Shelly (15)
+            </button>
+            <button onclick="setDocTraveler('Bill & Kris')" id="doc-filter-trav-rowe" class="doc-trav-btn px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">
+              🏔 Bill & Kris (17)
+            </button>
+            <button onclick="setDocTraveler('Shared')" id="doc-filter-trav-shared" class="doc-trav-btn px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">
+              👥 Shared / All 4 (7)
+            </button>
+          </div>
+        </div>
+
+        <!-- Category & City Dropdown Bar -->
+        <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-slate-100">
+          <!-- Category Pills -->
+          <div class="flex items-center gap-1.5 overflow-x-auto custom-scrollbar pb-1 w-full lg:w-auto">
+            <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider shrink-0 mr-1">Type:</span>
+            <button onclick="setDocCategory('all')" id="doc-filter-cat-all" class="doc-cat-btn active-doc-cat px-2.5 py-1 rounded-lg text-xs font-semibold shrink-0 bg-purple-600 text-white shadow-sm">
+              All (39)
+            </button>
+            <button onclick="setDocCategory('Train Tickets')" id="doc-filter-cat-trains" class="doc-cat-btn px-2.5 py-1 rounded-lg text-xs font-semibold shrink-0 bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">
+              🚆 Trains (20)
+            </button>
+            <button onclick="setDocCategory('Hotel Confirmations')" id="doc-filter-cat-lodging" class="doc-cat-btn px-2.5 py-1 rounded-lg text-xs font-semibold shrink-0 bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">
+              🏨 Hotels (11)
+            </button>
+            <button onclick="setDocCategory('Car Rental')" id="doc-filter-cat-car" class="doc-cat-btn px-2.5 py-1 rounded-lg text-xs font-semibold shrink-0 bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">
+              🚗 Car & Driving (3)
+            </button>
+            <button onclick="setDocCategory('Tours & Lifts')" id="doc-filter-cat-tours" class="doc-cat-btn px-2.5 py-1 rounded-lg text-xs font-semibold shrink-0 bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">
+              🚠 Tours & Lifts (4)
+            </button>
+            <button onclick="setDocCategory('Guides & Support')" id="doc-filter-cat-guides" class="doc-cat-btn px-2.5 py-1 rounded-lg text-xs font-semibold shrink-0 bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">
+              🧭 Support (1)
+            </button>
+          </div>
+
+          <!-- City Dropdown & Live Counter -->
+          <div class="flex items-center gap-2.5 w-full sm:w-auto justify-between sm:justify-end shrink-0">
+            <select id="doc-city-filter" onchange="filterDocuments()" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-purple-500">
+              <option value="all">📍 All Cities & Legs</option>
+              <option value="Innsbruck / Bolzano">Innsbruck / Bolzano</option>
+              <option value="Dolomites">Dolomites (Alta Badia)</option>
+              <option value="Venice">Venice</option>
+              <option value="Tirano / Bernina">Tirano / Bernina Route</option>
+              <option value="St. Moritz">St. Moritz</option>
+              <option value="Chur / Andermatt">Chur & Andermatt</option>
+              <option value="Zermatt">Zermatt & Matterhorn</option>
+              <option value="Geneva">Geneva</option>
+              <option value="General">General / Italy</option>
+            </select>
+            <span id="doc-results-counter" class="text-xs font-bold text-purple-700 bg-purple-50 px-2.5 py-1 rounded-lg border border-purple-200 shrink-0">
+              39 of 39
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid of 39 Document Cards -->
+      <div id="docs-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Shared"
+             data-category="Guides & Support"
+             data-city="General"
+             data-search="on-trip support & emergency contacts madeline & rebecca (italy beyond the obvious) shared guides & support general days 1–16">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-slate-100 text-slate-700 border border-slate-200">👥 Shared (All 4)</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-blue-50 text-blue-700 border border-blue-200">🧭 Support Guide</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Days 1–16</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              On-Trip Support & Emergency Contacts
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Madeline & Rebecca (Italy Beyond the Obvious)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 150.5 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/guides_support/On_Trip_Support_Overview_IBTO.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/guides_support/On_Trip_Support_Overview_IBTO.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Shared"
+             data-category="Train Tickets"
+             data-city="Innsbruck / Bolzano"
+             data-search="innsbruck ➔ bolzano train details öbb railjet 81 route, transit info & map shared train tickets innsbruck / bolzano day 5 • tue sep 8">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-slate-100 text-slate-700 border border-slate-200">👥 Shared (All 4)</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 5 • Tue Sep 8</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Innsbruck ➔ Bolzano Train Details
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              ÖBB Railjet 81 Route, Transit Info & Map
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PNG • 66.6 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/shared/Innsbruck_to_Bolzano_Train_Details.png" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/shared/Innsbruck_to_Bolzano_Train_Details.png" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Bill & Kris"
+             data-category="Train Tickets"
+             data-city="Innsbruck / Bolzano"
+             data-search="innsbruck ➔ bolzano train tickets öbb railjet 81 (seats 113 & 115) bill & kris train tickets innsbruck / bolzano day 5 • tue sep 8">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"><svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg> Bill & Kris</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 5 • Tue Sep 8</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Innsbruck ➔ Bolzano Train Tickets
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              ÖBB Railjet 81 (Seats 113 & 115)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 376.0 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/rowe/01_Innsbruck_to_Bolzano_Train_Tickets_Rowe.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/rowe/01_Innsbruck_to_Bolzano_Train_Tickets_Rowe.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Mark & Shelly"
+             data-category="Train Tickets"
+             data-city="Innsbruck / Bolzano"
+             data-search="innsbruck ➔ bolzano train tickets öbb railjet 81 (seats 111 & 116) mark & shelly train tickets innsbruck / bolzano day 5 • tue sep 8">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-sky-50 text-sky-700 border border-sky-200"><svg class="w-3 h-3 text-sky-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg> Mark & Shelly</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 5 • Tue Sep 8</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Innsbruck ➔ Bolzano Train Tickets
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              ÖBB Railjet 81 (Seats 111 & 116)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 376.7 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/matthews/01_Innsbruck_to_Bolzano_Train_Tickets_Matthews.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/matthews/01_Innsbruck_to_Bolzano_Train_Tickets_Matthews.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Bill & Kris"
+             data-category="Car Rental"
+             data-city="Bolzano / Venice"
+             data-search="hertz car rental confirmation bolzano pickup ➔ venice piazzale roma return bill & kris car rental bolzano / venice days 5–10">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"><svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg> Bill & Kris</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">🚗 Car & Driving</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Days 5–10</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Hertz Car Rental Confirmation
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Bolzano Pickup ➔ Venice Piazzale Roma Return
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 212.7 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/rental_car/Car_Rental_Confirmation_Rowe.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/rental_car/Car_Rental_Confirmation_Rowe.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Bill & Kris"
+             data-category="Car Rental"
+             data-city="Bolzano / Venice"
+             data-search="hertz car rental voucher official booking voucher for counter presentation bill & kris car rental bolzano / venice days 5–10">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"><svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg> Bill & Kris</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">🚗 Car & Driving</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Days 5–10</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Hertz Car Rental Voucher
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Official Booking Voucher for Counter Presentation
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 123.3 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/rental_car/Car_Rental_Voucher_Rowe.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/rental_car/Car_Rental_Voucher_Rowe.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Shared"
+             data-category="Car Rental"
+             data-city="Italy"
+             data-search="driving in italy guide & ebook ztl zones, tolls, speed limits & road rules shared car rental italy days 5–10">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-slate-100 text-slate-700 border border-slate-200">👥 Shared (All 4)</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">🚗 Car & Driving</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Days 5–10</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Driving in Italy Guide & Ebook
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              ZTL zones, tolls, speed limits & road rules
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 3.2 MB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/rental_car/IBTO_Driving_in_Italy_Ebook.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/rental_car/IBTO_Driving_in_Italy_Ebook.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Bill & Kris"
+             data-category="Hotel Confirmations"
+             data-city="Dolomites"
+             data-search="hotel pension rezia voucher mansard room (la villa / badia) bill & kris hotel confirmations dolomites days 5–10">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"><svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg> Bill & Kris</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200">🏨 Hotel Voucher</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Days 5–10</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Hotel Pension Rezia Voucher
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Mansard Room (La Villa / Badia)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 375.7 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/lodging/Hotel_Rezia_Confirmation_Rowe.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/lodging/Hotel_Rezia_Confirmation_Rowe.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Mark & Shelly"
+             data-category="Hotel Confirmations"
+             data-city="Dolomites"
+             data-search="hotel pension rezia voucher mansard room (la villa / badia) mark & shelly hotel confirmations dolomites days 5–10">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-sky-50 text-sky-700 border border-sky-200"><svg class="w-3 h-3 text-sky-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg> Mark & Shelly</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200">🏨 Hotel Voucher</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Days 5–10</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Hotel Pension Rezia Voucher
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Mansard Room (La Villa / Badia)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 374.9 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/lodging/Hotel_Rezia_Confirmation_Matthews.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/lodging/Hotel_Rezia_Confirmation_Matthews.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Shared"
+             data-category="Tours & Lifts"
+             data-city="Dolomites"
+             data-search="dolomites cable cars schedule & prices piz la ila, boé gondola & alta badia lifts shared tours & lifts dolomites days 6–9">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-slate-100 text-slate-700 border border-slate-200">👥 Shared (All 4)</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-purple-50 text-purple-700 border border-purple-200">🚠 Tour / Lift</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Days 6–9</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Dolomites Cable Cars Schedule & Prices
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Piz La Ila, Boé Gondola & Alta Badia Lifts
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 384.3 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/tours_excursions/Dolomites_Cable_Car_Prices_Schedule_Boe.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/tours_excursions/Dolomites_Cable_Car_Prices_Schedule_Boe.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Shared"
+             data-category="Tours & Lifts"
+             data-city="Dolomites"
+             data-search="la crusc chairlift prices & timetable santa croce & armentara meadows excursion shared tours & lifts dolomites day 8 • fri sep 11">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-slate-100 text-slate-700 border border-slate-200">👥 Shared (All 4)</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-purple-50 text-purple-700 border border-purple-200">🚠 Tour / Lift</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 8 • Fri Sep 11</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              La Crusc Chairlift Prices & Timetable
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Santa Croce & Armentara Meadows Excursion
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PNG • 78.8 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/tours_excursions/Dolomites_La_Crusc_Lift_Prices.png" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/tours_excursions/Dolomites_La_Crusc_Lift_Prices.png" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Shared"
+             data-category="Hotel Confirmations"
+             data-city="Venice"
+             data-search="b&b fortuny arrival walking map directions from s. angelo water taxi dock shared hotel confirmations venice days 10–13">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-slate-100 text-slate-700 border border-slate-200">👥 Shared (All 4)</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200">🏨 Hotel Voucher</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Days 10–13</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              B&B Fortuny Arrival Walking Map
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Directions from S. Angelo Water Taxi Dock
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 1.8 MB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/lodging/BB_Fortuny_Arrival_Map.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/lodging/BB_Fortuny_Arrival_Map.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Bill & Kris"
+             data-category="Hotel Confirmations"
+             data-city="Venice"
+             data-search="b&b fortuny venice voucher courtyard view room (ref: ty78554084-1) bill & kris hotel confirmations venice days 10–13">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"><svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg> Bill & Kris</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200">🏨 Hotel Voucher</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Days 10–13</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              B&B Fortuny Venice Voucher
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Courtyard View Room (Ref: TY78554084-1)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 14.2 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/lodging/BB_Fortuny_Confirmation_Rowe.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/lodging/BB_Fortuny_Confirmation_Rowe.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Mark & Shelly"
+             data-category="Hotel Confirmations"
+             data-city="Venice"
+             data-search="b&b fortuny venice voucher canal view room (ref: ty78554084-1) mark & shelly hotel confirmations venice days 10–13">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-sky-50 text-sky-700 border border-sky-200"><svg class="w-3 h-3 text-sky-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg> Mark & Shelly</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200">🏨 Hotel Voucher</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Days 10–13</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              B&B Fortuny Venice Voucher
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Canal View Room (Ref: TY78554084-1)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 14.2 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/lodging/BB_Fortuny_Confirmation_Matthews.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/lodging/BB_Fortuny_Confirmation_Matthews.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Bill & Kris"
+             data-category="Tours & Lifts"
+             data-city="Venice"
+             data-search="venice private tours receipt st. mark's basilica & doge's palace vip guide bill & kris tours & lifts venice day 11 • mon sep 14">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"><svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg> Bill & Kris</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-purple-50 text-purple-700 border border-purple-200">🚠 Tour / Lift</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 11 • Mon Sep 14</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Venice Private Tours Receipt
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              St. Mark's Basilica & Doge's Palace VIP Guide
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 236.9 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/tours_excursions/Venice_Tours_Payment_Rowe.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/tours_excursions/Venice_Tours_Payment_Rowe.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Mark & Shelly"
+             data-category="Tours & Lifts"
+             data-city="Venice"
+             data-search="venice private tours receipt st. mark's basilica & doge's palace vip guide mark & shelly tours & lifts venice day 11 • mon sep 14">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-sky-50 text-sky-700 border border-sky-200"><svg class="w-3 h-3 text-sky-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg> Mark & Shelly</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-purple-50 text-purple-700 border border-purple-200">🚠 Tour / Lift</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 11 • Mon Sep 14</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Venice Private Tours Receipt
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              St. Mark's Basilica & Doge's Palace VIP Guide
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 236.8 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/tours_excursions/Venice_Tours_Payment_Matthews.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/tours_excursions/Venice_Tours_Payment_Matthews.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Mark & Shelly"
+             data-category="Train Tickets"
+             data-city="Venice"
+             data-search="venice s.l. ➔ venice mestre tickets regionale veloce 3644 (7:31 am – 7:41 am) mark & shelly train tickets venice day 13 • wed sep 16">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-sky-50 text-sky-700 border border-sky-200"><svg class="w-3 h-3 text-sky-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg> Mark & Shelly</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 13 • Wed Sep 16</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Venice S.L. ➔ Venice Mestre Tickets
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Regionale Veloce 3644 (7:31 AM – 7:41 AM)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 974.4 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/matthews/02_Venice_SL_to_Mestre_Train_Tickets_Matthews.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/matthews/02_Venice_SL_to_Mestre_Train_Tickets_Matthews.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Bill & Kris"
+             data-category="Train Tickets"
+             data-city="Venice"
+             data-search="venice s.l. ➔ venice mestre tickets regionale veloce 3644 (7:31 am – 7:41 am) bill & kris train tickets venice day 13 • wed sep 16">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"><svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg> Bill & Kris</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 13 • Wed Sep 16</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Venice S.L. ➔ Venice Mestre Tickets
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Regionale Veloce 3644 (7:31 AM – 7:41 AM)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 968.5 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/rowe/02_Venice_SL_to_Mestre_Train_Tickets_Rowe.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/rowe/02_Venice_SL_to_Mestre_Train_Tickets_Rowe.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Bill & Kris"
+             data-category="Train Tickets"
+             data-city="Venice / Milan / Tirano"
+             data-search="venice mestre ➔ tirano tickets frecciarossa 9713 + trenord 2822 (seats 16a/b) bill & kris train tickets venice / milan / tirano day 13 • wed sep 16">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"><svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg> Bill & Kris</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 13 • Wed Sep 16</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Venice Mestre ➔ Tirano Tickets
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Frecciarossa 9713 + Trenord 2822 (Seats 16A/B)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 1.0 MB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/rowe/03_Venice_Mestre_to_Tirano_Train_Tickets_Rowe.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/rowe/03_Venice_Mestre_to_Tirano_Train_Tickets_Rowe.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Mark & Shelly"
+             data-category="Train Tickets"
+             data-city="Venice / Milan / Tirano"
+             data-search="venice mestre ➔ tirano tickets frecciarossa 9713 + trenord 2822 (seats 15a/b) mark & shelly train tickets venice / milan / tirano day 13 • wed sep 16">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-sky-50 text-sky-700 border border-sky-200"><svg class="w-3 h-3 text-sky-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg> Mark & Shelly</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 13 • Wed Sep 16</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Venice Mestre ➔ Tirano Tickets
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Frecciarossa 9713 + Trenord 2822 (Seats 15A/B)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 1.0 MB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/matthews/03_Venice_Mestre_to_Tirano_Train_Tickets_Matthews.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/matthews/03_Venice_Mestre_to_Tirano_Train_Tickets_Matthews.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Bill & Kris"
+             data-category="Train Tickets"
+             data-city="Tirano / St. Moritz"
+             data-search="tirano ➔ st. moritz (bernina line) bernina re 1660 1st class (seats 21 & 22) bill & kris train tickets tirano / st. moritz day 13 • wed sep 16">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"><svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg> Bill & Kris</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 13 • Wed Sep 16</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Tirano ➔ St. Moritz (Bernina Line)
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Bernina RE 1660 1st Class (Seats 21 & 22)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 225.2 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/rowe/04_Tirano_to_St_Moritz_Bernina_Tickets_Rowe.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/rowe/04_Tirano_to_St_Moritz_Bernina_Tickets_Rowe.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Mark & Shelly"
+             data-category="Train Tickets"
+             data-city="Tirano / St. Moritz"
+             data-search="tirano ➔ st. moritz (bernina line) bernina re 1660 1st class (seats 11 & 12) mark & shelly train tickets tirano / st. moritz day 13 • wed sep 16">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-sky-50 text-sky-700 border border-sky-200"><svg class="w-3 h-3 text-sky-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg> Mark & Shelly</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 13 • Wed Sep 16</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Tirano ➔ St. Moritz (Bernina Line)
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Bernina RE 1660 1st Class (Seats 11 & 12)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 184.1 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/matthews/04_Tirano_to_St_Moritz_Bernina_Tickets_Matthews.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/matthews/04_Tirano_to_St_Moritz_Bernina_Tickets_Matthews.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Bill & Kris"
+             data-category="Hotel Confirmations"
+             data-city="St. Moritz"
+             data-search="hotel arte st. moritz voucher double balcony room (ref: 2026080150736489) bill & kris hotel confirmations st. moritz day 13 • wed sep 16">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"><svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg> Bill & Kris</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200">🏨 Hotel Voucher</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 13 • Wed Sep 16</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Hotel Arte St. Moritz Voucher
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Double Balcony Room (Ref: 2026080150736489)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 180.9 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/lodging/Hotel_Arte_St_Moritz_Confirmation_Rowe.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/lodging/Hotel_Arte_St_Moritz_Confirmation_Rowe.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Mark & Shelly"
+             data-category="Hotel Confirmations"
+             data-city="St. Moritz"
+             data-search="hotel arte st. moritz voucher double balcony room (ref: 2026080150736583) mark & shelly hotel confirmations st. moritz day 13 • wed sep 16">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-sky-50 text-sky-700 border border-sky-200"><svg class="w-3 h-3 text-sky-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg> Mark & Shelly</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200">🏨 Hotel Voucher</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 13 • Wed Sep 16</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Hotel Arte St. Moritz Voucher
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Double Balcony Room (Ref: 2026080150736583)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 187.0 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/lodging/Hotel_Arte_St_Moritz_Confirmation_Matthews.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/lodging/Hotel_Arte_St_Moritz_Confirmation_Matthews.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Bill & Kris"
+             data-category="Train Tickets"
+             data-city="St. Moritz / Chur"
+             data-search="st. moritz ➔ chur train tickets train ir 1128 across landwasser viaduct bill & kris train tickets st. moritz / chur day 14 • thu sep 17">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"><svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg> Bill & Kris</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 14 • Thu Sep 17</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              St. Moritz ➔ Chur Train Tickets
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Train IR 1128 across Landwasser Viaduct
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 190.4 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/rowe/05_St_Moritz_to_Chur_Train_Tickets_Rowe.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/rowe/05_St_Moritz_to_Chur_Train_Tickets_Rowe.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Mark & Shelly"
+             data-category="Train Tickets"
+             data-city="St. Moritz / Chur"
+             data-search="st. moritz ➔ chur train tickets train ir 1128 across landwasser viaduct mark & shelly train tickets st. moritz / chur day 14 • thu sep 17">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-sky-50 text-sky-700 border border-sky-200"><svg class="w-3 h-3 text-sky-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg> Mark & Shelly</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 14 • Thu Sep 17</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              St. Moritz ➔ Chur Train Tickets
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Train IR 1128 across Landwasser Viaduct
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 145.2 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/matthews/05_St_Moritz_to_Chur_Train_Tickets_Matthews.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/matthews/05_St_Moritz_to_Chur_Train_Tickets_Matthews.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Bill & Kris"
+             data-category="Train Tickets"
+             data-city="Chur / Andermatt"
+             data-search="chur ➔ andermatt train tickets re 1737 rhine gorge (disentis connection) bill & kris train tickets chur / andermatt day 14 • thu sep 17">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"><svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg> Bill & Kris</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 14 • Thu Sep 17</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Chur ➔ Andermatt Train Tickets
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              RE 1737 Rhine Gorge (Disentis Connection)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 150.5 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/rowe/06_Chur_to_Andermatt_Train_Tickets_Rowe.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/rowe/06_Chur_to_Andermatt_Train_Tickets_Rowe.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Mark & Shelly"
+             data-category="Train Tickets"
+             data-city="Chur / Andermatt"
+             data-search="chur ➔ andermatt train tickets re 1737 rhine gorge (disentis connection) mark & shelly train tickets chur / andermatt day 14 • thu sep 17">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-sky-50 text-sky-700 border border-sky-200"><svg class="w-3 h-3 text-sky-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg> Mark & Shelly</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 14 • Thu Sep 17</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Chur ➔ Andermatt Train Tickets
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              RE 1737 Rhine Gorge (Disentis Connection)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 149.8 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/matthews/06_Chur_to_Andermatt_Train_Tickets_Matthews.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/matthews/06_Chur_to_Andermatt_Train_Tickets_Matthews.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Bill & Kris"
+             data-category="Train Tickets"
+             data-city="Andermatt / Zermatt"
+             data-search="andermatt ➔ zermatt train tickets train r 557 + r 257 up matter valley bill & kris train tickets andermatt / zermatt day 14 • thu sep 17">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"><svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg> Bill & Kris</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 14 • Thu Sep 17</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Andermatt ➔ Zermatt Train Tickets
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Train R 557 + R 257 up Matter Valley
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 192.1 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/rowe/07_Andermatt_to_Zermatt_Train_Tickets_Rowe.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/rowe/07_Andermatt_to_Zermatt_Train_Tickets_Rowe.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Mark & Shelly"
+             data-category="Train Tickets"
+             data-city="Andermatt / Zermatt"
+             data-search="andermatt ➔ zermatt train tickets train r 557 + r 257 up matter valley mark & shelly train tickets andermatt / zermatt day 14 • thu sep 17">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-sky-50 text-sky-700 border border-sky-200"><svg class="w-3 h-3 text-sky-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg> Mark & Shelly</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 14 • Thu Sep 17</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Andermatt ➔ Zermatt Train Tickets
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Train R 557 + R 257 up Matter Valley
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 146.6 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/matthews/07_Andermatt_to_Zermatt_Train_Tickets_Matthews.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/matthews/07_Andermatt_to_Zermatt_Train_Tickets_Matthews.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Bill & Kris"
+             data-category="Hotel Confirmations"
+             data-city="Zermatt"
+             data-search="hotel beau-rivage zermatt voucher double queen valley (ref: 60682402) bill & kris hotel confirmations zermatt day 14 • thu sep 17">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"><svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg> Bill & Kris</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200">🏨 Hotel Voucher</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 14 • Thu Sep 17</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Hotel Beau-Rivage Zermatt Voucher
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Double Queen Valley (Ref: 60682402)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 45.4 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/lodging/Hotel_Beau_Rivage_Zermatt_Confirmation_Rowe.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/lodging/Hotel_Beau_Rivage_Zermatt_Confirmation_Rowe.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Mark & Shelly"
+             data-category="Hotel Confirmations"
+             data-city="Zermatt"
+             data-search="hotel beau-rivage zermatt voucher double standard valley (ref: 60682436) mark & shelly hotel confirmations zermatt day 14 • thu sep 17">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-sky-50 text-sky-700 border border-sky-200"><svg class="w-3 h-3 text-sky-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg> Mark & Shelly</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200">🏨 Hotel Voucher</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 14 • Thu Sep 17</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Hotel Beau-Rivage Zermatt Voucher
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Double Standard Valley (Ref: 60682436)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 45.1 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/lodging/Hotel_Beau_Rivage_Zermatt_Confirmation_Matthews.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/lodging/Hotel_Beau_Rivage_Zermatt_Confirmation_Matthews.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Shared"
+             data-category="Train Tickets"
+             data-city="Zermatt"
+             data-search="zermatt ➔ gornergrat train timetable cogwheel railway departure schedule & info shared train tickets zermatt day 15 • fri sep 18">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-slate-100 text-slate-700 border border-slate-200">👥 Shared (All 4)</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 15 • Fri Sep 18</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Zermatt ➔ Gornergrat Train Timetable
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Cogwheel Railway Departure Schedule & Info
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 2.9 MB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/shared/Zermatt_to_Gornergrat_Train_Schedule.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/shared/Zermatt_to_Gornergrat_Train_Schedule.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Bill & Kris"
+             data-category="Train Tickets"
+             data-city="Zermatt / Geneva"
+             data-search="zermatt ➔ geneva train tickets train r 344 + ir 1824 via lake geneva bill & kris train tickets zermatt / geneva day 15 • fri sep 18">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"><svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg> Bill & Kris</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 15 • Fri Sep 18</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Zermatt ➔ Geneva Train Tickets
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Train R 344 + IR 1824 via Lake Geneva
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 147.9 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/rowe/08_Zermatt_to_Geneva_Train_Tickets_Rowe.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/rowe/08_Zermatt_to_Geneva_Train_Tickets_Rowe.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Mark & Shelly"
+             data-category="Train Tickets"
+             data-city="Zermatt / Geneva"
+             data-search="zermatt ➔ geneva train tickets train r 344 + ir 1824 via lake geneva mark & shelly train tickets zermatt / geneva day 15 • fri sep 18">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-sky-50 text-sky-700 border border-sky-200"><svg class="w-3 h-3 text-sky-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg> Mark & Shelly</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 15 • Fri Sep 18</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Zermatt ➔ Geneva Train Tickets
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Train R 344 + IR 1824 via Lake Geneva
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 147.4 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/matthews/08_Zermatt_to_Geneva_Train_Tickets_Matthews.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/matthews/08_Zermatt_to_Geneva_Train_Tickets_Matthews.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Bill & Kris"
+             data-category="Hotel Confirmations"
+             data-city="Geneva"
+             data-search="the new midi geneva voucher superior river view (ref: 1091652434) bill & kris hotel confirmations geneva day 15 • fri sep 18">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"><svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg> Bill & Kris</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200">🏨 Hotel Voucher</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 15 • Fri Sep 18</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              The New Midi Geneva Voucher
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Superior River View (Ref: 1091652434)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 255.1 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/lodging/The_New_Midi_Geneva_Confirmation_Rowe.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/lodging/The_New_Midi_Geneva_Confirmation_Rowe.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Mark & Shelly"
+             data-category="Hotel Confirmations"
+             data-city="Geneva"
+             data-search="the new midi geneva voucher superior river view (ref: 1091654581) mark & shelly hotel confirmations geneva day 15 • fri sep 18">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-sky-50 text-sky-700 border border-sky-200"><svg class="w-3 h-3 text-sky-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg> Mark & Shelly</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200">🏨 Hotel Voucher</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 15 • Fri Sep 18</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              The New Midi Geneva Voucher
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Superior River View (Ref: 1091654581)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 254.5 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/lodging/The_New_Midi_Geneva_Confirmation_Matthews.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/lodging/The_New_Midi_Geneva_Confirmation_Matthews.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Bill & Kris"
+             data-category="Train Tickets"
+             data-city="Geneva"
+             data-search="geneva ➔ airport train tickets cornavin to gva terminal 1 (7-min express) bill & kris train tickets geneva day 16 • sat sep 19">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"><svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg> Bill & Kris</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 16 • Sat Sep 19</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Geneva ➔ Airport Train Tickets
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Cornavin to GVA Terminal 1 (7-min express)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 144.7 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/rowe/09_Geneva_to_Airport_Train_Tickets_Rowe.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/rowe/09_Geneva_to_Airport_Train_Tickets_Rowe.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Mark & Shelly"
+             data-category="Train Tickets"
+             data-city="Geneva"
+             data-search="geneva ➔ airport train tickets cornavin to gva terminal 1 (7-min express) mark & shelly train tickets geneva day 16 • sat sep 19">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-sky-50 text-sky-700 border border-sky-200"><svg class="w-3 h-3 text-sky-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg> Mark & Shelly</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 16 • Sat Sep 19</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Geneva ➔ Airport Train Tickets
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Cornavin to GVA Terminal 1 (7-min express)
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 144.7 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/matthews/09_Geneva_to_Airport_Train_Tickets_Matthews.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/matthews/09_Geneva_to_Airport_Train_Tickets_Matthews.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty State If No Results Found -->
+      <div id="docs-empty-state" class="hidden text-center py-12 bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+        <div class="w-16 h-16 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center mx-auto mb-3">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h4 class="text-base font-bold text-slate-900">No matching tickets or vouchers found</h4>
+        <p class="text-xs text-slate-500 mt-1 max-w-sm mx-auto">Try clearing your search query or selecting "All Travelers" and "All Types".</p>
+        <button onclick="resetDocFilters()" class="mt-4 px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-xl text-xs transition shadow-md">
+          Reset All Filters
+        </button>
+      </div>
+    </div>
+
+
     <!-- TAB PANEL 3: DAY-BY-DAY EXPEDITION SCHEDULE -->
     <div id="panel-schedule" class="tab-panel hidden" style="display: none;">
       <section id="schedule" class="print-page-break mb-12">
@@ -2312,6 +3833,29 @@
 </div>
             </div>
           </div>
+        
+            <!-- Contextual Document Vault Strip -->
+            <div class="mt-3 p-3 bg-purple-50/80 rounded-xl border border-purple-200/80 text-xs no-print">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="font-bold text-purple-950 flex items-center gap-1.5 text-xs">
+                  <svg class="w-4 h-4 text-purple-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/></svg>
+                  <span>Day 7 Official Tickets & Vouchers</span>
+                </span>
+                <button onclick="switchMainTab('documents')" class="text-[11px] font-bold text-purple-700 hover:text-purple-900 underline">
+                  All 39 Docs ➔
+                </button>
+              </div>
+              <div class="flex flex-wrap items-center gap-1.5">
+    <a href="documents/trains/matthews/01_Innsbruck_to_Bolzano_Train_Tickets_Matthews.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>ÖBB Train (Mark & Shelly)</span></a>
+    <a href="documents/trains/rowe/01_Innsbruck_to_Bolzano_Train_Tickets_Rowe.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>ÖBB Train (Bill & Kris)</span></a>
+    <a href="documents/trains/shared/Innsbruck_to_Bolzano_Train_Details.png" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Train Details & Map</span></a>
+    <a href="documents/rental_car/Car_Rental_Voucher_Rowe.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Hertz Rental Voucher</span></a>
+    <a href="documents/rental_car/Car_Rental_Confirmation_Rowe.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Hertz Confirmation</span></a>
+    <a href="documents/rental_car/IBTO_Driving_in_Italy_Ebook.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Driving in Italy Ebook</span></a>
+    <a href="documents/lodging/Hotel_Rezia_Confirmation_Matthews.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Hotel Rezia (Mark & Shelly)</span></a>
+    <a href="documents/lodging/Hotel_Rezia_Confirmation_Rowe.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Hotel Rezia (Bill & Kris)</span></a>
+              </div>
+            </div>
         </div>
 
         <!-- DAY 8: DOLOMITES GATEWAY -->
@@ -2518,6 +4062,24 @@
               </div>
             </div>
           </div>
+        
+            <!-- Contextual Document Vault Strip -->
+            <div class="mt-3 p-3 bg-purple-50/80 rounded-xl border border-purple-200/80 text-xs no-print">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="font-bold text-purple-950 flex items-center gap-1.5 text-xs">
+                  <svg class="w-4 h-4 text-purple-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/></svg>
+                  <span>Venice Arrival & B&B Fortuny Vouchers</span>
+                </span>
+                <button onclick="switchMainTab('documents')" class="text-[11px] font-bold text-purple-700 hover:text-purple-900 underline">
+                  All 39 Docs ➔
+                </button>
+              </div>
+              <div class="flex flex-wrap items-center gap-1.5">
+    <a href="documents/lodging/BB_Fortuny_Confirmation_Matthews.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>B&B Fortuny (Mark & Shelly)</span></a>
+    <a href="documents/lodging/BB_Fortuny_Confirmation_Rowe.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>B&B Fortuny (Bill & Kris)</span></a>
+    <a href="documents/lodging/BB_Fortuny_Arrival_Map.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Fortuny Arrival Walking Map</span></a>
+              </div>
+            </div>
         </div>
 
         <!-- DAY 11: DOLOMITES TO VENICE -->
@@ -2590,6 +4152,23 @@
               </div>
             </div>
           </div>
+        
+            <!-- Contextual Document Vault Strip -->
+            <div class="mt-3 p-3 bg-purple-50/80 rounded-xl border border-purple-200/80 text-xs no-print">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="font-bold text-purple-950 flex items-center gap-1.5 text-xs">
+                  <svg class="w-4 h-4 text-purple-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/></svg>
+                  <span>Venice Private Tour Receipts</span>
+                </span>
+                <button onclick="switchMainTab('documents')" class="text-[11px] font-bold text-purple-700 hover:text-purple-900 underline">
+                  All 39 Docs ➔
+                </button>
+              </div>
+              <div class="flex flex-wrap items-center gap-1.5">
+    <a href="documents/tours_excursions/Venice_Tours_Payment_Matthews.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Venice Tours Receipt (Mark & Shelly)</span></a>
+    <a href="documents/tours_excursions/Venice_Tours_Payment_Rowe.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Venice Tours Receipt (Bill & Kris)</span></a>
+              </div>
+            </div>
         </div>
 
         <!-- DAY 12: FULL DAY IN VENICE -->
@@ -2747,6 +4326,29 @@
               </div>
             </div>
           </div>
+        
+            <!-- Contextual Document Vault Strip -->
+            <div class="mt-3 p-3 bg-purple-50/80 rounded-xl border border-purple-200/80 text-xs no-print">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="font-bold text-purple-950 flex items-center gap-1.5 text-xs">
+                  <svg class="w-4 h-4 text-purple-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/></svg>
+                  <span>Day 13 Train Tickets & St. Moritz Voucher</span>
+                </span>
+                <button onclick="switchMainTab('documents')" class="text-[11px] font-bold text-purple-700 hover:text-purple-900 underline">
+                  All 39 Docs ➔
+                </button>
+              </div>
+              <div class="flex flex-wrap items-center gap-1.5">
+    <a href="documents/trains/matthews/02_Venice_SL_to_Mestre_Train_Tickets_Matthews.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Venice ➔ Mestre (Mark & Shelly)</span></a>
+    <a href="documents/trains/rowe/02_Venice_SL_to_Mestre_Train_Tickets_Rowe.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Venice ➔ Mestre (Bill & Kris)</span></a>
+    <a href="documents/trains/matthews/03_Venice_Mestre_to_Tirano_Train_Tickets_Matthews.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Mestre ➔ Tirano (Mark & Shelly)</span></a>
+    <a href="documents/trains/rowe/03_Venice_Mestre_to_Tirano_Train_Tickets_Rowe.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Mestre ➔ Tirano (Bill & Kris)</span></a>
+    <a href="documents/trains/matthews/04_Tirano_to_St_Moritz_Bernina_Tickets_Matthews.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Bernina Express (Mark & Shelly)</span></a>
+    <a href="documents/trains/rowe/04_Tirano_to_St_Moritz_Bernina_Tickets_Rowe.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Bernina Express (Bill & Kris)</span></a>
+    <a href="documents/lodging/Hotel_Arte_St_Moritz_Confirmation_Matthews.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Hotel Arte (Mark & Shelly)</span></a>
+    <a href="documents/lodging/Hotel_Arte_St_Moritz_Confirmation_Rowe.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Hotel Arte (Bill & Kris)</span></a>
+              </div>
+            </div>
         </div>
 
         <!-- DAY 14: ST. MORITZ TO ZERMATT (GLACIER EXPRESS ROUTE) -->
@@ -2816,6 +4418,29 @@
               </p>
             </div>
           </div>
+        
+            <!-- Contextual Document Vault Strip -->
+            <div class="mt-3 p-3 bg-purple-50/80 rounded-xl border border-purple-200/80 text-xs no-print">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="font-bold text-purple-950 flex items-center gap-1.5 text-xs">
+                  <svg class="w-4 h-4 text-purple-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/></svg>
+                  <span>Day 14 Glacier Route Train Tickets & Zermatt Voucher</span>
+                </span>
+                <button onclick="switchMainTab('documents')" class="text-[11px] font-bold text-purple-700 hover:text-purple-900 underline">
+                  All 39 Docs ➔
+                </button>
+              </div>
+              <div class="flex flex-wrap items-center gap-1.5">
+    <a href="documents/trains/matthews/05_St_Moritz_to_Chur_Train_Tickets_Matthews.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>St. Moritz ➔ Chur (Mark & Shelly)</span></a>
+    <a href="documents/trains/rowe/05_St_Moritz_to_Chur_Train_Tickets_Rowe.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>St. Moritz ➔ Chur (Bill & Kris)</span></a>
+    <a href="documents/trains/matthews/06_Chur_to_Andermatt_Train_Tickets_Matthews.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Chur ➔ Andermatt (Mark & Shelly)</span></a>
+    <a href="documents/trains/rowe/06_Chur_to_Andermatt_Train_Tickets_Rowe.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Chur ➔ Andermatt (Bill & Kris)</span></a>
+    <a href="documents/trains/matthews/07_Andermatt_to_Zermatt_Train_Tickets_Matthews.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Andermatt ➔ Zermatt (Mark & Shelly)</span></a>
+    <a href="documents/trains/rowe/07_Andermatt_to_Zermatt_Train_Tickets_Rowe.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Andermatt ➔ Zermatt (Bill & Kris)</span></a>
+    <a href="documents/lodging/Hotel_Beau_Rivage_Zermatt_Confirmation_Matthews.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Hotel Beau-Rivage (Mark & Shelly)</span></a>
+    <a href="documents/lodging/Hotel_Beau_Rivage_Zermatt_Confirmation_Rowe.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Hotel Beau-Rivage (Bill & Kris)</span></a>
+              </div>
+            </div>
         </div>
 
         <!-- DAY 15: ZERMATT PANORAMAS TO GENEVA -->
@@ -2882,6 +4507,26 @@
               </div>
             </div>
           </div>
+        
+            <!-- Contextual Document Vault Strip -->
+            <div class="mt-3 p-3 bg-purple-50/80 rounded-xl border border-purple-200/80 text-xs no-print">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="font-bold text-purple-950 flex items-center gap-1.5 text-xs">
+                  <svg class="w-4 h-4 text-purple-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/></svg>
+                  <span>Day 15 Zermatt ➔ Geneva Train Tickets & Hotel Voucher</span>
+                </span>
+                <button onclick="switchMainTab('documents')" class="text-[11px] font-bold text-purple-700 hover:text-purple-900 underline">
+                  All 39 Docs ➔
+                </button>
+              </div>
+              <div class="flex flex-wrap items-center gap-1.5">
+    <a href="documents/trains/shared/Zermatt_to_Gornergrat_Train_Schedule.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Gornergrat Train Timetable</span></a>
+    <a href="documents/trains/matthews/08_Zermatt_to_Geneva_Train_Tickets_Matthews.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Zermatt ➔ Geneva (Mark & Shelly)</span></a>
+    <a href="documents/trains/rowe/08_Zermatt_to_Geneva_Train_Tickets_Rowe.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Zermatt ➔ Geneva (Bill & Kris)</span></a>
+    <a href="documents/lodging/The_New_Midi_Geneva_Confirmation_Matthews.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>The New Midi Geneva (Mark & Shelly)</span></a>
+    <a href="documents/lodging/The_New_Midi_Geneva_Confirmation_Rowe.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold text-[11px] shadow-sm transition"><svg class="w-3 h-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>The New Midi Geneva (Bill & Kris)</span></a>
+              </div>
+            </div>
         </div>
 
         <!-- DAY 16: GENEVA TO MINNEAPOLIS -->
@@ -2949,48 +4594,42 @@
     }
 
     
-    /* MAIN TAB NAVIGATION LOGIC (Overview, Confirmations, Schedule) */
+    /* MAIN TAB NAVIGATION LOGIC (Overview, Confirmations, Schedule, Documents) */
     function switchMainTab(tabId) {
       const pOverview = document.getElementById('panel-overview');
       const pConfirm = document.getElementById('panel-confirmations');
       const pSchedule = document.getElementById('panel-schedule');
+      const pDocs = document.getElementById('panel-documents');
 
-      if (pOverview) {
-        if (tabId === 'overview') {
-          pOverview.classList.remove('hidden');
-          pOverview.style.setProperty('display', 'block', 'important');
-        } else {
-          pOverview.classList.add('hidden');
-          pOverview.style.setProperty('display', 'none', 'important');
+      const panels = [
+        { id: 'overview', el: pOverview },
+        { id: 'confirmations', el: pConfirm },
+        { id: 'schedule', el: pSchedule },
+        { id: 'documents', el: pDocs }
+      ];
+
+      panels.forEach(p => {
+        if (p.el) {
+          if (p.id === tabId) {
+            p.el.classList.remove('hidden');
+            p.el.style.setProperty('display', 'block', 'important');
+          } else {
+            p.el.classList.add('hidden');
+            p.el.style.setProperty('display', 'none', 'important');
+          }
         }
-      }
+      });
 
-      if (pConfirm) {
-        if (tabId === 'confirmations') {
-          pConfirm.classList.remove('hidden');
-          pConfirm.style.setProperty('display', 'block', 'important');
-        } else {
-          pConfirm.classList.add('hidden');
-          pConfirm.style.setProperty('display', 'none', 'important');
-        }
-      }
-
-      if (pSchedule) {
-        if (tabId === 'schedule') {
-          pSchedule.classList.remove('hidden');
-          pSchedule.style.setProperty('display', 'block', 'important');
-        } else {
-          pSchedule.classList.add('hidden');
-          pSchedule.style.setProperty('display', 'none', 'important');
-        }
-      }
-
-      const tabs = ['overview', 'confirmations', 'schedule'];
+      const tabs = ['overview', 'confirmations', 'schedule', 'documents'];
       tabs.forEach(t => {
         const btn = document.getElementById('tab-btn-' + t);
         if (btn) {
           if (t === tabId) {
-            btn.className = 'main-nav-tab active-main-tab flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition bg-gradient-to-r from-sky-500 to-emerald-500 text-white shadow-lg shadow-sky-500/25';
+            if (t === 'documents') {
+              btn.className = 'main-nav-tab active-main-tab flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg shadow-purple-600/25';
+            } else {
+              btn.className = 'main-nav-tab active-main-tab flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition bg-gradient-to-r from-sky-500 to-emerald-500 text-white shadow-lg shadow-sky-500/25';
+            }
           } else {
             btn.className = 'main-nav-tab flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition text-slate-300 hover:text-white hover:bg-slate-800';
           }
@@ -3002,6 +4641,105 @@
       } catch (e) {}
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* DOCUMENTS VAULT FILTERING LOGIC */
+    let currentDocTraveler = 'all';
+    let currentDocCategory = 'all';
+
+    function setDocTraveler(trav) {
+      currentDocTraveler = trav;
+      document.querySelectorAll('.doc-trav-btn').forEach(btn => {
+        btn.classList.remove('bg-slate-900', 'text-white', 'shadow-sm');
+        btn.classList.add('bg-slate-100', 'text-slate-700', 'border', 'border-slate-200');
+      });
+      const activeId = trav === 'all' ? 'doc-filter-trav-all' : 
+                       trav === 'Mark & Shelly' ? 'doc-filter-trav-matthews' :
+                       trav === 'Bill & Kris' ? 'doc-filter-trav-rowe' : 'doc-filter-trav-shared';
+      const activeBtn = document.getElementById(activeId);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-slate-100', 'text-slate-700', 'border', 'border-slate-200');
+        activeBtn.classList.add('bg-slate-900', 'text-white', 'shadow-sm');
+      }
+      filterDocuments();
+    }
+
+    function setDocCategory(cat) {
+      currentDocCategory = cat;
+      document.querySelectorAll('.doc-cat-btn').forEach(btn => {
+        btn.classList.remove('bg-purple-600', 'text-white', 'shadow-sm');
+        btn.classList.add('bg-slate-100', 'text-slate-700', 'border', 'border-slate-200');
+      });
+      const activeId = cat === 'all' ? 'doc-filter-cat-all' :
+                       cat === 'Train Tickets' ? 'doc-filter-cat-trains' :
+                       cat === 'Hotel Confirmations' ? 'doc-filter-cat-lodging' :
+                       cat === 'Car Rental' ? 'doc-filter-cat-car' :
+                       cat === 'Tours & Lifts' ? 'doc-filter-cat-tours' : 'doc-filter-cat-guides';
+      const activeBtn = document.getElementById(activeId);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-slate-100', 'text-slate-700', 'border', 'border-slate-200');
+        activeBtn.classList.add('bg-purple-600', 'text-white', 'shadow-sm');
+      }
+      filterDocuments();
+    }
+
+    function filterDocuments() {
+      const query = (document.getElementById('doc-search-input')?.value || '').trim().toLowerCase();
+      const cityFilter = document.getElementById('doc-city-filter')?.value || 'all';
+      const clearBtn = document.getElementById('doc-search-clear');
+      if (clearBtn) {
+        if (query.length > 0) clearBtn.classList.remove('hidden');
+        else clearBtn.classList.add('hidden');
+      }
+
+      const cards = document.querySelectorAll('.doc-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cTraveler = card.getAttribute('data-traveler');
+        const cCategory = card.getAttribute('data-category');
+        const cCity = card.getAttribute('data-city') || '';
+        const cSearch = card.getAttribute('data-search') || '';
+
+        const matchesTraveler = (currentDocTraveler === 'all') || (cTraveler === currentDocTraveler);
+        const matchesCategory = (currentDocCategory === 'all') || (cCategory === currentDocCategory);
+        const matchesCity = (cityFilter === 'all') || (cCity.toLowerCase().includes(cityFilter.toLowerCase()));
+        const matchesQuery = !query || cSearch.includes(query);
+
+        if (matchesTraveler && matchesCategory && matchesCity && matchesQuery) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      const counter = document.getElementById('doc-results-counter');
+      if (counter) counter.innerText = `${visibleCount} of ${cards.length}`;
+
+      const emptyState = document.getElementById('docs-empty-state');
+      if (emptyState) {
+        if (visibleCount === 0) emptyState.classList.remove('hidden');
+        else emptyState.classList.add('hidden');
+      }
+    }
+
+    function clearDocSearch() {
+      const input = document.getElementById('doc-search-input');
+      if (input) {
+        input.value = '';
+        filterDocuments();
+        input.focus();
+      }
+    }
+
+    function resetDocFilters() {
+      const input = document.getElementById('doc-search-input');
+      if (input) input.value = '';
+      const citySelect = document.getElementById('doc-city-filter');
+      if (citySelect) citySelect.value = 'all';
+      setDocTraveler('all');
+      setDocCategory('all');
     }
 
     

@@ -19,6 +19,7 @@
   * **Vehicle Rental (Bolzano ➔ Venice):** Peugeot 508 SW SWAR Diesel Automatic (Auto Europe Voucher #745646711 / Europcar #1206017591) for 4 adults + 4 large suitcases. Driver: William Rowe.
   * **Excursions & Dining:** Neuschwanstein Castle tour (4 seats • $227 ea), Venice private tours with Maria Andrea, cable car ascents, and dinner reservations set for a table of four.
   * **Travel Planner (Italy Beyond the Obvious):** All Italian & Swiss bookings, tours, transfers, and hotels coordinated through travel planner **Madeline Jhawar** and on-trip coordinator **Rebecca**.
+  * **🎟️ Tickets & Supporting Docs Hub (39 Files):** All official PDF/PNG travel documents, train passes, vouchers, and guides are organized under [`documents/`](documents/) with metadata in [`documents/catalog.json`](documents/catalog.json). On the live web app, a dedicated **Tickets & Docs** tab with live search, traveler filtering (Mark & Shelly vs. Bill & Kris), category filtering, and mobile-friendly viewcards provides 100% offline access.
 
 ---
 
