@@ -309,7 +309,7 @@
               <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-400/30">
                 ✈ Mark & Shelly Matthews
               </span>
-              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-sky-400/20 text-sky-300 border border-sky-400/30">v3.41</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-sky-400/20 text-sky-300 border border-sky-400/30">v3.42</span>
               <span id="pwa-status-badge" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 shadow-sm" title="Offline Caching Status">
                 <span id="pwa-status-dot" class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span id="pwa-status-text">Online • Synced</span>
@@ -5145,6 +5145,474 @@
         }
       }
     });
+
+    /* IN-APP DOCUMENT VIEWER SYSTEM (SOLVES IOS STANDALONE PWA TRAP) */
+    const DOCS_CATALOG_MAP = {
+    "documents/guides_support/On_Trip_Support_Overview_IBTO.pdf": {
+        "title": "On-Trip Support & Emergency Contacts",
+        "subtitle": "Madeline & Rebecca (Italy Beyond the Obvious)",
+        "traveler": "Shared",
+        "category": "Guides & Support",
+        "size": "150.5 KB",
+        "format": "PDF"
+    },
+    "documents/trains/shared/Innsbruck_to_Bolzano_Train_Details.png": {
+        "title": "Innsbruck \u2794 Bolzano Train Details",
+        "subtitle": "\u00d6BB Railjet 81 Route, Transit Info & Map",
+        "traveler": "Shared",
+        "category": "Train Tickets",
+        "size": "66.6 KB",
+        "format": "PNG"
+    },
+    "documents/trains/rowe/01_Innsbruck_to_Bolzano_Train_Tickets_Rowe.pdf": {
+        "title": "Innsbruck \u2794 Bolzano Train Tickets",
+        "subtitle": "\u00d6BB Railjet 81 (Seats 113 & 115)",
+        "traveler": "Bill & Kris",
+        "category": "Train Tickets",
+        "size": "376.0 KB",
+        "format": "PDF"
+    },
+    "documents/trains/matthews/01_Innsbruck_to_Bolzano_Train_Tickets_Matthews.pdf": {
+        "title": "Innsbruck \u2794 Bolzano Train Tickets",
+        "subtitle": "\u00d6BB Railjet 81 (Seats 111 & 116)",
+        "traveler": "Mark & Shelly",
+        "category": "Train Tickets",
+        "size": "376.7 KB",
+        "format": "PDF"
+    },
+    "documents/rental_car/Car_Rental_Confirmation_Rowe.pdf": {
+        "title": "Hertz Car Rental Confirmation",
+        "subtitle": "Bolzano Pickup \u2794 Venice Piazzale Roma Return",
+        "traveler": "Bill & Kris",
+        "category": "Car Rental",
+        "size": "212.7 KB",
+        "format": "PDF"
+    },
+    "documents/rental_car/Car_Rental_Voucher_Rowe.pdf": {
+        "title": "Hertz Car Rental Voucher",
+        "subtitle": "Official Booking Voucher for Counter Presentation",
+        "traveler": "Bill & Kris",
+        "category": "Car Rental",
+        "size": "123.3 KB",
+        "format": "PDF"
+    },
+    "documents/rental_car/IBTO_Driving_in_Italy_Ebook.pdf": {
+        "title": "Driving in Italy Guide & Ebook",
+        "subtitle": "ZTL zones, tolls, speed limits & road rules",
+        "traveler": "Shared",
+        "category": "Car Rental",
+        "size": "3.2 MB",
+        "format": "PDF"
+    },
+    "documents/lodging/Hotel_Rezia_Confirmation_Rowe.pdf": {
+        "title": "Hotel Pension Rezia Voucher",
+        "subtitle": "Mansard Room (La Villa / Badia)",
+        "traveler": "Bill & Kris",
+        "category": "Hotel Confirmations",
+        "size": "375.7 KB",
+        "format": "PDF"
+    },
+    "documents/lodging/Hotel_Rezia_Confirmation_Matthews.pdf": {
+        "title": "Hotel Pension Rezia Voucher",
+        "subtitle": "Mansard Room (La Villa / Badia)",
+        "traveler": "Mark & Shelly",
+        "category": "Hotel Confirmations",
+        "size": "374.9 KB",
+        "format": "PDF"
+    },
+    "documents/tours_excursions/Dolomites_Cable_Car_Prices_Schedule_Boe.pdf": {
+        "title": "Dolomites Cable Cars Schedule & Prices",
+        "subtitle": "Piz La Ila, Bo\u00e9 Gondola & Alta Badia Lifts",
+        "traveler": "Shared",
+        "category": "Tours & Lifts",
+        "size": "384.3 KB",
+        "format": "PDF"
+    },
+    "documents/tours_excursions/Dolomites_La_Crusc_Lift_Prices.png": {
+        "title": "La Crusc Chairlift Prices & Timetable",
+        "subtitle": "Santa Croce & Armentara Meadows Excursion",
+        "traveler": "Shared",
+        "category": "Tours & Lifts",
+        "size": "78.8 KB",
+        "format": "PNG"
+    },
+    "documents/lodging/BB_Fortuny_Arrival_Map.pdf": {
+        "title": "B&B Fortuny Arrival Walking Map",
+        "subtitle": "Directions from S. Angelo Water Taxi Dock",
+        "traveler": "Shared",
+        "category": "Hotel Confirmations",
+        "size": "1.8 MB",
+        "format": "PDF"
+    },
+    "documents/lodging/BB_Fortuny_Confirmation_Rowe.pdf": {
+        "title": "B&B Fortuny Venice Voucher",
+        "subtitle": "Courtyard View Room (Ref: TY78554084-1)",
+        "traveler": "Bill & Kris",
+        "category": "Hotel Confirmations",
+        "size": "14.2 KB",
+        "format": "PDF"
+    },
+    "documents/lodging/BB_Fortuny_Confirmation_Matthews.pdf": {
+        "title": "B&B Fortuny Venice Voucher",
+        "subtitle": "Canal View Room (Ref: TY78554084-1)",
+        "traveler": "Mark & Shelly",
+        "category": "Hotel Confirmations",
+        "size": "14.2 KB",
+        "format": "PDF"
+    },
+    "documents/tours_excursions/Venice_Tours_Payment_Rowe.pdf": {
+        "title": "Venice Private Tours Receipt",
+        "subtitle": "St. Mark's Basilica & Doge's Palace VIP Guide",
+        "traveler": "Bill & Kris",
+        "category": "Tours & Lifts",
+        "size": "236.9 KB",
+        "format": "PDF"
+    },
+    "documents/tours_excursions/Venice_Tours_Payment_Matthews.pdf": {
+        "title": "Venice Private Tours Receipt",
+        "subtitle": "St. Mark's Basilica & Doge's Palace VIP Guide",
+        "traveler": "Mark & Shelly",
+        "category": "Tours & Lifts",
+        "size": "236.8 KB",
+        "format": "PDF"
+    },
+    "documents/trains/matthews/02_Venice_SL_to_Mestre_Train_Tickets_Matthews.pdf": {
+        "title": "Venice S.L. \u2794 Venice Mestre Tickets",
+        "subtitle": "Regionale Veloce 3644 (7:31 AM \u2013 7:41 AM)",
+        "traveler": "Mark & Shelly",
+        "category": "Train Tickets",
+        "size": "974.4 KB",
+        "format": "PDF"
+    },
+    "documents/trains/rowe/02_Venice_SL_to_Mestre_Train_Tickets_Rowe.pdf": {
+        "title": "Venice S.L. \u2794 Venice Mestre Tickets",
+        "subtitle": "Regionale Veloce 3644 (7:31 AM \u2013 7:41 AM)",
+        "traveler": "Bill & Kris",
+        "category": "Train Tickets",
+        "size": "968.5 KB",
+        "format": "PDF"
+    },
+    "documents/trains/rowe/03_Venice_Mestre_to_Tirano_Train_Tickets_Rowe.pdf": {
+        "title": "Venice Mestre \u2794 Tirano Tickets",
+        "subtitle": "Frecciarossa 9713 + Trenord 2822 (Seats 16A/B)",
+        "traveler": "Bill & Kris",
+        "category": "Train Tickets",
+        "size": "1.0 MB",
+        "format": "PDF"
+    },
+    "documents/trains/matthews/03_Venice_Mestre_to_Tirano_Train_Tickets_Matthews.pdf": {
+        "title": "Venice Mestre \u2794 Tirano Tickets",
+        "subtitle": "Frecciarossa 9713 + Trenord 2822 (Seats 15A/B)",
+        "traveler": "Mark & Shelly",
+        "category": "Train Tickets",
+        "size": "1.0 MB",
+        "format": "PDF"
+    },
+    "documents/trains/rowe/04_Tirano_to_St_Moritz_Bernina_Tickets_Rowe.pdf": {
+        "title": "Tirano \u2794 St. Moritz (Bernina Line)",
+        "subtitle": "Bernina RE 1660 1st Class (Seats 21 & 22)",
+        "traveler": "Bill & Kris",
+        "category": "Train Tickets",
+        "size": "225.2 KB",
+        "format": "PDF"
+    },
+    "documents/trains/matthews/04_Tirano_to_St_Moritz_Bernina_Tickets_Matthews.pdf": {
+        "title": "Tirano \u2794 St. Moritz (Bernina Line)",
+        "subtitle": "Bernina RE 1660 1st Class (Seats 11 & 12)",
+        "traveler": "Mark & Shelly",
+        "category": "Train Tickets",
+        "size": "184.1 KB",
+        "format": "PDF"
+    },
+    "documents/lodging/Hotel_Arte_St_Moritz_Confirmation_Rowe.pdf": {
+        "title": "Hotel Arte St. Moritz Voucher",
+        "subtitle": "Double Balcony Room (Ref: 2026080150736489)",
+        "traveler": "Bill & Kris",
+        "category": "Hotel Confirmations",
+        "size": "180.9 KB",
+        "format": "PDF"
+    },
+    "documents/lodging/Hotel_Arte_St_Moritz_Confirmation_Matthews.pdf": {
+        "title": "Hotel Arte St. Moritz Voucher",
+        "subtitle": "Double Balcony Room (Ref: 2026080150736583)",
+        "traveler": "Mark & Shelly",
+        "category": "Hotel Confirmations",
+        "size": "187.0 KB",
+        "format": "PDF"
+    },
+    "documents/trains/rowe/05_St_Moritz_to_Chur_Train_Tickets_Rowe.pdf": {
+        "title": "St. Moritz \u2794 Chur Train Tickets",
+        "subtitle": "Train IR 1128 across Landwasser Viaduct",
+        "traveler": "Bill & Kris",
+        "category": "Train Tickets",
+        "size": "190.4 KB",
+        "format": "PDF"
+    },
+    "documents/trains/matthews/05_St_Moritz_to_Chur_Train_Tickets_Matthews.pdf": {
+        "title": "St. Moritz \u2794 Chur Train Tickets",
+        "subtitle": "Train IR 1128 across Landwasser Viaduct",
+        "traveler": "Mark & Shelly",
+        "category": "Train Tickets",
+        "size": "145.2 KB",
+        "format": "PDF"
+    },
+    "documents/trains/rowe/06_Chur_to_Andermatt_Train_Tickets_Rowe.pdf": {
+        "title": "Chur \u2794 Andermatt Train Tickets",
+        "subtitle": "RE 1737 Rhine Gorge (Disentis Connection)",
+        "traveler": "Bill & Kris",
+        "category": "Train Tickets",
+        "size": "150.5 KB",
+        "format": "PDF"
+    },
+    "documents/trains/matthews/06_Chur_to_Andermatt_Train_Tickets_Matthews.pdf": {
+        "title": "Chur \u2794 Andermatt Train Tickets",
+        "subtitle": "RE 1737 Rhine Gorge (Disentis Connection)",
+        "traveler": "Mark & Shelly",
+        "category": "Train Tickets",
+        "size": "149.8 KB",
+        "format": "PDF"
+    },
+    "documents/trains/rowe/07_Andermatt_to_Zermatt_Train_Tickets_Rowe.pdf": {
+        "title": "Andermatt \u2794 Zermatt Train Tickets",
+        "subtitle": "Train R 557 + R 257 up Matter Valley",
+        "traveler": "Bill & Kris",
+        "category": "Train Tickets",
+        "size": "192.1 KB",
+        "format": "PDF"
+    },
+    "documents/trains/matthews/07_Andermatt_to_Zermatt_Train_Tickets_Matthews.pdf": {
+        "title": "Andermatt \u2794 Zermatt Train Tickets",
+        "subtitle": "Train R 557 + R 257 up Matter Valley",
+        "traveler": "Mark & Shelly",
+        "category": "Train Tickets",
+        "size": "146.6 KB",
+        "format": "PDF"
+    },
+    "documents/lodging/Hotel_Beau_Rivage_Zermatt_Confirmation_Rowe.pdf": {
+        "title": "Hotel Beau-Rivage Zermatt Voucher",
+        "subtitle": "Double Queen Valley (Ref: 60682402)",
+        "traveler": "Bill & Kris",
+        "category": "Hotel Confirmations",
+        "size": "45.4 KB",
+        "format": "PDF"
+    },
+    "documents/lodging/Hotel_Beau_Rivage_Zermatt_Confirmation_Matthews.pdf": {
+        "title": "Hotel Beau-Rivage Zermatt Voucher",
+        "subtitle": "Double Standard Valley (Ref: 60682436)",
+        "traveler": "Mark & Shelly",
+        "category": "Hotel Confirmations",
+        "size": "45.1 KB",
+        "format": "PDF"
+    },
+    "documents/trains/shared/Zermatt_to_Gornergrat_Train_Schedule.pdf": {
+        "title": "Zermatt \u2794 Gornergrat Train Timetable",
+        "subtitle": "Cogwheel Railway Departure Schedule & Info",
+        "traveler": "Shared",
+        "category": "Train Tickets",
+        "size": "2.9 MB",
+        "format": "PDF"
+    },
+    "documents/trains/rowe/08_Zermatt_to_Geneva_Train_Tickets_Rowe.pdf": {
+        "title": "Zermatt \u2794 Geneva Train Tickets",
+        "subtitle": "Train R 344 + IR 1824 via Lake Geneva",
+        "traveler": "Bill & Kris",
+        "category": "Train Tickets",
+        "size": "147.9 KB",
+        "format": "PDF"
+    },
+    "documents/trains/matthews/08_Zermatt_to_Geneva_Train_Tickets_Matthews.pdf": {
+        "title": "Zermatt \u2794 Geneva Train Tickets",
+        "subtitle": "Train R 344 + IR 1824 via Lake Geneva",
+        "traveler": "Mark & Shelly",
+        "category": "Train Tickets",
+        "size": "147.4 KB",
+        "format": "PDF"
+    },
+    "documents/lodging/The_New_Midi_Geneva_Confirmation_Rowe.pdf": {
+        "title": "The New Midi Geneva Voucher",
+        "subtitle": "Superior River View (Ref: 1091652434)",
+        "traveler": "Bill & Kris",
+        "category": "Hotel Confirmations",
+        "size": "255.1 KB",
+        "format": "PDF"
+    },
+    "documents/lodging/The_New_Midi_Geneva_Confirmation_Matthews.pdf": {
+        "title": "The New Midi Geneva Voucher",
+        "subtitle": "Superior River View (Ref: 1091654581)",
+        "traveler": "Mark & Shelly",
+        "category": "Hotel Confirmations",
+        "size": "254.5 KB",
+        "format": "PDF"
+    },
+    "documents/trains/rowe/09_Geneva_to_Airport_Train_Tickets_Rowe.pdf": {
+        "title": "Geneva \u2794 Airport Train Tickets",
+        "subtitle": "Cornavin to GVA Terminal 1 (7-min express)",
+        "traveler": "Bill & Kris",
+        "category": "Train Tickets",
+        "size": "144.7 KB",
+        "format": "PDF"
+    },
+    "documents/trains/matthews/09_Geneva_to_Airport_Train_Tickets_Matthews.pdf": {
+        "title": "Geneva \u2794 Airport Train Tickets",
+        "subtitle": "Cornavin to GVA Terminal 1 (7-min express)",
+        "traveler": "Mark & Shelly",
+        "category": "Train Tickets",
+        "size": "144.7 KB",
+        "format": "PDF"
+    }
+};
+
+    let currentDocState = null;
+
+    function openDocViewer(url, fallbackTitle, isSaveAction) {
+      if (!url) return;
+      const cleanUrl = url.replace(/^\.\//, '');
+      const docInfo = DOCS_CATALOG_MAP[cleanUrl] || {};
+
+      const title = docInfo.title || fallbackTitle || cleanUrl.split('/').pop().replace(/_/g, ' ').replace(/\.pdf$/i, '').replace(/\.png$/i, '');
+      const traveler = docInfo.traveler || (cleanUrl.includes('matthews') ? 'Mark & Shelly' : (cleanUrl.includes('rowe') ? 'Bill & Kris' : 'Shared'));
+      const category = docInfo.category || 'Documents';
+      const size = docInfo.size || '';
+      const isImage = /\.(png|jpe?g|webp|gif)$/i.test(cleanUrl);
+      const format = docInfo.format || (isImage ? 'PNG' : 'PDF');
+
+      currentDocState = {
+        url: cleanUrl,
+        title: title,
+        traveler: traveler,
+        category: category
+      };
+
+      const modal = document.getElementById('doc-viewer-modal');
+      const titleEl = document.getElementById('doc-modal-title');
+      const badgeEl = document.getElementById('doc-modal-badge');
+      const catEl = document.getElementById('doc-modal-category');
+      const formatEl = document.getElementById('doc-modal-format');
+      const iframeContainer = document.getElementById('doc-modal-iframe-container');
+      const iframe = document.getElementById('doc-modal-iframe');
+      const imgContainer = document.getElementById('doc-modal-image-container');
+      const img = document.getElementById('doc-modal-img');
+
+      if (titleEl) titleEl.textContent = title;
+      if (catEl) catEl.textContent = category;
+      if (formatEl) formatEl.textContent = `${format}${size ? ' • ' + size : ''}`;
+
+      if (badgeEl) {
+        badgeEl.textContent = traveler;
+        if (traveler.includes('Mark')) {
+          badgeEl.className = 'inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black bg-purple-500/20 text-purple-300 border border-purple-400/30 truncate shrink-0';
+        } else if (traveler.includes('Bill')) {
+          badgeEl.className = 'inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black bg-blue-500/20 text-blue-300 border border-blue-400/30 truncate shrink-0';
+        } else {
+          badgeEl.className = 'inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 truncate shrink-0';
+        }
+      }
+
+      if (isImage) {
+        if (iframeContainer) iframeContainer.classList.add('hidden');
+        if (iframe) iframe.src = 'about:blank';
+        if (imgContainer) imgContainer.classList.remove('hidden');
+        if (img) img.src = cleanUrl;
+      } else {
+        if (imgContainer) imgContainer.classList.add('hidden');
+        if (img) img.src = '';
+        if (iframeContainer) iframeContainer.classList.remove('hidden');
+        if (iframe) iframe.src = cleanUrl;
+      }
+
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      }
+
+      try {
+        history.pushState({ alpsModal: 'docViewer' }, '', '#viewer');
+      } catch (e) {}
+
+      if (isSaveAction && navigator.share) {
+        setTimeout(() => {
+          shareCurrentDoc();
+        }, 300);
+      }
+    }
+
+    function closeDocViewer(popHistory = true) {
+      const modal = document.getElementById('doc-viewer-modal');
+      if (!modal || modal.classList.contains('hidden')) return;
+
+      modal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+
+      const iframe = document.getElementById('doc-modal-iframe');
+      if (iframe) iframe.src = 'about:blank';
+      const img = document.getElementById('doc-modal-img');
+      if (img) img.src = '';
+
+      currentDocState = null;
+
+      if (popHistory && window.location.hash === '#viewer') {
+        history.back();
+      }
+    }
+
+    async function shareCurrentDoc() {
+      if (!currentDocState) return;
+      const absUrl = new URL(currentDocState.url, window.location.href).href;
+
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: currentDocState.title,
+            text: `${currentDocState.title} (${currentDocState.traveler}) - Europe Alps Odyssey 2026`,
+            url: absUrl
+          });
+        } catch (err) {
+          if (err.name !== 'AbortError') {
+            console.warn('Share error:', err);
+          }
+        }
+      } else {
+        const tempLink = document.createElement('a');
+        tempLink.href = absUrl;
+        tempLink.download = currentDocState.url.split('/').pop();
+        document.body.appendChild(tempLink);
+        tempLink.click();
+        document.body.removeChild(tempLink);
+      }
+    }
+
+    // Global document link interception
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('a[href*="documents/"]');
+      if (!link) return;
+
+      const href = link.getAttribute('href');
+      if (!href || href.startsWith('#')) return;
+
+      e.preventDefault();
+
+      const isSave = link.hasAttribute('download');
+      const cardTitle = link.closest('.doc-card')?.querySelector('h4')?.textContent?.trim();
+      const textTitle = link.textContent?.trim();
+
+      openDocViewer(href, cardTitle || textTitle, isSave);
+    });
+
+    // History popstate listener for back button & edge-swipe
+    window.addEventListener('popstate', (e) => {
+      const modal = document.getElementById('doc-viewer-modal');
+      if (modal && !modal.classList.contains('hidden')) {
+        closeDocViewer(false);
+      }
+    });
+
+    // Keyboard ESC listener
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDocViewer(true);
+      }
+    });
+
   </script>
 
   <!-- ADD AS WEB APP MODAL (Step-by-Step Home Screen Instructions with Custom Icon) -->
@@ -5294,6 +5762,68 @@
         </button>
       </div>
     </div>
+  </div>
+
+
+  <!-- IN-APP DOCUMENT VIEWER MODAL (SOLVES IOS STANDALONE PWA TRAP) -->
+  <div id="doc-viewer-modal" class="fixed inset-0 z-[100] bg-slate-950 flex flex-col hidden select-none no-print">
+    <!-- Sticky Safe-Area Header Bar -->
+    <header class="bg-slate-900 border-b border-slate-800 px-3 sm:px-5 py-2.5 flex items-center justify-between gap-2 sm:gap-4 shadow-xl shrink-0"
+            style="padding-top: max(0.6rem, env(safe-area-inset-top)); padding-left: max(0.75rem, env(safe-area-inset-left)); padding-right: max(0.75rem, env(safe-area-inset-right));">
+      <!-- Left: Primary 'Back to App' Button -->
+      <button type="button" onclick="closeDocViewer()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 active:scale-95 text-white font-extrabold text-xs sm:text-sm shadow-md transition-all shrink-0 cursor-pointer">
+        <svg class="w-4 h-4 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <span>Back to App</span>
+      </button>
+
+      <!-- Center: Document Title & Badges -->
+      <div class="flex flex-col min-w-0 flex-1 px-1 text-left">
+        <div class="flex items-center gap-1.5 overflow-hidden">
+          <span id="doc-modal-badge" class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black bg-purple-500/20 text-purple-300 border border-purple-400/30 truncate shrink-0">Mark & Shelly</span>
+          <span id="doc-modal-category" class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-slate-800 text-slate-300 border border-slate-700 truncate shrink-0">Train Tickets</span>
+          <span id="doc-modal-format" class="text-[10px] font-mono text-slate-400 hidden sm:inline shrink-0">PDF • 376 KB</span>
+        </div>
+        <h3 id="doc-modal-title" class="text-xs sm:text-sm font-black text-white truncate mt-0.5">
+          Innsbruck ➔ Bolzano Train Tickets
+        </h3>
+      </div>
+
+      <!-- Right: Share / Save to Files & Close Icon -->
+      <div class="flex items-center gap-1.5 shrink-0">
+        <button type="button" onclick="shareCurrentDoc()" class="inline-flex items-center gap-1 px-2.5 sm:px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 active:scale-95 text-sky-400 border border-slate-700 text-xs font-bold transition cursor-pointer" title="Save to Files / Share ticket via AirDrop, Messages, etc.">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+          <span class="hidden sm:inline">Save / Share</span>
+        </button>
+        <button type="button" onclick="closeDocViewer()" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 active:scale-95 text-slate-300 hover:text-white border border-slate-700 transition cursor-pointer" title="Close document viewer">
+          <svg class="w-5 h-5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Viewer Body -->
+    <div class="flex-1 w-full h-full relative overflow-hidden bg-slate-950 flex flex-col items-center justify-center">
+      <!-- PDF Iframe Container -->
+      <div id="doc-modal-iframe-container" class="w-full h-full relative overflow-auto" style="-webkit-overflow-scrolling: touch;">
+        <iframe id="doc-modal-iframe" src="about:blank" class="w-full h-full border-0 bg-white" title="Trip Document Viewer" allowfullscreen></iframe>
+      </div>
+
+      <!-- Image Container (for PNG tickets / maps) -->
+      <div id="doc-modal-image-container" class="w-full h-full flex items-center justify-center p-4 overflow-auto bg-slate-950 hidden">
+        <img id="doc-modal-img" src="" alt="Document Preview" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl border border-slate-800" />
+      </div>
+    </div>
+
+    <!-- Bottom Helper / Dismiss Bar -->
+    <footer class="bg-slate-900/95 border-t border-slate-800/80 px-4 py-2 flex items-center justify-between text-xs shrink-0 select-none"
+            style="padding-bottom: max(0.5rem, env(safe-area-inset-bottom)); padding-left: max(0.75rem, env(safe-area-inset-left)); padding-right: max(0.75rem, env(safe-area-inset-right));">
+      <span class="text-[11px] text-slate-400 truncate flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-pulse"></span>
+        <span id="doc-modal-status-text">Available Offline • Synced to Phone</span>
+      </span>
+      <button type="button" onclick="closeDocViewer()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 active:scale-95 text-slate-200 border border-slate-700 font-bold text-[11px] transition cursor-pointer">
+        <span>✕ Done Viewing</span>
+      </button>
+    </footer>
   </div>
 
 </body>
