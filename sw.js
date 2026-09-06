@@ -3,6 +3,8 @@
 const CACHE_NAME = 'europe-alps-2026-v7';
 
 const PRECACHE_URLS = [
+  './documents/tours_excursions/Salzburg_Sound_of_Music_Hallstatt_Tour_Viator.pdf',
+  './documents/trains/shared/00_Munich_to_Salzburg_Train_Tickets_Shared.pdf',
   './',
   './index.html',
   './manifest.json',
