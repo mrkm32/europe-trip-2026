@@ -165,13 +165,13 @@ flowchart TD
 ### Leg 2: The Austrian Alps (Salzburg & Innsbruck)
 
 #### Day 5 — Tuesday, September 8: Railjet to Salzburg & Mozart Fortress Gala
-- **Morning:** Check out of Boutique Hotel Germania. Stroll 3 minutes to Munich Hauptbahnhof.
+- **Morning:** Check out of Boutique Hotel Germania. Stroll 3 minutes to [Munich Hauptbahnhof](https://www.google.com/maps/search/?api=1&query=Munich+Hauptbahnhof%2C+Bayerstra%C3%9Fe+10A%2C+80335+M%C3%BCnchen).
 - **10:16 AM – 11:59 AM: ÖBB Railjet Train to Salzburg**
-  - *Departure:* Munich Hbf (Bayerstraße 10A) @ 10:16 AM.
-  - *Arrival:* Salzburg Hbf (Südtiroler Pl 7, 5020) @ 11:59 AM.
+  - *Departure Station:* [Munich Hbf (Bayerstraße 10A)](https://www.google.com/maps/search/?api=1&query=Munich+Hauptbahnhof%2C+Bayerstra%C3%9Fe+10A%2C+80335+M%C3%BCnchen) @ 10:16 AM.
+  - *Arrival Station:* [Salzburg Hbf (Südtiroler Pl 7, 5020)](https://www.google.com/maps/search/?api=1&query=Salzburg+Hauptbahnhof%2C+S%C3%BCdtiroler+Platz+7%2C+5020+Salzburg) @ 11:59 AM.
   - *Booking:* Order ID `RN-202608-2520722` • **Booked by Kris (Paid $202)**.
 - **Accommodation Check-in:** **June Six Salzburg, Tribute Portfolio**
-  - *Address:* Haunspergstraße 41, 5020 Salzburg, Austria | Conf: `#72077000025128` | Tel: `+43 662 254156`.
+  - *Address:* [Haunspergstraße 41, 5020 Salzburg, Austria](https://www.google.com/maps/search/?api=1&query=June+Six+Salzburg%2C+Haunspergstra%C3%9Fe+41%2C+5020+Salzburg) | Conf: `#72077000025128` | Tel: `+43 662 254156`.
   - *Rooms:* 2 Deluxe Rooms (2 nights: Sep 8 – 10). Check-in from 3:00 PM.
   - *(Note: Apple Strudel & Nockerl cooking class was checked and is no longer available).*
 - **4:00 PM – ~9:30 PM: Mozart Concert, Dinner at Fortress Salzburg & River Cruise**

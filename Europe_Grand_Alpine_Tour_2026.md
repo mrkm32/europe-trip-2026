@@ -138,10 +138,10 @@ flowchart TD
 ### Leg 2: The Austrian Alps (Salzburg & Innsbruck)
 
 #### Day 5 — Tuesday, September 8: Munich to Salzburg
-- **By 11:00 AM:** Check out of Boutique Hotel Germania.
-- **Train Transit:** Frequent direct EuroCity / Railjet trains from Munich Hbf to Salzburg Hbf (~1 hr 30 mins).
+- **By 11:00 AM:** Check out of Boutique Hotel Germania. Stroll to [Munich Hauptbahnhof](https://www.google.com/maps/search/?api=1&query=Munich+Hauptbahnhof%2C+Bayerstra%C3%9Fe+10A%2C+80335+M%C3%BCnchen).
+- **Train Transit:** Frequent direct EuroCity / Railjet trains from [Munich Hbf (Bayerstraße 10A)](https://www.google.com/maps/search/?api=1&query=Munich+Hauptbahnhof%2C+Bayerstra%C3%9Fe+10A%2C+80335+M%C3%BCnchen) to [Salzburg Hbf (Südtiroler Pl 7)](https://www.google.com/maps/search/?api=1&query=Salzburg+Hauptbahnhof%2C+S%C3%BCdtiroler+Platz+7%2C+5020+Salzburg) (~1 hr 30 mins).
 - **Accommodation Check-in:** **June Six Salzburg, Tribute Portfolio**
-  - *Address:* Haunspergstraße 41, 5020 Salzburg, Austria.
+  - *Address:* [Haunspergstraße 41, 5020 Salzburg, Austria](https://www.google.com/maps/search/?api=1&query=June+Six+Salzburg%2C+Haunspergstra%C3%9Fe+41%2C+5020+Salzburg).
   - *Booking:* Hotels.com `#72077000025128` | Tel: `+43 662 254156`
   - *Rooms:* 2 Deluxe Rooms (2 nights: Sep 8 – 10). Check-in from 3:00 PM.
 - **Afternoon & Evening:** Cross the footbridge into the pedestrian Old Town (*Altstadt*). Walk along picturesque *Getreidegasse* past Mozart’s Birthplace. Dinner for four at *St. Peter Stiftskulinarium* or the lively monks' beer hall at *Augustiner Bräustübl*.

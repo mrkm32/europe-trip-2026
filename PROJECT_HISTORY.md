@@ -124,6 +124,15 @@ This document consolidates all context, architecture decisions, and feature deve
      * Implemented `triggerHapticFeedback()`: executes `navigator.vibrate([15])` on Android and a subtle synthesized acoustic micro-click via Web Audio API on iOS Safari/PWA.
    * **Version Upgrade:** Advanced web app to **v3.41** with Service Worker cache `v5`.
 
+10. **Conversation 10: In-App Document Viewer & iOS PWA Standalone Trap Resolution (v3.42)**
+    * **Modal Document Viewer:** Created full-screen in-app modal viewer (`docViewerModal`) for seamless inspection of all PDFs and images directly inside the iOS Standalone Web App without navigating away or breaking PWA context.
+    * **Version Upgrade:** Advanced web app to **v3.42** with Service Worker cache `v6`.
+
+11. **Conversation 11: Tuesday Sept 8th Rail Station Maps Navigation (v3.43)**
+    * **Station Maps Navigation:** Added direct Apple Maps and Google Maps links for both Munich Hauptbahnhof (departure station) and Salzburg Hauptbahnhof (arrival station) on Tuesday, September 8th (Day 5), while preserving distinct links for June Six Salzburg hotel.
+    * **Sync Across Hubs:** Synchronized the Railjet summary card in the Confirmations tab, the detailed Day 5 schedule, `README.md`, and `Europe_Grand_Alpine_Tour_2026.md`.
+    * **Version Upgrade:** Advanced web app to **v3.43** with Service Worker cache `v7`.
+
 ---
 
 ## 👥 Travel Party & Planning Status
