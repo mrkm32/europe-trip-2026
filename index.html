@@ -309,7 +309,7 @@
               <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-400/30">
                 ✈ Mark & Shelly Matthews
               </span>
-              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-sky-400/20 text-sky-300 border border-sky-400/30">v3.43</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-sky-400/20 text-sky-300 border border-sky-400/30">v3.44</span>
               <span id="pwa-status-badge" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 shadow-sm" title="Offline Caching Status">
                 <span id="pwa-status-dot" class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span id="pwa-status-text">Online • Synced</span>
@@ -610,7 +610,7 @@
                   <span>Airport Train Tickets</span>
                 </span>
                 <button onclick="switchMainTab('documents')" class="text-[11px] font-bold text-purple-700 hover:text-purple-900 underline">
-                  All 41 Docs ➔
+                  All 42 Docs ➔
                 </button>
               </div>
               <div class="flex flex-wrap items-center gap-1.5">
@@ -1854,7 +1854,7 @@
     </section>
     </div>
 
-    <!-- PANEL 4: TICKETS & SUPPORTING DOCUMENTS (41 ITEMS, MULTI-FILTER, 100% OFFLINE) -->
+    <!-- PANEL 4: TICKETS & SUPPORTING DOCUMENTS (42 ITEMS, MULTI-FILTER, 100% OFFLINE) -->
     <div id="panel-documents" class="tab-panel hidden" style="display: none;">
       <!-- Hero Banner -->
       <div class="bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 rounded-2xl p-5 sm:p-7 text-white shadow-xl mb-6 border border-purple-800/40 relative overflow-hidden">
@@ -1873,12 +1873,12 @@
               Official Tickets & Vouchers
             </h2>
             <p class="text-purple-200/90 text-xs sm:text-sm mt-1 max-w-2xl font-light leading-relaxed">
-              All 41 official train tickets, hotel confirmations, rental car vouchers, excursion passes, and emergency guides. Stored locally on this site for instant access even without cellular reception in the Alps!
+              All 42 official train tickets, hotel confirmations, rental car vouchers, excursion passes, and emergency guides. Stored locally on this site for instant access even without cellular reception in the Alps!
             </p>
           </div>
           <div class="flex flex-row md:flex-col items-center md:items-end justify-between gap-2 shrink-0">
             <div class="text-right hidden sm:block">
-              <div class="text-2xl font-black text-white">41 Files</div>
+              <div class="text-2xl font-black text-white">42 Files</div>
               <div class="text-[11px] text-purple-300 font-mono">Offline Cached</div>
             </div>
           </div>
@@ -1892,7 +1892,7 @@
           <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           </div>
-          <input type="text" id="doc-search-input" oninput="filterDocuments()" placeholder="Search by city, train number, hotel, or traveler (e.g. Salzburg, EC 115, Hallstatt, Rezia)..." 
+          <input type="text" id="doc-search-input" oninput="filterDocuments()" placeholder="Search by city, train number, hotel, or traveler (e.g. WESTbahn, 79212, Salzburg, Innsbruck, Rezia)..." 
                  class="w-full pl-9 pr-8 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 text-slate-900 placeholder-slate-400 transition" />
           <button onclick="clearDocSearch()" id="doc-search-clear" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -1904,7 +1904,7 @@
           <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider shrink-0">Traveler:</span>
           <div class="flex flex-wrap items-center gap-1.5">
             <button onclick="setDocTraveler('all')" id="doc-filter-trav-all" class="doc-trav-btn active-doc-trav px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-900 text-white shadow-sm">
-              All Travelers (41)
+              All Travelers (42)
             </button>
             <button onclick="setDocTraveler('Mark & Shelly')" id="doc-filter-trav-matthews" class="doc-trav-btn px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">
               ✈ Mark & Shelly (15)
@@ -1913,7 +1913,7 @@
               🏔 Bill & Kris (17)
             </button>
             <button onclick="setDocTraveler('Shared')" id="doc-filter-trav-shared" class="doc-trav-btn px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">
-              👥 Shared / All 4 (9)
+              👥 Shared / All 4 (10)
             </button>
           </div>
         </div>
@@ -1924,10 +1924,10 @@
           <div class="flex items-center gap-1.5 overflow-x-auto custom-scrollbar pb-1 w-full lg:w-auto">
             <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider shrink-0 mr-1">Type:</span>
             <button onclick="setDocCategory('all')" id="doc-filter-cat-all" class="doc-cat-btn active-doc-cat px-2.5 py-1 rounded-lg text-xs font-semibold shrink-0 bg-purple-600 text-white shadow-sm">
-              All (41)
+              All (42)
             </button>
             <button onclick="setDocCategory('Train Tickets')" id="doc-filter-cat-trains" class="doc-cat-btn px-2.5 py-1 rounded-lg text-xs font-semibold shrink-0 bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">
-              🚆 Trains (21)
+              🚆 Trains (22)
             </button>
             <button onclick="setDocCategory('Hotel Confirmations')" id="doc-filter-cat-lodging" class="doc-cat-btn px-2.5 py-1 rounded-lg text-xs font-semibold shrink-0 bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">
               🏨 Hotels (11)
@@ -1949,6 +1949,7 @@
               <option value="all">📍 All Cities & Legs</option>
               <option value="Munich / Salzburg">Munich / Salzburg</option>
               <option value="Salzburg / Hallstatt">Salzburg / Hallstatt</option>
+              <option value="Salzburg / Innsbruck">Salzburg / Innsbruck</option>
               <option value="Innsbruck / Bolzano">Innsbruck / Bolzano</option>
               <option value="Dolomites">Dolomites (Alta Badia)</option>
               <option value="Venice">Venice</option>
@@ -1960,7 +1961,7 @@
               <option value="General">General / Italy</option>
             </select>
             <span id="doc-results-counter" class="text-xs font-bold text-purple-700 bg-purple-50 px-2.5 py-1 rounded-lg border border-purple-200 shrink-0">
-              41 of 41
+              42 of 42
             </span>
           </div>
         </div>
@@ -2067,6 +2068,41 @@
                 <span>View</span>
               </a>
               <a href="documents/trains/shared/Innsbruck_to_Bolzano_Train_Details.png" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
+                <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span class="hidden sm:inline">Save</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-card bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-3"
+             data-traveler="Shared"
+             data-category="Train Tickets"
+             data-city="Salzburg / Innsbruck"
+             data-search="salzburg ➔ innsbruck train tickets (westbahn) zug 79212 (09:39–11:58) • 4 adult tickets • codes: bx4-fdc, vev-baz, djs-zdp, f83-agt shared train tickets salzburg / innsbruck day 7 • thu sep 10">
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-slate-100 text-slate-700 border border-slate-200">👥 Shared (All 4)</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">🚆 Train Ticket</span>
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[10px] font-medium bg-slate-100 text-slate-600">Day 7 • Thu Sep 10</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+              Salzburg ➔ Innsbruck Train Tickets (WESTbahn)
+            </h4>
+            <p class="text-xs text-slate-600 font-medium mt-1 leading-relaxed">
+              Zug 79212 (09:39–11:58) • 4 Adult Tickets • Codes: BX4-FDC, VEV-BAZ, DJS-ZDP, F83-AGT
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1 text-[11px] text-slate-400 font-medium">
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>PDF • 163.4 KB</span>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="documents/trains/shared/Salzburg_to_Innsbruck_WESTbahn_Tickets_Shared.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition" title="Open in new tab">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>View</span>
+              </a>
+              <a href="documents/trains/shared/Salzburg_to_Innsbruck_WESTbahn_Tickets_Shared.pdf" download class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 transition" title="Download copy">
                 <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                 <span class="hidden sm:inline">Save</span>
               </a>
@@ -3986,7 +4022,7 @@
                   <span>Day 7 Official Tickets & Vouchers</span>
                 </span>
                 <button onclick="switchMainTab('documents')" class="text-[11px] font-bold text-purple-700 hover:text-purple-900 underline">
-                  All 41 Docs ➔
+                  All 42 Docs ➔
                 </button>
               </div>
               <div class="flex flex-wrap items-center gap-1.5">
@@ -4215,7 +4251,7 @@
                   <span>Venice Arrival & B&B Fortuny Vouchers</span>
                 </span>
                 <button onclick="switchMainTab('documents')" class="text-[11px] font-bold text-purple-700 hover:text-purple-900 underline">
-                  All 41 Docs ➔
+                  All 42 Docs ➔
                 </button>
               </div>
               <div class="flex flex-wrap items-center gap-1.5">
@@ -4305,7 +4341,7 @@
                   <span>Venice Private Tour Receipts</span>
                 </span>
                 <button onclick="switchMainTab('documents')" class="text-[11px] font-bold text-purple-700 hover:text-purple-900 underline">
-                  All 41 Docs ➔
+                  All 42 Docs ➔
                 </button>
               </div>
               <div class="flex flex-wrap items-center gap-1.5">
@@ -4479,7 +4515,7 @@
                   <span>Day 13 Train Tickets & St. Moritz Voucher</span>
                 </span>
                 <button onclick="switchMainTab('documents')" class="text-[11px] font-bold text-purple-700 hover:text-purple-900 underline">
-                  All 41 Docs ➔
+                  All 42 Docs ➔
                 </button>
               </div>
               <div class="flex flex-wrap items-center gap-1.5">
@@ -4571,7 +4607,7 @@
                   <span>Day 14 Glacier Route Train Tickets & Zermatt Voucher</span>
                 </span>
                 <button onclick="switchMainTab('documents')" class="text-[11px] font-bold text-purple-700 hover:text-purple-900 underline">
-                  All 41 Docs ➔
+                  All 42 Docs ➔
                 </button>
               </div>
               <div class="flex flex-wrap items-center gap-1.5">
@@ -4660,7 +4696,7 @@
                   <span>Day 15 Zermatt ➔ Geneva Train Tickets & Hotel Voucher</span>
                 </span>
                 <button onclick="switchMainTab('documents')" class="text-[11px] font-bold text-purple-700 hover:text-purple-900 underline">
-                  All 41 Docs ➔
+                  All 42 Docs ➔
                 </button>
               </div>
               <div class="flex flex-wrap items-center gap-1.5">
@@ -5280,6 +5316,14 @@
         "category": "Train Tickets",
         "size": "66.6 KB",
         "format": "PNG"
+    },
+    "documents/trains/shared/Salzburg_to_Innsbruck_WESTbahn_Tickets_Shared.pdf": {
+        "title": "Salzburg \u2794 Innsbruck Train Tickets (WESTbahn)",
+        "subtitle": "Zug 79212 (09:39\u201311:58) \u2022 4 Adult Tickets \u2022 Codes: BX4-FDC, VEV-BAZ, DJS-ZDP, F83-AGT",
+        "traveler": "Shared",
+        "category": "Train Tickets",
+        "size": "163.4 KB",
+        "format": "PDF"
     },
     "documents/trains/rowe/01_Innsbruck_to_Bolzano_Train_Tickets_Rowe.pdf": {
         "title": "Innsbruck \u2794 Bolzano Train Tickets",

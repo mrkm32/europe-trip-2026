@@ -45,6 +45,21 @@
     "bytes": 68196
   },
   {
+    "raw_name": "Salzburg to Innsbruck WESTbahn Train Tickets Shared.pdf",
+    "folder": "trains/shared",
+    "file_name": "Salzburg_to_Innsbruck_WESTbahn_Tickets_Shared.pdf",
+    "title": "Salzburg \u2794 Innsbruck Train Tickets (WESTbahn)",
+    "subtitle": "Zug 79212 (09:39\u201311:58) \u2022 4 Adult Tickets \u2022 Codes: BX4-FDC, VEV-BAZ, DJS-ZDP, F83-AGT",
+    "traveler": "Shared",
+    "category": "Train Tickets",
+    "city": "Salzburg / Innsbruck",
+    "day": "Day 7 \u2022 Thu Sep 10",
+    "remote_url": "",
+    "path": "documents/trains/shared/Salzburg_to_Innsbruck_WESTbahn_Tickets_Shared.pdf",
+    "size": "163.4 KB",
+    "bytes": 167318
+  },
+  {
     "raw_name": "Innsbruck to Bolzano Train Tickets Rowe.pdf",
     "folder": "trains/rowe",
     "file_name": "01_Innsbruck_to_Bolzano_Train_Tickets_Rowe.pdf",
