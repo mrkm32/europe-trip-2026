@@ -309,7 +309,7 @@
               <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-400/30">
                 ✈ Mark & Shelly Matthews
               </span>
-              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-sky-400/20 text-sky-300 border border-sky-400/30">v3.44</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-sky-400/20 text-sky-300 border border-sky-400/30">v3.45</span>
               <span id="pwa-status-badge" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 shadow-sm" title="Offline Caching Status">
                 <span id="pwa-status-dot" class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span id="pwa-status-text">Online • Synced</span>
@@ -3458,27 +3458,79 @@
     <!-- TAB PANEL 3: DAY-BY-DAY EXPEDITION SCHEDULE -->
     <div id="panel-schedule" class="tab-panel hidden" style="display: none;">
       <section id="schedule" class="print-page-break mb-12">
-      <!-- Section Header with Filter Tabs -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-        <div>
-          <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">Detailed Walkthrough</span>
-          <h2 class="text-2xl font-black text-slate-900">Day-by-Day Expedition Schedule</h2>
+            <!-- Schedule Controls Hub: Past Days Filter, Jump to Today, & Quick Day Navigator -->
+      <div class="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-sm mb-6 space-y-3.5 no-print">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">Detailed Walkthrough</span>
+              <span id="current-day-badge" class="px-2 py-0.5 rounded-full text-[11px] font-extrabold bg-sky-100 text-sky-800 border border-sky-200">
+                📍 Today: Day 4 (Munich)
+              </span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-black text-slate-900 mt-0.5">Day-by-Day Expedition Schedule</h2>
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="flex items-center gap-2 flex-wrap">
+            <!-- Jump to Today Button -->
+            <button type="button" onclick="jumpToToday()" id="btn-jump-today" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 active:scale-95 text-white text-xs font-extrabold shadow-sm transition cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Jump to Today</span>
+            </button>
+
+            <!-- Hide Past Days Toggle -->
+            <button type="button" onclick="toggleHidePastDays()" id="btn-toggle-past" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-900 border border-purple-200 text-xs font-bold transition active:scale-95 cursor-pointer shadow-sm">
+              <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18"/></svg>
+              <span id="toggle-past-text">Hide Past Days</span>
+            </button>
+          </div>
         </div>
-        
-        <!-- Filter Tabs -->
-        <div class="flex items-center gap-1.5 overflow-x-auto pb-2 md:pb-0 custom-scrollbar no-print">
-          <button onclick="filterDays('all')" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white transition active-tab" data-filter="all">All Days</button>
-          <button onclick="filterDays('bavaria')" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition" data-filter="bavaria">Bavaria & Austria</button>
-          <button onclick="filterDays('dolomites')" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition" data-filter="dolomites">Dolomites</button>
-          <button onclick="filterDays('swiss')" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition" data-filter="swiss">Venice, Bernina & Swiss</button>
+
+        <!-- Quick Day Jump Strip (16 Day Chips) -->
+        <div class="pt-3 border-t border-slate-100">
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Quick Day Jump:</span>
+            <span id="past-days-counter" class="text-[11px] text-purple-700 font-bold hidden">
+              3 past days hidden
+            </span>
+          </div>
+          <div id="quick-day-strip" class="flex items-center gap-1.5 overflow-x-auto custom-scrollbar pb-1 text-xs select-none">
+            <!-- Rendered by JS updateDayChips() -->
+          </div>
         </div>
+
+        <!-- Region Filter Pills -->
+        <div class="pt-2.5 border-t border-slate-100 flex items-center justify-between gap-2 flex-wrap">
+          <div class="flex items-center gap-1.5 overflow-x-auto custom-scrollbar pb-1 w-full sm:w-auto">
+            <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider shrink-0 mr-1">Region:</span>
+            <button onclick="filterDays('all')" class="tab-btn active-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white transition shrink-0" data-filter="all">All Regions</button>
+            <button onclick="filterDays('bavaria')" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition shrink-0" data-filter="bavaria">Bavaria & Austria (D1–7)</button>
+            <button onclick="filterDays('dolomites')" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition shrink-0" data-filter="dolomites">Dolomites (D8–10)</button>
+            <button onclick="filterDays('swiss')" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition shrink-0" data-filter="swiss">Venice, Bernina & Swiss (D11–16)</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collapsible Past Days Banner (Visible when past days are filtered out) -->
+      <div id="past-days-banner" class="hidden mb-6 p-4 rounded-xl bg-gradient-to-r from-slate-100 via-purple-50 to-indigo-50 border border-purple-200 flex items-center justify-between gap-3 text-xs no-print">
+        <div class="flex items-center gap-2.5">
+          <span class="text-xl shrink-0">⏪</span>
+          <div>
+            <strong class="text-slate-900 font-bold" id="past-days-banner-title">Past Days Filter Active</strong>
+            <p class="text-slate-600 text-[11px] mt-0.5" id="past-days-banner-sub">Streamlined view: Showing Today & Upcoming days only</p>
+          </div>
+        </div>
+        <button type="button" onclick="toggleHidePastDays()" class="px-3 py-1.5 rounded-lg bg-white hover:bg-purple-100 text-purple-900 font-bold border border-purple-200 transition shadow-sm shrink-0 cursor-pointer">
+          Show All Days
+        </button>
       </div>
 
       <!-- TIMELINE CARDS WRAPPER -->
       <div class="space-y-6">
 
         <!-- DAY 1 -->
-        <div id="day-1" class="day-card bg-white rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm" data-category="bavaria">
+        <div id="day-1" class="day-card bg-white rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm" data-category="bavaria" data-date="2026-09-04" data-day-num="1">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
             <div class="flex items-center gap-3">
               <span class="w-10 h-10 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center font-bold text-sm">01</span>
@@ -3515,7 +3567,7 @@
         </div>
 
         <!-- DAY 2 -->
-        <div id="day-2" class="day-card bg-white rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm" data-category="bavaria">
+        <div id="day-2" class="day-card bg-white rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm" data-category="bavaria" data-date="2026-09-05" data-day-num="2">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
             <div class="flex items-center gap-3">
               <span class="w-10 h-10 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center font-bold text-sm">02</span>
@@ -3599,7 +3651,7 @@
         </div>
 
         <!-- DAY 3 -->
-        <div id="day-3" class="day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-amber-300 shadow-md relative" data-category="bavaria">
+        <div id="day-3" class="day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-amber-300 shadow-md relative" data-category="bavaria" data-date="2026-09-06" data-day-num="3">
           <div class="absolute -top-3 right-6 bg-amber-600 text-white text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
             Booked VIP Tour
           </div>
@@ -3685,7 +3737,7 @@
         </div>
 
         <!-- DAY 4 -->
-        <div id="day-4" class="day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-emerald-300 shadow-md relative" data-category="bavaria">
+        <div id="day-4" class="day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-emerald-300 shadow-md relative" data-category="bavaria" data-date="2026-09-07" data-day-num="4">
           <div class="absolute -top-3 right-6 bg-emerald-600 text-white text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
             Booked Food Tour
           </div>
@@ -3752,7 +3804,7 @@
         </div>
 
         <!-- DAY 5: SALZBURG -->
-        <div id="day-5" class="print-page-break day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-indigo-300 shadow-md relative" data-category="bavaria">
+        <div id="day-5" class="print-page-break day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-indigo-300 shadow-md relative" data-category="bavaria" data-date="2026-09-08" data-day-num="5">
           <div class="absolute -top-3 right-6 bg-indigo-600 text-white text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
             Railjet & Fortress Gala
           </div>
@@ -3855,7 +3907,7 @@
         </div>
 
         <!-- DAY 6 -->
-        <div id="day-6" class="day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-emerald-300 shadow-md relative" data-category="bavaria">
+        <div id="day-6" class="day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-emerald-300 shadow-md relative" data-category="bavaria" data-date="2026-09-09" data-day-num="6">
           <div class="absolute -top-3 right-6 bg-emerald-600 text-white text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
             Booked Super Saver Tour
           </div>
@@ -3941,7 +3993,7 @@
         </div>
 
         <!-- DAY 7 -->
-        <div id="day-7" class="day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-purple-300 shadow-md relative" data-category="bavaria">
+        <div id="day-7" class="day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-purple-300 shadow-md relative" data-category="bavaria" data-date="2026-09-10" data-day-num="7">
           <div class="absolute -top-3 right-6 bg-purple-600 text-white text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
             WESTbahn & Folk Show
           </div>
@@ -4039,7 +4091,7 @@
         </div>
 
         <!-- DAY 8: DOLOMITES GATEWAY -->
-        <div id="day-8" class="print-page-break day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-rose-300 shadow-md relative" data-category="dolomites">
+        <div id="day-8" class="print-page-break day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-rose-300 shadow-md relative" data-category="dolomites" data-date="2026-09-11" data-day-num="8">
           <div class="absolute -top-3 right-6 bg-rose-600 text-white text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
             Dolomites Gateway
           </div>
@@ -4136,7 +4188,7 @@
         </div>
 
         <!-- DAY 9 -->
-        <div id="day-9" class="day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-rose-300 shadow-md relative" data-category="dolomites">
+        <div id="day-9" class="day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-rose-300 shadow-md relative" data-category="dolomites" data-date="2026-09-12" data-day-num="9">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
             <div class="flex items-center gap-3">
               <span class="w-10 h-10 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center font-extrabold text-sm">09</span>
@@ -4191,7 +4243,7 @@
         </div>
 
         <!-- DAY 10 -->
-        <div id="day-10" class="day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-rose-300 shadow-md relative" data-category="dolomites">
+        <div id="day-10" class="day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-rose-300 shadow-md relative" data-category="dolomites" data-date="2026-09-13" data-day-num="10">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
             <div class="flex items-center gap-3">
               <span class="w-10 h-10 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center font-extrabold text-sm">10</span>
@@ -4263,7 +4315,7 @@
         </div>
 
         <!-- DAY 11: DOLOMITES TO VENICE -->
-        <div id="day-11" class="print-page-break day-card bg-white rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm" data-category="swiss">
+        <div id="day-11" class="print-page-break day-card bg-white rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm" data-category="swiss" data-date="2026-09-14" data-day-num="11">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
             <div class="flex items-center gap-3">
               <span class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-sm">11</span>
@@ -4352,7 +4404,7 @@
         </div>
 
         <!-- DAY 12: FULL DAY IN VENICE -->
-        <div id="day-12" class="day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-amber-300 shadow-md relative" data-category="swiss">
+        <div id="day-12" class="day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-amber-300 shadow-md relative" data-category="swiss" data-date="2026-09-15" data-day-num="12">
           <div class="absolute -top-3 right-6 bg-amber-600 text-white text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
             Venetian Canals
           </div>
@@ -4414,7 +4466,7 @@
         </div>
 
         <!-- DAY 13: VENICE TO ST. MORITZ VIA BERNINA RAILWAY -->
-        <div id="day-13" class="print-page-break day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-teal-300 shadow-md relative" data-category="swiss">
+        <div id="day-13" class="print-page-break day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-teal-300 shadow-md relative" data-category="swiss" data-date="2026-09-16" data-day-num="13">
           <div class="absolute -top-3 right-6 bg-teal-600 text-white text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
             UNESCO Bernina Railway
           </div>
@@ -4532,7 +4584,7 @@
         </div>
 
         <!-- DAY 14: ST. MORITZ TO ZERMATT (GLACIER EXPRESS ROUTE) -->
-        <div id="day-14" class="print-page-break day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-emerald-300 shadow-md relative" data-category="swiss">
+        <div id="day-14" class="print-page-break day-card bg-white rounded-xl p-5 sm:p-6 border-2 border-emerald-300 shadow-md relative" data-category="swiss" data-date="2026-09-17" data-day-num="14">
           <div class="absolute -top-3 right-6 bg-emerald-600 text-white text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
             Glacier Express Route
           </div>
@@ -4624,7 +4676,7 @@
         </div>
 
         <!-- DAY 15: ZERMATT PANORAMAS TO GENEVA -->
-        <div id="day-15" class="day-card bg-white rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm" data-category="swiss">
+        <div id="day-15" class="day-card bg-white rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm" data-category="swiss" data-date="2026-09-18" data-day-num="15">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
             <div class="flex items-center gap-3">
               <span class="w-10 h-10 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center font-bold text-sm">15</span>
@@ -4710,7 +4762,7 @@
         </div>
 
         <!-- DAY 16: GENEVA TO MINNEAPOLIS -->
-        <div id="day-16" class="day-card bg-white rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm" data-category="swiss">
+        <div id="day-16" class="day-card bg-white rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm" data-category="swiss" data-date="2026-09-19" data-day-num="16">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
             <div class="flex items-center gap-3">
               <span class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">16</span>
@@ -5047,27 +5099,248 @@
     }
 
 
-    function filterDays(category) {
-      const cards = document.querySelectorAll('.day-card');
-      const buttons = document.querySelectorAll('.tab-btn');
+    /* SCHEDULE FILTERING & TIMELINE NAVIGATION (PAST DAYS FILTER & QUICK JUMP) */
+    const TRIP_DATES = [
+      { day: 1, date: "2026-09-04", label: "D1 • Sep 4", title: "Flight: MSP ➔ AMS" },
+      { day: 2, date: "2026-09-05", label: "D2 • Sep 5", title: "Munich Arrival" },
+      { day: 3, date: "2026-09-06", label: "D3 • Sep 6", title: "Neuschwanstein" },
+      { day: 4, date: "2026-09-07", label: "D4 • Sep 7", title: "Munich Altstadt" },
+      { day: 5, date: "2026-09-08", label: "D5 • Sep 8", title: "Train ➔ Salzburg" },
+      { day: 6, date: "2026-09-09", label: "D6 • Sep 9", title: "Sound of Music / Hallstatt" },
+      { day: 7, date: "2026-09-10", label: "D7 • Sep 10", title: "WESTbahn ➔ Innsbruck" },
+      { day: 8, date: "2026-09-11", label: "D8 • Sep 11", title: "Bolzano ➔ Dolomites" },
+      { day: 9, date: "2026-09-12", label: "D9 • Sep 12", title: "Dolomites Mountain Passes" },
+      { day: 10, date: "2026-09-13", label: "D10 • Sep 13", title: "Drive ➔ Venice" },
+      { day: 11, date: "2026-09-14", label: "D11 • Sep 14", title: "Bernina Express ➔ St. Moritz" },
+      { day: 12, date: "2026-09-15", label: "D12 • Sep 15", title: "St. Moritz Glacier Lakes" },
+      { day: 13, date: "2026-09-16", label: "D13 • Sep 16", title: "Glacier Route ➔ Andermatt" },
+      { day: 14, date: "2026-09-17", label: "D14 • Sep 17", title: "Zermatt & Matterhorn" },
+      { day: 15, date: "2026-09-18", label: "D15 • Sep 18", title: "Train ➔ Lake Geneva" },
+      { day: 16, date: "2026-09-19", label: "D16 • Sep 19", title: "Return Flights: GVA ➔ MSP" }
+    ];
 
+    let currentRegionFilter = 'all';
+    let isHidePastDays = localStorage.getItem('alps_hide_past_days') === 'true';
+
+    function getTodayDateStr() {
+      const now = new Date();
+      const y = now.getFullYear();
+      const m = String(now.getMonth() + 1).padStart(2, '0');
+      const d = String(now.getDate()).padStart(2, '0');
+      return `${y}-${m}-${d}`;
+    }
+
+    function toggleHidePastDays() {
+      isHidePastDays = !isHidePastDays;
+      localStorage.setItem('alps_hide_past_days', isHidePastDays ? 'true' : 'false');
+      applyScheduleFilters();
+    }
+
+    function filterDays(category) {
+      currentRegionFilter = category;
+      const buttons = document.querySelectorAll('#panel-schedule .tab-btn');
       buttons.forEach(btn => {
         if (btn.dataset.filter === category) {
           btn.classList.remove('bg-white', 'text-slate-600');
-          btn.classList.add('bg-slate-900', 'text-white');
+          btn.classList.add('bg-slate-900', 'text-white', 'active-tab');
         } else {
-          btn.classList.remove('bg-slate-900', 'text-white');
+          btn.classList.remove('bg-slate-900', 'text-white', 'active-tab');
           btn.classList.add('bg-white', 'text-slate-600');
         }
       });
+      applyScheduleFilters();
+    }
+
+    function applyScheduleFilters() {
+      const cards = document.querySelectorAll('.day-card');
+      const todayStr = getTodayDateStr();
+
+      let hiddenPastCount = 0;
+      let visibleCount = 0;
+      let firstVisibleCard = null;
 
       cards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
+        const cardDate = card.getAttribute('data-date');
+        const cardCategory = card.getAttribute('data-category');
+
+        const isPast = Boolean(cardDate && cardDate < todayStr);
+        const matchesRegion = (currentRegionFilter === 'all' || cardCategory === currentRegionFilter);
+
+        if (isPast && isHidePastDays) {
+          card.style.display = 'none';
+          hiddenPastCount++;
+        } else if (matchesRegion) {
           card.style.display = 'block';
+          visibleCount++;
+          if (!firstVisibleCard) firstVisibleCard = card;
         } else {
           card.style.display = 'none';
         }
       });
+
+      // Update Toolbar Controls
+      const toggleBtn = document.getElementById('btn-toggle-past');
+      const toggleText = document.getElementById('toggle-past-text');
+      const banner = document.getElementById('past-days-banner');
+      const bannerTitle = document.getElementById('past-days-banner-title');
+      const bannerSub = document.getElementById('past-days-banner-sub');
+      const pastCounter = document.getElementById('past-days-counter');
+      const badge = document.getElementById('current-day-badge');
+
+      // Update Today Badge
+      const todayItem = TRIP_DATES.find(d => d.date === todayStr);
+      if (badge) {
+        if (todayItem) {
+          badge.textContent = `📍 Today: Day ${todayItem.day} (${todayItem.title.split(':')[0].split('➔')[0].trim()})`;
+          badge.className = 'px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-sky-100 text-sky-900 border border-sky-300 shadow-sm';
+        } else if (todayStr < TRIP_DATES[0].date) {
+          badge.textContent = '✈ Upcoming: Departs Sep 4';
+          badge.className = 'px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-300';
+        } else {
+          badge.textContent = '🏔 Completed: Sep 4–19, 2026';
+          badge.className = 'px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-900 border border-emerald-300';
+        }
+      }
+
+      if (isHidePastDays && hiddenPastCount > 0) {
+        if (toggleBtn) {
+          toggleBtn.className = 'inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold shadow-md transition active:scale-95 cursor-pointer';
+        }
+        if (toggleText) toggleText.textContent = `Hide Past Days (${hiddenPastCount} hidden)`;
+        if (banner) {
+          banner.classList.remove('hidden');
+          if (bannerTitle) bannerTitle.textContent = `${hiddenPastCount} Past Day${hiddenPastCount > 1 ? 's' : ''} Hidden (Days 1–${hiddenPastCount})`;
+          if (bannerSub) bannerSub.textContent = `Streamlined timeline: Showing Today & Upcoming days only. Tap "Show All Days" anytime to review past legs.`;
+        }
+        if (pastCounter) {
+          pastCounter.classList.remove('hidden');
+          pastCounter.textContent = `${hiddenPastCount} past day${hiddenPastCount > 1 ? 's' : ''} hidden`;
+        }
+      } else {
+        if (toggleBtn) {
+          toggleBtn.className = 'inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 text-xs font-bold transition active:scale-95 cursor-pointer';
+        }
+        if (toggleText) toggleText.textContent = 'Hide Past Days';
+        if (banner) banner.classList.add('hidden');
+        if (pastCounter) pastCounter.classList.add('hidden');
+      }
+
+      updateDayChips(todayStr);
+      highlightTodayCard(todayStr);
+    }
+
+    function updateDayChips(todayStr) {
+      const container = document.getElementById('quick-day-strip');
+      if (!container) return;
+
+      container.innerHTML = '';
+
+      TRIP_DATES.forEach(item => {
+        const isPast = item.date < todayStr;
+        const isToday = item.date === todayStr;
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.onclick = () => jumpToDay(item.day);
+
+        if (isToday) {
+          btn.className = 'inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-extrabold text-xs shrink-0 shadow-md ring-2 ring-sky-300 cursor-pointer transition';
+          btn.innerHTML = `<span>📍 D${item.day} Today</span>`;
+        } else if (isPast) {
+          btn.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-500 border border-slate-200 font-semibold text-[11px] shrink-0 cursor-pointer transition';
+          btn.innerHTML = `<span>✓ D${item.day}</span>`;
+          btn.title = `${item.title} (Completed)`;
+        } else {
+          btn.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold text-[11px] shrink-0 cursor-pointer transition';
+          btn.innerHTML = `<span>D${item.day}</span>`;
+          btn.title = item.title;
+        }
+
+        container.appendChild(btn);
+      });
+    }
+
+    function highlightTodayCard(todayStr) {
+      const cards = document.querySelectorAll('.day-card');
+      cards.forEach(card => {
+        const cardDate = card.getAttribute('data-date');
+        const existingBadge = card.querySelector('.badge-today-pulse');
+        if (cardDate === todayStr) {
+          card.classList.add('ring-2', 'ring-sky-500', 'shadow-md');
+          if (!existingBadge) {
+            const badgeContainer = card.querySelector('.pb-4');
+            if (badgeContainer) {
+              const badge = document.createElement('span');
+              badge.className = 'badge-today-pulse self-start sm:self-auto px-3 py-1 bg-sky-500 text-white rounded-full text-xs font-black shadow-sm flex items-center gap-1.5 animate-pulse';
+              badge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-white"></span><span>TODAY</span>';
+              badgeContainer.appendChild(badge);
+            }
+          }
+        } else {
+          card.classList.remove('ring-2', 'ring-sky-500');
+          if (existingBadge) existingBadge.remove();
+        }
+      });
+    }
+
+    function jumpToToday() {
+      const todayStr = getTodayDateStr();
+      const cards = document.querySelectorAll('.day-card');
+      let targetCard = null;
+
+      cards.forEach(card => {
+        if (card.getAttribute('data-date') === todayStr) {
+          targetCard = card;
+        }
+      });
+
+      if (!targetCard && cards.length > 0) {
+        // If before trip, Day 1; if after trip, Day 16
+        targetCard = todayStr < TRIP_DATES[0].date ? cards[0] : cards[cards.length - 1];
+      }
+
+      if (targetCard) {
+        if (targetCard.style.display === 'none') {
+          targetCard.style.display = 'block';
+        }
+
+        const headerOffset = 90;
+        const elementPosition = targetCard.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+
+        targetCard.classList.add('ring-4', 'ring-sky-400', 'transition-all');
+        setTimeout(() => {
+          targetCard.classList.remove('ring-4', 'ring-sky-400');
+        }, 1500);
+      }
+    }
+
+    function jumpToDay(dayNum) {
+      const card = document.getElementById(`day-${dayNum}`);
+      if (!card) return;
+
+      if (card.style.display === 'none') {
+        card.style.display = 'block';
+      }
+
+      const headerOffset = 90;
+      const elementPosition = card.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      card.classList.add('ring-4', 'ring-purple-400', 'transition-all');
+      setTimeout(() => {
+        card.classList.remove('ring-4', 'ring-purple-400');
+      }, 1500);
     }
 
     /* ACCESS SECURITY LOGIC (SHA-256 Cryptographic Verification) */
