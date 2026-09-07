@@ -1,6 +1,6 @@
 // Service Worker for Europe Alps Odyssey 2026
 // Enables 100% Offline Access across Alpine valleys, trains, and mountain passes
-const CACHE_NAME = 'europe-alps-2026-v9';
+const CACHE_NAME = 'europe-alps-2026-v10';
 
 const PRECACHE_URLS = [
   './documents/trains/shared/Salzburg_to_Innsbruck_WESTbahn_Tickets_Shared.pdf',
