@@ -30,7 +30,7 @@ for item in catalog:
     if "WESTbahn" in title:
         page_labels = [
             "Mark Matthews • Ticket BX4-FDC",
-            "Shelly Rowe • Ticket VEV-BAZ",
+            "Shelly Matthews • Ticket VEV-BAZ",
             "Bill Rowe • Ticket DJS-ZDP",
             "Kris Rowe • Ticket F83-AGT"
         ]
@@ -39,13 +39,13 @@ for item in catalog:
     elif cat == "Train Tickets":
         if trav == "Mark & Shelly":
             if page_count == 3:
-                page_labels = ["Mark Matthews (Passenger 1)", "Shelly Rowe (Passenger 2)", "Seat Reservation & Route Details"]
+                page_labels = ["Mark Matthews (Passenger 1)", "Shelly Matthews (Passenger 2)", "Seat Reservation & Route Details"]
             elif page_count == 2:
-                page_labels = ["Mark Matthews (Passenger 1)", "Shelly Rowe (Passenger 2)"]
+                page_labels = ["Mark Matthews (Passenger 1)", "Shelly Matthews (Passenger 2)"]
             elif page_count == 4:
-                page_labels = ["Mark Matthews (Ticket 1)", "Shelly Rowe (Ticket 2)", "Seat Reservation 1", "Seat Reservation 2"]
+                page_labels = ["Mark Matthews (Ticket 1)", "Shelly Matthews (Ticket 2)", "Seat Reservation 1", "Seat Reservation 2"]
             elif page_count == 1:
-                page_labels = ["Mark & Shelly (Combined Ticket)"]
+                page_labels = ["Mark & Shelly Matthews (Combined Ticket)"]
         elif trav == "Bill & Kris":
             if page_count == 3:
                 page_labels = ["Bill Rowe (Passenger 1)", "Kris Rowe (Passenger 2)", "Seat Reservation & Route Details"]
@@ -54,7 +54,7 @@ for item in catalog:
             elif page_count == 4:
                 page_labels = ["Bill Rowe (Ticket 1)", "Kris Rowe (Ticket 2)", "Seat Reservation 1", "Seat Reservation 2"]
             elif page_count == 1:
-                page_labels = ["Bill & Kris (Combined Ticket)"]
+                page_labels = ["Bill & Kris Rowe (Combined Ticket)"]
         elif trav == "Shared":
             page_labels = [f"Ticket / Details Page {i+1} of {page_count}" for i in range(page_count)]
     elif cat == "Hotel Confirmations":
@@ -94,10 +94,43 @@ for item in catalog:
 with open("index.html", "r", encoding="utf-8") as f:
     html = f.read()
 
-# 1. Update version badge to v3.48
-html = html.replace("<span>v3.47</span>", "<span>v3.48</span>").replace("<span>v3.46</span>", "<span>v3.48</span>")
+# 1. Update version badge to v3.49
+html = re.sub(r"<span>v3\.\d+</span>", "<span>v3.49</span>", html, count=1)
 
-# 2. Update DOCS_CATALOG_MAP
+# 2. Fix forceAppUpdate to clear ALL caches and force registration update
+new_force_update = """    async function forceAppUpdate() {
+      const dot = document.getElementById('pwa-status-dot');
+      const text = document.getElementById('pwa-status-text');
+      if (dot) dot.className = 'w-2 h-2 rounded-full bg-sky-400 animate-ping';
+      if (text) text.innerText = 'Updating...';
+
+      if ('serviceWorker' in navigator) {
+        try {
+          const registrations = await navigator.serviceWorker.getRegistrations();
+          for (const reg of registrations) {
+            await reg.update();
+          }
+        } catch (e) {}
+      }
+
+      if ('caches' in window) {
+        try {
+          const keys = await caches.keys();
+          for (const k of keys) {
+            await caches.delete(k);
+          }
+        } catch (e) {}
+      }
+
+      setTimeout(() => {
+        window.location.reload(true);
+      }, 300);
+    }"""
+
+force_pattern = re.compile(r"    async function forceAppUpdate\(\) \{[\s\S]*?    \}", re.MULTILINE)
+html = force_pattern.sub(new_force_update, html, count=1)
+
+# 3. Update DOCS_CATALOG_MAP
 catalog_json_str = json.dumps(docs_map, indent=4)
 catalog_map_code = f"    const DOCS_CATALOG_MAP = {catalog_json_str};\n"
 
@@ -111,7 +144,7 @@ end_pos = end_match.start()
 
 html = html[:start_pos] + catalog_map_code + "\n" + html[end_pos + 3:]
 
-# 3. Update JavaScript logic
+# 4. Update JavaScript logic with clean image rendering and no flexbox trap
 new_js = """    let currentDocState = null;
 
     function openCurrentDocInSafari() {
@@ -204,8 +237,8 @@ new_js = """    let currentDocState = null;
                 </div>
                 <span class="text-[10px] font-mono text-emerald-400/90 font-semibold shrink-0 hidden sm:inline">QR / Conductor Scan</span>
               </div>
-              <div class="w-full bg-white flex items-center justify-center p-1 sm:p-2 select-text min-h-[300px]">
-                <img src="${pagePath}" alt="${label}" loading="eager" class="w-full h-auto max-w-full object-contain pointer-events-auto" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'p-8 text-center text-slate-800 font-bold text-xs\\'>Failed to load page image.<br><a href=\\'${cleanUrl}\\' target=\\'_blank\\' class=\\'inline-block mt-2 px-3 py-1.5 bg-sky-600 text-white rounded-lg text-xs font-extrabold shadow\\'>Open Native PDF ↗</a></div>';" />
+              <div class="w-full bg-white p-2 sm:p-4 text-center">
+                <img src="${pagePath}" alt="${label}" class="w-full h-auto rounded shadow-sm mx-auto block" style="display: block; width: 100%; height: auto; max-width: 100%;" />
               </div>
             `;
             galleryContainer.appendChild(card);
@@ -342,4 +375,4 @@ html = html[:js_start_pos] + new_js + "\n\n" + html[js_end_pos:]
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html)
 
-print("SUCCESS: Updated index.html with rendered path, fallback onerror, and v3.48!")
+print("SUCCESS: Updated index.html with Shelly Matthews, clean block image rendering, and v3.49!")

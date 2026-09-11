@@ -1,12 +1,13 @@
 import json
 import glob
 
-CACHE_NAME = 'europe-alps-2026-v12'
+CACHE_NAME = 'europe-alps-2026-v13'
 
 with open("documents/catalog.json", "r") as f:
     catalog = json.load(f)
 
-rendered_pngs = sorted(glob.glob("documents/rendered/**/*.png", recursive=True))
+# Precache all train tickets (rendered pages) so they are 100% available offline
+train_pngs = sorted(glob.glob("documents/rendered/trains/**/*.png", recursive=True))
 
 precache_set = [
     './',
@@ -20,12 +21,15 @@ precache_set = [
     'https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js'
 ]
 
+# Add all train ticket PDFs
 for item in catalog:
-    p = f"./{item['path']}"
-    if p not in precache_set:
-        precache_set.append(p)
+    if item.get("category") == "Train Tickets":
+        p = f"./{item['path']}"
+        if p not in precache_set:
+            precache_set.append(p)
 
-for png in rendered_pngs:
+# Add all train ticket rendered PNGs
+for png in train_pngs:
     p = f"./{png}"
     if p not in precache_set:
         precache_set.append(p)
@@ -40,14 +44,14 @@ const PRECACHE_URLS = [
 {precache_lines}
 ];
 
-// Install: Cache essential application assets & pre-rendered ticket pages
+// Install: Cache essential application assets & pre-rendered train ticket pages
 self.addEventListener('install', (event) => {{
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {{
       return Promise.allSettled(
         PRECACHE_URLS.map((url) =>
           cache.add(url).catch((err) => {{
-            console.warn('Pre-caching non-fatal asset warning:', url, err);
+            console.warn('Pre-caching asset:', url, err);
           }})
         )
       );
@@ -55,7 +59,7 @@ self.addEventListener('install', (event) => {{
   );
 }});
 
-// Activate: Purge older cache versions
+// Activate: Purge older cache versions immediately
 self.addEventListener('activate', (event) => {{
   event.waitUntil(
     caches.keys().then((keys) => {{
@@ -70,39 +74,16 @@ self.addEventListener('activate', (event) => {{
   );
 }});
 
-// Fetch: Cache-First for documents/rendered/, Network-First with Cache Fallback for everything else
+// Fetch: Cache-First for instant offline performance, Network Fallback with automatic caching
 self.addEventListener('fetch', (event) => {{
   if (event.request.method !== 'GET') return;
 
-  const url = event.request.url;
-
-  // Cache-first strategy for rendered ticket pages & documents (instant offline performance)
-  if (url.includes('/documents/rendered/') || url.includes('/documents/')) {{
-    event.respondWith(
-      caches.match(event.request).then((cachedResponse) => {{
-        if (cachedResponse) {{
-          return cachedResponse;
-        }}
-        return fetch(event.request).then((networkResponse) => {{
-          if (networkResponse && networkResponse.status === 200) {{
-            const responseClone = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => {{
-              cache.put(event.request, responseClone);
-            }});
-          }}
-          return networkResponse;
-        }}).catch(() => {{
-          return caches.match(event.request);
-        }});
-      }})
-    );
-    return;
-  }}
-
-  // Network-First with Cache Fallback for app shell & dynamic data
   event.respondWith(
-    fetch(event.request)
-      .then((networkResponse) => {{
+    caches.match(event.request).then((cachedResponse) => {{
+      if (cachedResponse) {{
+        return cachedResponse;
+      }}
+      return fetch(event.request).then((networkResponse) => {{
         if (networkResponse && networkResponse.status === 200) {{
           const responseClone = networkResponse.clone();
           caches.open(CACHE_NAME).then((cache) => {{
@@ -110,17 +91,13 @@ self.addEventListener('fetch', (event) => {{
           }});
         }}
         return networkResponse;
-      }})
-      .catch(() => {{
-        return caches.match(event.request).then((cachedResponse) => {{
-          if (cachedResponse) {{
-            return cachedResponse;
-          }}
-          if (event.request.mode === 'navigate') {{
-            return caches.match('./index.html');
-          }}
-        }});
-      }})
+      }}).catch(() => {{
+        if (event.request.mode === 'navigate') {{
+          return caches.match('./index.html');
+        }}
+        return caches.match(event.request);
+      }});
+    }})
   );
 }});
 """
@@ -128,4 +105,4 @@ self.addEventListener('fetch', (event) => {{
 with open("sw.js", "w", encoding="utf-8") as f:
     f.write(sw_content)
 
-print(f"Updated sw.js with {len(precache_set)} precache assets (including {len(rendered_pngs)} rendered pages) on cache {CACHE_NAME}!")
+print(f"Updated sw.js with {len(precache_set)} precache assets on cache {CACHE_NAME}!")
