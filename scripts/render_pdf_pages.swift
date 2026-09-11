@@ -5,7 +5,7 @@ import AppKit
 let fileManager = FileManager.default
 let currentDir = fileManager.currentDirectoryPath
 let docsDir = (currentDir as NSString).appendingPathComponent("documents")
-let renderedBaseDir = (docsDir as NSString).appendingPathComponent("_rendered")
+let renderedBaseDir = (docsDir as NSString).appendingPathComponent("rendered")
 
 try? fileManager.createDirectory(atPath: renderedBaseDir, withIntermediateDirectories: true, attributes: nil)
 
@@ -13,7 +13,7 @@ var enumerator = fileManager.enumerator(atPath: docsDir)
 var pdfPaths: [String] = []
 
 while let file = enumerator?.nextObject() as? String {
-    if file.hasPrefix("_rendered") { continue }
+    if file.hasPrefix("rendered") { continue }
     if file.lowercased().hasSuffix(".pdf") {
         pdfPaths.append(file)
     }
@@ -45,7 +45,7 @@ for relPdfPath in pdfPaths {
         let pageNum = pageIdx + 1
         let outFileName = "page-\(pageNum).png"
         let outFullPath = (targetSubDir as NSString).appendingPathComponent(outFileName)
-        let outRelPath = "documents/_rendered/\(relDir.isEmpty ? "" : relDir + "/")\(pdfNameWithoutExt)/\(outFileName)"
+        let outRelPath = "documents/rendered/\(relDir.isEmpty ? "" : relDir + "/")\(pdfNameWithoutExt)/\(outFileName)"
             .replacingOccurrences(of: "//", with: "/")
         
         renderedPages.append(outRelPath)

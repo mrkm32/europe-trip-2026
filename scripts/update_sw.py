@@ -1,12 +1,12 @@
 import json
 import glob
 
-CACHE_NAME = 'europe-alps-2026-v11'
+CACHE_NAME = 'europe-alps-2026-v12'
 
 with open("documents/catalog.json", "r") as f:
     catalog = json.load(f)
 
-rendered_pngs = sorted(glob.glob("documents/_rendered/**/*.png", recursive=True))
+rendered_pngs = sorted(glob.glob("documents/rendered/**/*.png", recursive=True))
 
 precache_set = [
     './',
@@ -70,14 +70,14 @@ self.addEventListener('activate', (event) => {{
   );
 }});
 
-// Fetch: Cache-First for documents/_rendered/, Network-First with Cache Fallback for everything else
+// Fetch: Cache-First for documents/rendered/, Network-First with Cache Fallback for everything else
 self.addEventListener('fetch', (event) => {{
   if (event.request.method !== 'GET') return;
 
   const url = event.request.url;
 
   // Cache-first strategy for rendered ticket pages & documents (instant offline performance)
-  if (url.includes('/documents/_rendered/') || url.includes('/documents/')) {{
+  if (url.includes('/documents/rendered/') || url.includes('/documents/')) {{
     event.respondWith(
       caches.match(event.request).then((cachedResponse) => {{
         if (cachedResponse) {{
